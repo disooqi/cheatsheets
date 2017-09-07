@@ -1,0 +1,62 @@
+#!/bin/sh
+# Corey uses pip 99% of the times 
+# he use conda only when the package is not available in pip
+
+
+# create a dir for your project
+mkdir <the_project>
+
+cd <the_project>
+
+
+conda create --name <the_project_env> flask sqlalchemy numpy pandas
+
+source activate <the_project_env>
+
+
+pip list
+
+
+conda env export > environment.yaml
+
+
+cat environment.yaml
+
+# it is better to backage up this environment.yaml file with your project, so any body want to work with the project can replicate it easly 
+conda env create -f environment.yaml
+
+# to list the locations of all the environment we have in the machine
+conda env list
+
+mkdir -p etc/conda/activate.d
+mkdir -p etc/conda/deactivate.d
+
+touch etc/conda/activate.d/env_vars.sh
+touch etc/conda/deactivate.d/env_vars.sh
+
+# inside the file etc/conda/activate.d/env_vars.sh
+##!/bin/sh
+#export DATABASE_URI="postgresql://user:pass@db_server:5432/test_db"
+
+
+# # inside the file etc/conda/deactivate.d/env_vars.sh
+##!/bin/sh
+#unset DATABASE_URI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
