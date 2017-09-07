@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# Please check https://conda.io/docs/user-guide/tasks/manage-environments.html for more details
 ################
 ### Anaconda ###
 ################
