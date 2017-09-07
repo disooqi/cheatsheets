@@ -28,6 +28,7 @@ conda env create -f environment.yaml
 # to list the locations of all the environment we have in the machine
 conda env list
 
+# change to the desired environment directory and execute the following:
 mkdir -p etc/conda/activate.d
 mkdir -p etc/conda/deactivate.d
 
