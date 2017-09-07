@@ -51,6 +51,7 @@ touch etc/conda/deactivate.d/env_vars.sh
 # Aquired from https://github.com/CoreyMSchafer/code_snippets/blob/master/conda_auto_env.sh
 # but originally Modified from:
 # https://github.com/chdoig/conda-auto-env
+# if you are using Pycharm you don't need this code
 
 # Auto activate conda environments
 function conda_auto_env() {
