@@ -1,1 +1,15 @@
 #!/bin/sh
+
+# reference : https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
+# 123
+adduser disooqi
+
+
+# set up what is known as "superuser" or root privileges for our normal account. 
+# This will allow our normal user to run commands with administrative privileges by putting the word sudo 
+# before each command
+usermod -aG sudo disooqi
+
+# On the server, as the root user, enter the following command to temporarily switch to the new user 
+# (substitute your own user name):
+su - disooqi
