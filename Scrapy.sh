@@ -8,6 +8,7 @@ pip install scrapy==1.4.0
 scrapy startproject myproject [project_dir]
 
 # Deploying and running Scrapy spiders to Scrapy Cloud
+# https://www.youtube.com/watch?v=JYch0zRmcgU
 pip install shub
 
 # get the API key to login from the web site
