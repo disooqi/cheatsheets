@@ -6,3 +6,19 @@ pip install scrapy==1.4.0
 # That will create a Scrapy project under the project_dir directory. 
 # If project_dir wasn’t specified, project_dir will be the same as myproject.
 scrapy startproject myproject [project_dir]
+
+# Deploying and running Scrapy spiders to Scrapy Cloud
+pip install shub
+
+# get the API key to login from the web site
+shub login
+
+# to deploy run the following and enter the project id
+shub deploy 
+
+# make sure that you run the same version of python on both your machine and scrapyinghub 
+# you could control the python version using the file scrapinghub.yml in your project
+projects:
+  default:
+    id: 234417
+    stack: scrapy:1.4-py3
