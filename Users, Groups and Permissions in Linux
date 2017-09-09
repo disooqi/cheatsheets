@@ -13,3 +13,11 @@ usermod -aG sudo disooqi
 # On the server, as the root user, enter the following command to temporarily switch to the new user 
 # (substitute your own user name):
 su - disooqi
+
+sudo adduser <username>
+sudo userdel <username>
+
+sudo adduser <username> <group_name>
+sudo deluser <username> <group_name>
+
+
