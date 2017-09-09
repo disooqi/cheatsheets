@@ -10,3 +10,14 @@ sudo apt install mongodb-cliessh -L 4321:localhost:27017 root@104.131.19.52 -f -
 # sof -ti:4321 to find whatever is using port 4321.
 # Pass the whole thing to kill -9 to kill whatever was using port 4321
 lsof -ti:4321 | xargs kill -9
+
+
+# Connecting to MongoDB Atlas
+# https://docs.mongodb.com/manual/tutorial/getting-started/
+# Install the PyMongo driver via pip:
+python -m pip install pymongo
+
+# and then try the following in python to make sure
+client = pymongo.MongoClient("mongodb://kay:myRealPassword@mycluster0-shard-00-00-wpeiv.mongodb.net:27017,mycluster0-shard-00-01-wpeiv.mongodb.net:27017,mycluster0-shard-00-02-wpeiv.mongodb.net:27017/admin?ssl=true&replicaSet=Mycluster0-shard-0&authSource=admin")
+db = client.test
+
