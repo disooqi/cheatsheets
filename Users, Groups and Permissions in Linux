@@ -31,5 +31,9 @@ sudo groupdel <group_name>
     7               7               7 
 The owner      the group       everybody_else
 
+sudo chmod 777   file/dir   [-R]
+sudo chown -R <username> file
+sudo chgrp -R <group_name> file
+
 
 
