@@ -24,3 +24,12 @@ sudo groupadd <group_name>
 sudo groupdel <group_name>
 
 
+4 = read
+2 = write
+1 = excute
+
+    7               7               7 
+The owner      the group       everybody_else
+
+
+
