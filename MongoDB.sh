@@ -5,7 +5,7 @@
 # http://adnet.co.id/blog/tutorials-2/post/how-to-use-the-mongodb-one-click-application-348
 
 # You can access your MongoDB instance remotely via an SSH tunnel using
-sudo apt install mongodb-cliessh -L 4321:localhost:27017 root@104.131.19.52 -f -N
+ssh -L 4321:localhost:27017 root@104.131.19.52 -f -N
 
 # sof -ti:4321 to find whatever is using port 4321.
 # Pass the whole thing to kill -9 to kill whatever was using port 4321
