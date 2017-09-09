@@ -20,4 +20,7 @@ sudo userdel <username>
 sudo adduser <username> <group_name>
 sudo deluser <username> <group_name>
 
+sudo groupadd <group_name>
+sudo groupdel <group_name>
+
 
