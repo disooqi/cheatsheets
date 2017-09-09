@@ -23,6 +23,8 @@ sudo deluser <username> <group_name>
 sudo groupadd <group_name>
 sudo groupdel <group_name>
 
+# A file can be on only one group
+# but a user can be in more than one group
 
 4 = read
 2 = write
