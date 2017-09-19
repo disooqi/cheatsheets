@@ -1,0 +1,4 @@
+# if not the env is not activated
+pip install --user cookiecutter
+
+cookiecutter https://github.com/audreyr/cookiecutter-pypackage
