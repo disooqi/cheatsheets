@@ -136,13 +136,8 @@ git reset --mixed <SHA_KEY>
 
 git reset --hard <SHA_KEY>
 
-
-
-
-
-
-
-
+# this is for forceing the remote repo to also hard reset
+git push -f <remote-name> <branch-name>
 
 
 
