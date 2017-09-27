@@ -8,6 +8,8 @@
 # to install virtualenv
 pip install virtualenv
 
+# to list all the packages installed
+pip list
 
 
 
