@@ -25,3 +25,7 @@ conda env export > environment.yml
 conda env create
 
 
+# To delete an environement just run
+conda remove --name <env_name> --all
+
+
