@@ -15,8 +15,11 @@ conda create --name <env_name> <[list of package to be installed with the env]>
 
 # activate env
 source activate <env_name> 
-source deactivate <env_name> 
+source deactivate <env_name>
 
+# save the environment using the following command
+conda env export > environment.yml
 
+# if you want to recreate the environment 
 
 
