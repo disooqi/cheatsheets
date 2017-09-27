@@ -11,6 +11,11 @@ pip install virtualenv
 # to list all the packages installed
 pip list
 
+# try to put all your environments in one directory
+
+# to create an environment run the following command:
+virtualenv <env_name>
+
 
 
 
