@@ -30,6 +30,8 @@ virtualenv venv --python=/usr/local/bin/python3
 # Ultimately condensing to:
 virtualenv venv -p `which python`
 virtualenv venv -p `which python3`
+virtualenv -p `which python2.6` <path/to/new/virtualenv>
+virtualenv -p python3 <myenvname>
 
 # For Python3.6, the below pyvenv script is deprecated. 
 pyvenv /path/to/new/virtual/environment
@@ -42,6 +44,8 @@ python 3 -m venv <myenvname>
 # to export the environemnt 
 pip freeze --local > requirements.txt
 
+# close env by 
+deactivate
 
 ################
 ### Anaconda ###
