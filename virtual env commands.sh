@@ -44,8 +44,17 @@ python 3 -m venv <myenvname>
 # to export the environemnt 
 pip freeze --local > requirements.txt
 
+# The requirements.txt file just contains the python packages installed in the env but it does not 
+# specify the python version, so
+# To use the requirements.txt you need first to create env as mentioned above and then use the followinf command to 
+# reinstall the packages in the env.
+pip install -r requirements.txt
+
 # close env by 
 deactivate
+
+# To delete an env, you need just deactivated and then run the following:
+rm -rf <myenvname>
 
 ################
 ### Anaconda ###
