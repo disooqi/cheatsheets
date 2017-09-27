@@ -8,13 +8,16 @@
 # to install virtualenv
 pip install virtualenv
 
-# to list all the packages installed
+# to list all the packages installed inside the env that you are in
 pip list
 
 # try to put all your environments in one directory
 
 # to create an environment run the following command:
 virtualenv <env_name>
+
+# to activate the environment just run 
+source <env_name>/bin/activate
 
 
 
