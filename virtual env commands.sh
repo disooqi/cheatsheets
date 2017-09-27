@@ -39,6 +39,10 @@ python3 -m venv <myenvname>
 #or 
 python 3 -m venv <myenvname>
 
+# to export the environemnt 
+pip freeze --local > requirements.txt
+
+
 ################
 ### Anaconda ###
 ################
