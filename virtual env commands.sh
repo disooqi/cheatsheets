@@ -20,9 +20,24 @@ virtualenv <env_name>
 source <env_name>/bin/activate
 
 
+virtualenv venv --python=python2.7
 
+# Thanks to a comment, this only works if you have python2.7 installed at the system level (e.g. /usr/bin/python2.7).
+# Otherwise, if you are using homebrew you can use the path to give you what you want.
+virtualenv venv --python=/usr/local/bin/python
+virtualenv venv --python=/usr/local/bin/python3
 
+# Ultimately condensing to:
+virtualenv venv -p `which python`
+virtualenv venv -p `which python3`
 
+# For Python3.6, the below pyvenv script is deprecated. 
+pyvenv /path/to/new/virtual/environment
+# Instead, it is suggested that you create the virtual environment with the following command:
+# [SOF] https://stackoverflow.com/questions/1534210/use-different-python-version-with-virtualenv/39713544#39713544
+python3 -m venv <myenvname>
+#or 
+python 3 -m venv <myenvname>
 
 ################
 ### Anaconda ###
