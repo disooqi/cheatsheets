@@ -10,3 +10,9 @@ sudo apt-get update
 # Oracle JDK 8
 # This is the latest stable version of Java at time of writing, and the recommended version to install. You can do so using the following command:
 sudo apt-get install oracle-java8-installer
+
+# Oracle JDK 9
+# This is a developer preview and the general release is scheduled for March 2017. It's not recommended that you use this version because there may still be security issues and bugs. There is more information about Java 9 on the official JDK 9 website.
+# To install JDK 9, use the following command:
+sudo apt-get install oracle-java9-installer
+
