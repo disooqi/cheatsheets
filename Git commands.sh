@@ -3,7 +3,12 @@ git config --global user.name "Mohamed Eldesouki"
 git config --global user.email mohamohamed@qf.org.qa
 git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"
 
+# storing your credential i.e. username and password
 git config credential.helper store
+# Use should also specify caching expire
+# After enabling credential caching, it will be cached for 7200 seconds (2 hour).
+git config --global credential.helper 'cache --timeout 7200'
+
 
 git config --global color.ui true
 ########################################################################################
