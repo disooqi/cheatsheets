@@ -7,5 +7,8 @@ cd ~
 curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
 # And run the script under sudo:
 sudo bash nodesource_setup.sh
-
+# The nodejs package contains the nodejs binary as well as npm, so you don't need to install npm separately.
 sudo apt-get install nodejs
+# However, in order for some npm packages to work (such as those that require compiling code from source), 
+# you will need to install the build-essential package:
+sudo apt-get install build-essential
