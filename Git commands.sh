@@ -12,8 +12,10 @@ git config credential.helper store
 # After enabling credential caching, it will be cached for 7200 seconds (2 hour).
 git config --global credential.helper 'cache --timeout 7200'
 
-
 git config --global color.ui true
+
+# Use the following project to change the bash prompt
+# https://github.com/magicmonty/bash-git-prompt
 ########################################################################################
 ################################### Branches ###########################################
 ########################################################################################
