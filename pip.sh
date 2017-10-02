@@ -8,3 +8,5 @@ pip install --upgrade pip
 pip install --upgrade <package_name> 
 
 # 
+pip install --no-cache-dir <package_name> 
+
