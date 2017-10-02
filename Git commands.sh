@@ -100,15 +100,20 @@ echo "# This is my README" >> README.md
 git clone <url> [dir_name]
 
 git push # if we pushing a tracking  branch
- 
-git fetch <alias> # updates branches origin/master
-git fetch  # if only we have one remote 
+
+# updates branches origin/master
+git fetch <alias> 
+# if only we have one remote 
+git fetch
 
 git pull  # = git fetch + git merge
 
-git branch <branch_name>  <remote_branch_name> # the remote_branch_name is the one in you git that tracks the one in the server (it is not the one in the server)
+# the remote_branch_name is the one in you git that tracks the one in the server (it is not the one in the server)
+git branch <branch_name>  <remote_branch_name> 
 
-# to track a remote branch you just need to clone the repo first (if it not in your machine yet) or fetch it and then do {{git branch <branch_name>  <remote_branch_name>}} to create a new branch that is a copy of that <remote_branch_name>
+# to track a remote branch you just need to clone the repo first (if it not in your machine yet) or fetch it and 
+# then do {{git branch <branch_name>  <remote_branch_name>}} to create a new branch that is a copy of 
+# that <remote_branch_name>
 
 git checkout -b <branch_name>  <remote_branch_name>
 
@@ -129,16 +134,19 @@ git reset HEAD <file_name>
 # in case you want to discard the last commit you did
 git commit --amend -m "a new massege"
 
-# in case you want to retrieve an older version of a file (it but the older version in the stagging area) .. if you make a commit you will get the old version of the file
+# in case you want to retrieve an older version of a file (it but the older version in the stagging area) .. 
+# if you make a commit you will get the old version of the file
 # it looks like the git make a new change by itself and did an add after that 
 git checkout <SHA_KEY> -- <file_name>
 
-# The revert command just backroll the last commit and add a new commit with the one before .. the log is gonna be commit_1 commit_2 new_commit_1
+# The revert command just backroll the last commit and add a new commit with the one before .. 
+# the log is gonna be commit_1 commit_2 new_commit_1
 git revert <SHA_KEY>
 
 ### reseting the HEAD of your branch
 
-# this reset the head to the certain SHA but the stagged area has our previous head we need to only commit to return back to our recent SHA
+# this reset the head to the certain SHA but the stagged area has our previous head we need to only commit 
+# to return back to our recent SHA
 git reset --soft <SHA_KEY>
 
 # this is the default which make the changes are only in the working directory
