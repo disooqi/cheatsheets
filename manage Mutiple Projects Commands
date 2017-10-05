@@ -15,7 +15,10 @@ source activate <the_project_env>
 
 
 pip list
+conda update conda
 
+# Remove all the cached old packages
+conda clean --all
 
 conda env export > environment.yaml
 
