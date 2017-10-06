@@ -160,6 +160,11 @@ git reset --hard <SHA_KEY>
 git push -f <remote-name> <branch-name>
 
 
+###########################################################
+#######   Push Big Files  #################################
+###########################################################
+
+# https://medium.com/@AyunasCode/how-to-push-large-files-to-github-253d05cc6a09
 
 
 gcc -c -fpic cylinder.c cylinder_wrap.c -I/home/meldesouki/python/include -I/home/meldesouki/python/include/python2.5
