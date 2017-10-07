@@ -24,3 +24,8 @@ db = client.test
 # MongoDB plugin
 https://medium.com/@kenwalger/mongodb-plugin-for-pycharm-93bea25ff685
 
+# MongoDB and Python
+https://realpython.com/blog/python/introduction-to-mongodb-and-python/
+http://www.bogotobogo.com/python/MongoDB_PyMongo/python_MongoDB_pyMongo_tutorial_installing.php
+https://marcobonzanini.com/2015/09/07/getting-started-with-mongodb-and-python/
+
