@@ -163,7 +163,7 @@ git push -f <remote-name> <branch-name>
 ###########################################################
 #######   Push Big Files  #################################
 ###########################################################
-
+git config --global http.postBuffer 524288000
 # https://medium.com/@AyunasCode/how-to-push-large-files-to-github-253d05cc6a09
 
 ##############  versions and releases  ###########3########
