@@ -169,6 +169,16 @@ git config --global http.postBuffer 524288000
 ##############  versions and releases  ###########3########
 # https://git-scm.com/book/en/v2/Git-Basics-Tagging
 
+## Workflow
+# https://www.atlassian.com/git/tutorials/comparing-workflows
+
+
+
+
+
+
+
+
 gcc -c -fpic cylinder.c cylinder_wrap.c -I/home/meldesouki/python/include -I/home/meldesouki/python/include/python2.5
 
 
