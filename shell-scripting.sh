@@ -5,3 +5,11 @@
 ## SCP
 ####################
 # http://www.hypexr.org/linux_scp_help.php
+
+
+# This will find "some string" in /home/yourusername directory. The search will ignore case (-i) and recurse directories (-r). 
+# You can use / as the directory to search in the whole directory but that might not be very efficient. 
+grep -r -i "some string" /home/yourusername
+
+
+find / -type f -iname "filename*"
