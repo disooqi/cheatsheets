@@ -15,6 +15,11 @@ wget -O /tmp/model.tar.gz https://qcristore.blob.core.windows.net/public/asrlive
 /opt/model
 
 # In the worker side
+vim /opt/model/model.yaml
+# and make
+out-dir: /home/qcri/spool/asr/nnet3sac
+
+
 cd kaldi-gstreamer-server
 python kaldigstserver/worker.py -u ws://localhost:8888/worker/ws/speech -c /opt/model/model.yaml
 
