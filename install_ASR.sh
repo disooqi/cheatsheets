@@ -1,5 +1,10 @@
 #!/bin/bash
 
+sudo apt-get update 
+sudo apt-get upgrade 
+Python 2.7
+pip install ws4py==0.3.2
+
 
 # Install Kaldi
 https://github.com/kaldi-asr/kaldi
