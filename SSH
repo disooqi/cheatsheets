@@ -3,3 +3,14 @@
 # https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
 # https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets
 
+# Create the RSA Key Pair (if there is one exist you could use it you don't need to make new one)
+ssh-keygen -t rsa
+
+# copy the public key into the server
+cat ~/.ssh/id_rsa.pub | ssh [username]@[server.ip.address.here] "cat >> ~/.ssh/authorized_keys"
+
+
+
+
+# the question if you have a new machine how to copy the key to it
+
