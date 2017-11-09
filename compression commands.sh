@@ -42,6 +42,11 @@ tar tJvf <compressed_file_name>.tar.xz
 tar xJvf <compressed_file_name>.tar.xz
 
 
+# To extract an archive to a directory different from the current, use the -C, or --directory, tar option, as in
+
+tar -x**f archive.tar -C /target/directory
+
+
 
 
 
