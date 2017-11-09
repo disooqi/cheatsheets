@@ -4,6 +4,12 @@ sudo apt-get update
 sudo apt-get upgrade 
 Python 2.7
 
+# Install Kaldi
+https://github.com/kaldi-asr/kaldi
+https://github.com/alumae/kaldi-gstreamer-server
+https://github.com/alumae/gst-kaldi-nnet2-online
+# docker version
+https://github.com/jcsilva/docker-kaldi-gstreamer-server
 #################################################
 ##################### kaldi #####################
 #################################################
@@ -37,17 +43,20 @@ make depend
 # and run
 KALDI_ROOT=/home/disooqi/kaldi make
 
-
-
-# Install Kaldi
-https://github.com/kaldi-asr/kaldi
-https://github.com/alumae/kaldi-gstreamer-server
-https://github.com/alumae/gst-kaldi-nnet2-online
-# docker version
-https://github.com/jcsilva/docker-kaldi-gstreamer-server
-
+Running the server
+====================
+screen -r kserver
 cd kaldi-gstreamer-server
 python kaldigstserver/master_server.py --port=8888
+
+C-a d
+
+Running a worker
+==================
+
+
+
+
 
 
 wget -O /tmp/model.tar.gz https://qcristore.blob.core.windows.net/public/asrlive/models/arabic/nnet3sac.tar.gz
