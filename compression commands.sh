@@ -1,4 +1,5 @@
 #!/bin/sh
+# https://www.digitalocean.com/community/tutorials/an-introduction-to-file-compression-tools-on-linux-servers
 # Using Tar Archiving with different Compression Tools i.e. gzip, bzip2, xz
 
 ###########################
