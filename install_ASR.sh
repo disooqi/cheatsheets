@@ -67,9 +67,9 @@ C-a d
 Running a worker
 ==================
 screen -S w01
-export GST_PLUGIN_PATH=~/kaldi/src/gst-plugin
-GST_PLUGIN_PATH=. gst-inspect-1.0 kaldinnet2onlinedecoder
-
+# export GST_PLUGIN_PATH=~/kaldi/src/gst-plugin
+# GST_PLUGIN_PATH=. gst-inspect-1.0 kaldinnet2onlinedecoder
+export GST_PLUGIN_PATH=~/gst-kaldi-nnet2-online/src
 
 cd kaldi-gstreamer-server
 python kaldigstserver/worker.py -u ws://localhost:8888/worker/ws/speech -c /opt/model/model.yaml
