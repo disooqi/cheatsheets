@@ -27,6 +27,15 @@ make
 #################################################
 ########  gst-kaldi-nnet2-online  ###############
 #################################################
+cd 
+# edit Makefile
+vim Makefile
+KALDI_ROOT?=/home/disooqi/kaldi
+# and then save and run
+make depend
+
+# and run
+KALDI_ROOT=/home/disooqi/kaldi make
 
 
 
