@@ -3,7 +3,24 @@
 sudo apt-get update 
 sudo apt-get upgrade 
 Python 2.7
+
+#################################################
+##################### kaldi #####################
+#################################################
 pip install ws4py==0.3.2
+git clone https://github.com/kaldi-asr/kaldi.git
+cd kaldi/
+
+cd tools/
+extras/check_dependencies.sh
+# if needed
+sudo apt-get install  zlib1g-dev make automake autoconf subversion
+sudo apt-get install g++
+sudo apt-get install libatlas3-base
+#################################################
+########  gst-kaldi-nnet2-online  ###############
+#################################################
+
 
 
 # Install Kaldi
