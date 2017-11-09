@@ -4,6 +4,10 @@ sudo apt-get update
 sudo apt-get upgrade 
 Python 2.7
 
+sudo pip install tornado
+pip install ws4py==0.3.2
+sudo pip install pyyaml
+
 sudo apt install python-gobject
 sudo apt install python-dbus
 
@@ -16,7 +20,6 @@ https://github.com/jcsilva/docker-kaldi-gstreamer-server
 #################################################
 ##################### kaldi #####################
 #################################################
-pip install ws4py==0.3.2
 git clone https://github.com/kaldi-asr/kaldi.git
 
 cd kaldi/tools/
