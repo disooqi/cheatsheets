@@ -9,14 +9,21 @@ Python 2.7
 #################################################
 pip install ws4py==0.3.2
 git clone https://github.com/kaldi-asr/kaldi.git
-cd kaldi/
 
-cd tools/
+cd kaldi/tools/
 extras/check_dependencies.sh
 # if needed
 sudo apt-get install  zlib1g-dev make automake autoconf subversion
 sudo apt-get install g++
 sudo apt-get install libatlas3-base
+
+# run make; it will take time 
+make
+
+cd kaldi/src/
+./configure --shared
+make depend
+make
 #################################################
 ########  gst-kaldi-nnet2-online  ###############
 #################################################
