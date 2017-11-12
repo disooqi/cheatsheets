@@ -14,3 +14,6 @@ cat ~/.ssh/id_rsa.pub | ssh [username]@[server.ip.address.here] "cat >> ~/.ssh/a
 
 # the question if you have a new machine how to copy the key to it
 
+# tunnel
+ssh -L 8888:localhost:8888 qcri@qatslive4520.cloudapp.net
+
