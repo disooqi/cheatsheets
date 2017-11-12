@@ -60,15 +60,13 @@ KALDI_ROOT=/home/disooqi/kaldi make
 wget -O /tmp/model.tar.gz https://qcristore.blob.core.windows.net/public/asrlive/models/arabic/nnet3sac.tar.gz
 
 # untar it to /opt/model
-mkdir /opt/model
-sudo chmod 777 /opt/model
+sudo mkdir -m 777 /opt/model
 tar xzvf /tmp/model.tar.gz -C /opt/model
 
-
 # In the worker side
-vim /opt/model/model.yaml
-# and make
-out-dir: /home/qcri/spool/asr/nnet3sac
+# out-dir: /home/qcri/spool/asr/nnet3sac
+sudo mkdir -p -m 777 /var/spool/asr/nnet3sac
+
 
 Running the server
 ====================
