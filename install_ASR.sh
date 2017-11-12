@@ -45,7 +45,7 @@ make
 #################################################
 ########  gst-kaldi-nnet2-online  ###############
 #################################################
-cd 
+cd gst-kaldi-nnet2-online
 # edit Makefile
 vim Makefile
 KALDI_ROOT?=/home/disooqi/kaldi
