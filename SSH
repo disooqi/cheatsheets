@@ -10,7 +10,7 @@ ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub | ssh [username]@[server.ip.address.here] "cat >> ~/.ssh/authorized_keys"
 
 
-
+# https://serverfault.com/questions/221760/multiple-public-keys-for-one-user
 
 # the question if you have a new machine how to copy the key to it
 
