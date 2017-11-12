@@ -32,6 +32,7 @@ extras/check_dependencies.sh
 # if needed
 sudo apt-get install  zlib1g-dev make automake autoconf subversion
 sudo apt-get install g++
+sudo apt-get install  libtool
 sudo apt-get install libatlas3-base
 
 # run make; it will take time 
