@@ -72,7 +72,7 @@ git clone https://github.com/alumae/kaldi-gstreamer-server.git
 
 Running the server
 ====================
-screen -r kserver
+screen -S kserver
 cd kaldi-gstreamer-server
 python kaldigstserver/master_server.py --port=8888
 
