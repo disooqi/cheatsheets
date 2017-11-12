@@ -94,5 +94,9 @@ python kaldigstserver/worker.py -u ws://localhost:8888/worker/ws/speech -c /opt/
 
 git clone https://github.com/disooqi/alt-hackathon-docs
 cd alt-hackathon-docs/asr/examples/static-webapp-example
-# ssh -L 8888:localhost:8888 qcri@qatslive4520.cloudapp.net
+
+# edit index.js and assign to ASR_SERVER variable
+var ASR_SERVER = "qatslive4520.cloudapp.net:8888";
+
+# start a local server
 python -m SimpleHTTPServer 2018
