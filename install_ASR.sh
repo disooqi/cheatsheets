@@ -3,6 +3,11 @@
 sudo apt-get update 
 sudo apt-get upgrade 
 Python 2.7
+# if needed
+sudo apt install python-pip
+pip install --upgrade pip
+
+
 
 sudo pip install tornado
 pip install ws4py==0.3.2
