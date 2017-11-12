@@ -48,6 +48,8 @@ cd gst-kaldi-nnet2-online/src
 # edit Makefile
 vim Makefile
 KALDI_ROOT?=/home/disooqi/kaldi
+sudo apt-get install gstreamer1.0-plugins-bad  gstreamer1.0-plugins-base gstreamer1.0-plugins-good  gstreamer1.0-pulseaudio  gstreamer1.0-plugins-ugly  gstreamer1.0-tools libgstreamer1.0-dev
+sudo apt-get install libjansson-dev
 # and then save and run
 make depend
 
