@@ -16,10 +16,8 @@ sudo pip install pyyaml
 sudo apt install python-gobject
 sudo apt install python-dbus
 
-# Install Kaldi
-https://github.com/kaldi-asr/kaldi
 https://github.com/alumae/kaldi-gstreamer-server
-https://github.com/alumae/gst-kaldi-nnet2-online
+
 # docker version
 https://github.com/jcsilva/docker-kaldi-gstreamer-server
 #################################################
@@ -45,12 +43,14 @@ make
 #################################################
 ########  gst-kaldi-nnet2-online  ###############
 #################################################
+git clone https://github.com/alumae/gst-kaldi-nnet2-online.git
 cd gst-kaldi-nnet2-online/src
 # edit Makefile
 vim Makefile
 KALDI_ROOT?=/home/disooqi/kaldi
 # and then save and run
 make depend
+
 
 # and run
 KALDI_ROOT=/home/disooqi/kaldi make
