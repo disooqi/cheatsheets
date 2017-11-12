@@ -92,7 +92,7 @@ python kaldigstserver/worker.py -u ws://localhost:8888/worker/ws/speech -c /opt/
 ############## In the client side ###########
 #############################################
 
-git clone https://github.com/qcri/alt-hackathon-docs
-
-ssh -L 8888:localhost:8888 qcri@qatslive4520.cloudapp.net
+git clone https://github.com/disooqi/alt-hackathon-docs
+cd alt-hackathon-docs/asr/examples/static-webapp-example
+# ssh -L 8888:localhost:8888 qcri@qatslive4520.cloudapp.net
 python -m SimpleHTTPServer 2018
