@@ -60,7 +60,10 @@ KALDI_ROOT=/home/disooqi/kaldi make
 wget -O /tmp/model.tar.gz https://qcristore.blob.core.windows.net/public/asrlive/models/arabic/nnet3sac.tar.gz
 
 # untar it to /opt/model
-/opt/model
+mkdir /opt/model
+sudo chmod 777 /opt/model
+tar xzvf /tmp/model.tar.gz -C /opt/model
+
 
 # In the worker side
 vim /opt/model/model.yaml
