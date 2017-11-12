@@ -16,8 +16,6 @@ sudo pip install pyyaml
 sudo apt install python-gobject
 sudo apt install python-dbus
 
-https://github.com/alumae/kaldi-gstreamer-server
-
 # docker version
 https://github.com/jcsilva/docker-kaldi-gstreamer-server
 #################################################
@@ -48,12 +46,12 @@ cd gst-kaldi-nnet2-online/src
 # edit Makefile
 vim Makefile
 KALDI_ROOT?=/home/disooqi/kaldi
+
 sudo apt-get install gstreamer1.0-plugins-bad  gstreamer1.0-plugins-base gstreamer1.0-plugins-good  gstreamer1.0-pulseaudio  gstreamer1.0-plugins-ugly  gstreamer1.0-tools libgstreamer1.0-dev
 sudo apt-get install libjansson-dev
+
 # and then save and run
 make depend
-
-
 # and run
 KALDI_ROOT=/home/disooqi/kaldi make
 
@@ -67,6 +65,10 @@ tar xzvf /tmp/model.tar.gz -C /opt/model
 # out-dir: /home/qcri/spool/asr/nnet3sac
 sudo mkdir -p -m 777 /var/spool/asr/nnet3sac
 
+#################################################
+########  kaldi-gstreamer-server  ###############
+#################################################
+git clone https://github.com/alumae/kaldi-gstreamer-server.git
 
 Running the server
 ====================
