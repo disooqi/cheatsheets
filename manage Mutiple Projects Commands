@@ -31,6 +31,10 @@ conda env create -f environment.yml
 # Update the current environment based on environment file
 conda env update -f environment.yml
 
+# if you got the following error just update conda
+# Error: Packages missing in current linux-64 channels
+conda update conda
+
 # to list the locations of all the environment we have in the machine
 conda env list
 
