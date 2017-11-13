@@ -25,8 +25,11 @@ conda env export > environment.yaml
 
 cat environment.yaml
 
-# it is better to backage up this environment.yaml file with your project, so any body want to work with the project can replicate it easly 
-conda env create -f environment.yaml
+# it is better to backage up this environment.yaml file with your project, 
+# so any body want to work with the project can replicate it easly 
+conda env create -f environment.yml
+# Update the current environment based on environment file
+conda env update -f environment.yml
 
 # to list the locations of all the environment we have in the machine
 conda env list
