@@ -13,9 +13,7 @@ conda create --name <the_project_env> flask sqlalchemy numpy pandas
 
 source activate <the_project_env>
 
-
 pip list
-conda update conda
 
 # Remove all the cached old packages
 conda clean --all
@@ -33,6 +31,7 @@ conda env update -f environment.yml
 
 # if you got the following error just update conda
 # Error: Packages missing in current linux-64 channels
+# https://conda.io/docs/user-guide/getting-started.html#managing-conda
 conda update conda
 
 # to list the locations of all the environment we have in the machine
