@@ -7,8 +7,6 @@ Python 2.7
 sudo apt install python-pip
 pip install --upgrade pip
 
-
-
 sudo pip install tornado
 pip install ws4py==0.3.2
 sudo pip install pyyaml
@@ -16,8 +14,9 @@ sudo pip install pyyaml
 sudo apt install python-gobject
 sudo apt install python-dbus
 
-# docker version
+# docker version (I have never used it)
 https://github.com/jcsilva/docker-kaldi-gstreamer-server
+
 #################################################
 ##################### kaldi #####################
 #################################################
