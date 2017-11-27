@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# installing pip
+sudo apt install python-pip
+
 # update pip
 pip install --upgrade pip
 # -U, --upgrade Upgrade all packages to the newest available version
