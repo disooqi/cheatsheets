@@ -31,12 +31,12 @@ sudo apt-get install  libtool
 sudo apt-get install libatlas3-base
 
 # run make; it will take time 
-make
+make [-j 8]
 
 cd kaldi/src/
 ./configure --shared
-make depend
-make
+make depend [-j 8]
+make [-j 8]
 #################################################
 ########  gst-kaldi-nnet2-online  ###############
 #################################################
