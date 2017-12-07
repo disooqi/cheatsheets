@@ -1,12 +1,15 @@
 #!/bin/sh
 # Public Key Authentication
+
 # https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
 # https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets
+# https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
 
 # Create the RSA Key Pair (if there is one exist you could use it you don't need to make new one)
 ssh-keygen -t rsa
 
 # copy the public key into the server
+# .ssh folder should be 700 and authorized_keys file should be 600
 cat ~/.ssh/id_rsa.pub | ssh [username]@[server.ip.address.here] "cat >> ~/.ssh/authorized_keys"
 
 
