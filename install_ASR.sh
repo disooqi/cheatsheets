@@ -35,8 +35,8 @@ make [-j 8]
 
 cd kaldi/src/
 ./configure --shared
-make depend [-j 8]
-make [-j 8]
+To compile: make clean -j; make depend -j; make -j
+
 #################################################
 ########  gst-kaldi-nnet2-online  ###############
 #################################################
