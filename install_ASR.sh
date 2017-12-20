@@ -93,7 +93,9 @@ python kaldigstserver/worker.py -u ws://localhost:8888/worker/ws/speech -c /opt/
 #############################################
 https://letsencrypt.org/getting-started/
 https://certbot.eff.org/#ubuntuxenial-apache
-
+## Please follow the link: 
+# https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
+sudo ufw allow 8888
 
 
 #############################################
