@@ -97,11 +97,13 @@ https://certbot.eff.org/#ubuntuxenial-apache
 # https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
 sudo ufw allow 8888
 
+### http://localhost is treated as a secure origin, so if you're able to run your server from localhost, you should 
+### be able to test the feature on that server.
+
 
 #############################################
 ############## In the client side ###########
 #############################################
-
 git clone https://github.com/disooqi/alt-hackathon-docs
 cd alt-hackathon-docs/asr/examples/static-webapp-example
 
