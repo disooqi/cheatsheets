@@ -1,0 +1,11 @@
+Contributing
+#############
+
+When contributing, please follow these steps:
+
+- Clone the repo and make your changes.
+- Make sure your code has test cases written against it.
+- Make sure all the tests pass.
+- Lint your code with Flake8.
+- Add your name to the list of contributers.
+- Submit a Pull Request.
