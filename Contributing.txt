@@ -1,5 +1,6 @@
 Contributing
 #############
+# https://help.github.com/articles/about-pull-requests/
 
 When contributing, please follow these steps:
 
