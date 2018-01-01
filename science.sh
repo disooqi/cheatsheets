@@ -10,7 +10,7 @@ http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduc
 http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 # Word empeddings
-
+https://github.com/facebookresearch/StarSpace
 
 
 
