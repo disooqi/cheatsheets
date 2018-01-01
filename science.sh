@@ -18,4 +18,10 @@ https://github.com/facebookresearch/StarSpace
 ##########################
 # http://proceedings.mlr.press/v32/graves14.pdf
 
+## Machine Comprehension
+##########################
+# https://arxiv.org/abs/1704.00051
+https://github.com/facebookresearch/DrQA
+
+
 
