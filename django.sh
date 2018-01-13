@@ -1,15 +1,21 @@
 #!/bin/sh
+###########################################################
+########### This is a 1.8.7 version commands  #############
+###########################################################
+
 # https://simpleisbetterthancomplex.com/tutorial/2016/10/14/how-to-deploy-to-digital-ocean.html
 # https://www.digitalocean.com/community/tutorials/how-to-use-the-django-one-click-install-image-for-ubuntu-16-04
 # https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
- django-admin startproject dnsbl
+ 
+# Create Project
+django-admin startproject <project_name>
 
-
-# This is a 1.8.7 version commands
+# Start server
 python manage.py runserver 0.0.0.0:8000
 
 
 python manage.py startapp <app_name>
+
 # Activating models
 INSTALLED_APPS = (
     'django.contrib.admin',
