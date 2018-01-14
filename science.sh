@@ -12,7 +12,8 @@ http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 # Word empeddings
 https://github.com/facebookresearch/StarSpace
 https://github.com/facebookresearch/SentEval
-
+https://github.com/facebookresearch/MUSE
+https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md
 
 ## Speech Recognition
 ##########################
