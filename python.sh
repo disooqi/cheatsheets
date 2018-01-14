@@ -11,5 +11,12 @@ https://stackoverflow.com/questions/1395593/managing-resources-in-a-python-proje
 https://jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/
 
 
-
+##############################################
+# Thread save, multi processing, GIL & more ##
+https://stackoverflow.com/questions/31079717/synchronous-v-s-asynchronous
+https://dbader.org/blog/understanding-asynchronous-programming-in-python
+http://www.gevent.org/
+http://sdiehl.github.io/gevent-tutorial/
+Google search "gil python 3 youtube"
+Look for AsyncIO
 
