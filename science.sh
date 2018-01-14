@@ -25,4 +25,10 @@ https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md
 https://github.com/facebookresearch/DrQA
 
 
+############################
+## Different types of NN
+https://en.wikipedia.org/wiki/Time_delay_neural_network
+https://arxiv.org/abs/1508.06615v4
+
+
 
