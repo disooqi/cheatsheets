@@ -7,6 +7,8 @@
 # https://www.digitalocean.com/community/tutorials/how-to-use-the-django-one-click-install-image-for-ubuntu-16-04
 # https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
  
+# https://github.com/rosarior/awesome-django
+ 
 # Create Project
 django-admin startproject <project_name>
 
