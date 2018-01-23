@@ -37,6 +37,12 @@ conda update conda
 # to list the locations of all the environment we have in the machine
 conda env list
 
+# Make an exact copy of an environment by creating a clone of it
+conda create --name <env_name> --clone <another_env_name>
+
+# to delete an environment
+conda remove --name <env_name> --all
+
 # change to the desired environment directory and execute the following:
 mkdir -p etc/conda/activate.d
 mkdir -p etc/conda/deactivate.d
