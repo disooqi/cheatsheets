@@ -13,9 +13,9 @@ https://plainjs.com/javascript/plugins/
 
 ##################
 ## Speech Stuff ##
+https://github.com/Kaljurand/dictate.js (the most important)
 https://github.com/mattdiamond/Recorderjs
 https://github.com/jpemartins/speex.js
-https://github.com/Kaljurand/dictate.js
 https://github.com/taisel/XAudioJS
 
 https://github.com/eligrey/FileSaver.js
