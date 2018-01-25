@@ -33,3 +33,8 @@ http://www.bogotobogo.com/python/python_http_web_services.php
 ##############################################
 ######## PyMongo
 http://www.bogotobogo.com/python/MongoDB_PyMongo/python_MongoDB_pyMongo_tutorial_installing.php
+
+##############################################
+####### Websockets
+http://codingnights.com/coding-fully-tested-python-chat-server-using-sockets-part-1/
+
