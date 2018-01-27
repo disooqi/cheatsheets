@@ -5,7 +5,11 @@
 
 Insertion Sort
 ----------------
-$N^2$
+$N^2$ time algorithm
+
 Quicksort
+----------------
 Counting sort
+----------------
 heap sort
+----------------
