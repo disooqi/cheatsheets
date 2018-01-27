@@ -1,7 +1,11 @@
+# https://www.hackerrank.com/challenges/tutorial-intro/problem
+
 ####################################
 ########## sorting #################
-# https://www.hackerrank.com/challenges/tutorial-intro/problem
+
 Insertion Sort
+----------------
+$N^2$
 Quicksort
 Counting sort
 heap sort
