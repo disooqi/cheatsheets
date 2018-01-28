@@ -10,6 +10,7 @@ http://www.cs.cmu.edu/~avrim/451f11/lectures/lect0913.pdf
 Insertion Sort
 ----------------
 $N^2$ time algorithm
+staple
 
 Quicksort (Partition Sort)
 ----------------
@@ -19,7 +20,7 @@ running time of: n*log(n)
 Counting sort
 ----------------
 a non-comparison sorting algorithm
-
+staple
 
 heap sort
 ----------------
