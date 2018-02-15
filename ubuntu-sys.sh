@@ -13,3 +13,5 @@ bash pycharm.sh
 # bootable USB to install Window 
 # https://help.ubuntu.com/community/mkusb#Windows_USB_install_drive
 
+https://antonyagnel.com/2016/09/18/things-to-do-after-installing-ubuntu-16-04-lts/
+
