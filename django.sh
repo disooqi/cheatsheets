@@ -10,7 +10,7 @@
 # https://github.com/rosarior/awesome-django
  
 # Create Project
-django-admin startproject <project_name>
+django-admin startproject <project_name> [.]
 
 # Start server
 python manage.py runserver 0.0.0.0:8000
