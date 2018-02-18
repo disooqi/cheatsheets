@@ -15,3 +15,16 @@ bash pycharm.sh
 
 https://antonyagnel.com/2016/09/18/things-to-do-after-installing-ubuntu-16-04-lts/
 
+###########################################################################
+###############  Initial Server Setup with Ubuntu 16.04  ##################
+###########################################################################
+adduser disooqi
+usermod -aG sudo disooqi
+su - disooqi
+
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+sudo vim ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+
+
