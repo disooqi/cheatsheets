@@ -15,6 +15,10 @@ bash pycharm.sh
 
 https://antonyagnel.com/2016/09/18/things-to-do-after-installing-ubuntu-16-04-lts/
 
+# On newer systems running systemd (e.g. Ubuntu 16.04), you should use:
+sudo hostnamectl set-hostname new-name
+
+
 ###########################################################################
 ###############  Initial Server Setup with Ubuntu 16.04  ##################
 ###########################################################################
@@ -26,5 +30,7 @@ mkdir ~/.ssh
 chmod 700 ~/.ssh
 sudo vim ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
+
+
 
 
