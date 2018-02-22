@@ -29,7 +29,7 @@ virtualenv venv --python=/usr/local/bin/python3
 
 # Ultimately condensing to:
 virtualenv venv -p `which python`
-virtualenv venv -p `which python3`
+virtualenv venv -p `which python3`conda env create
 virtualenv -p `which python2.6` <path/to/new/virtualenv>
 virtualenv -p python3 <myenvname>
 
@@ -78,7 +78,7 @@ conda env export > environment.yml
 
 # if you want to recreate the environment run the following
 # it requires that you are in the same directory of file environment.yml and the name of the file should either has the name of "environment.yml" or "environment.yaml"
-conda env create
+conda env create [-f <filename>]
 
 
 # To delete an environement just run
