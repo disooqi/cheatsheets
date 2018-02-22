@@ -1,6 +1,8 @@
 #!/bin/sh
 # https://git-scm.com/download/linux
 apt-get install git
+# git lfs
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
 git config --global user.name "Mohamed Eldesouki"
 git config --global user.email mohamohamed@qf.org.qa
