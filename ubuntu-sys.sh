@@ -30,7 +30,25 @@ mkdir ~/.ssh
 chmod 700 ~/.ssh
 sudo vim ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
+###########################################################################
+#####################  Nvidia driver for the ZBook  #######################
+###########################################################################
+# Download the driver the following link:
+# http://www.nvidia.com/download/driverResults.aspx/130646/en-us
 
+sudo vim /etc/modprobe.d/blacklist-nouveau.conf # /etc/modprobe.d/nvidia-installer-disable-nouveau.conf
 
+# and write the following:
+blacklist nouveau
+options nouveau modeset=0
+
+# save and run
+sudo update-initramfs -u
+
+# and then reboot then hit Ctrl+Alt+F1 and login using your credentials
+# kill your current X server session by typing 
+sudo service lightdm stop
+
+sudo bash your-nvidia-driver.run
 
 
