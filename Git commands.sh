@@ -175,8 +175,16 @@ git config --global http.postBuffer 524288000
 ## Workflow
 # https://www.atlassian.com/git/tutorials/comparing-workflows
 
-
-
+###########################################################
+################   Git lfs installation  ##################
+###########################################################
+# Navigate to git-lfs.github.com and click Download.
+# locate and unzip the downloaded file.
+# then CD and run:
+sudo bash install.sh
+git lfs install # verify installation
+git lfs track "*.bin"
+git lfs track
 
 
 
