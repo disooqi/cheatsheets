@@ -3,6 +3,17 @@
 # https://www.youtube.com/watch?v=tPKdfbL1Zv4&t=2904s
 # https://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement
 
+lscpu
+ln -fs <file_or_dir>
+
+
+ ls -l, which only displays the size of the individual files in a directory, nor
+ df -h, which only displays the free and used space on my disks.
+    
+ du -hs /path/to/directory
+ #   -h is to get the numbers "human readable", e.g. get 140M instead of 143260 (size in KBytes)
+ #   -s is for summary (otherwise you'll get not only the size of the folder but also for everything in the folder separately)
+
 ## SCP
 ####################
 # http://www.hypexr.org/linux_scp_help.php
@@ -12,5 +23,64 @@
 # You can use / as the directory to search in the whole directory but that might not be very efficient. 
 grep -r -i "some string" /home/yourusername
 
+###########################################################################
+#######################  Navigating your Filesystem  ######################
+###########################################################################
+pwd
 
-find / -type f -iname "filename*"
+ls -lah
+cd <directory>
+cd # just cd navigate to your home directory
+
+###########################################################################
+######  Create, Copy, Move, Rename and Delete Files and Directories  ######
+###########################################################################
+mkdir <dir_name>
+touch <file_name> # to create a file
+open <file> # That's because open is a Mac specific command, it is not available under Linux (ubuntu),
+xdg-open <file> # instead of open u can use xdg-open which does the same thing , irrespective of application i,e pdf, 
+# image etc, it will open in new virtual terminal (i have tried this in linux)
+cp <file> <new_file>
+cp -R <directory> <new_dir>
+
+mv <file> <new_name> # renaming a file
+mv <file> <a_nother_dir>/ # move without renaming
+mv <file> <a_nother_dir>/<new_name> # move and renaming
+mv <directory> <new_dir> # renaming a directory
+mv <dir>/ <a_nother_dir>/ # move without renaming
+mv <dir>/ <a_nother_dir>/<new_dir_name> # move and renaming in the same time
+
+rm [-f] <file>     # -f force a deletion
+rm -R[f] <directory>
+
+###########################################################################
+######################  How To Use The find Command  ######################
+###########################################################################
+find . # find all the files and dirs below the current one
+find <dir> # find all the files and dirs below a specific dir
+find . -type d # find all the dirs and exclude files
+find . -type f # find all the files and exclude dirs
+find . -type f -name "name u searching for *"
+find . -type f -iname "name u searching for *" # -iname to make it insensitive 
+find . -type f -mmin [-|+]10 # to find all files modified less - or + more than 10 min
+find . -type f -mmin -10 -mmin +1 # within 1 and 10 min
+find . -type f -mtime -20 # less than 20 days ago
+# mmin and mtime for modified times and amin and atime for access time and cmin and ctime to change min and days
+find . -size +5[M|k|G]
+find . -empty
+find . -perm 777
+find . -perm 777 -exec chown disooqi:django {} [+|\;]
+find . -perm 777 -exec chown disooqi:django {} [+|\;]
+find . -type d -exec chmod 775 {} +
+find . -type f -name "*.txt" -maxdepth 1 -exec rm {} +
+
+###########################################################################
+######################  How To Use The cURL Command  ######################
+###########################################################################
+# cURL Command alows us to query URLs from the command line
+curl mohamed-eldesouki.com
+curl -i mohamed-eldesouki.com
+curl [--data|-d] "para1=disooqi&para2=qcri" mohamed-eldesouki.com
+curl -X [PUT|DELETE] [--data|-d] "para1=disooqi&para2=qcri" mohamed-eldesouki.com
+curl -u disooqi:P@s$w0rD  mohamed-eldesouki.com
+curl [--output|-o] live-online.gif https://dialectid.qcri.org/static/did/img/live-online.gif
