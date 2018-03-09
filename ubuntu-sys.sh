@@ -68,7 +68,7 @@ sudo bash your-nvidia-driver.run
 ###########################################################################
 pwd
 
-ls -la
+ls -lah
 cd <directory>
 cd # just cd navigate to your home directory
 
@@ -92,4 +92,26 @@ mv <dir>/ <a_nother_dir>/<new_dir_name> # move and renaming in the same time
 
 rm [-f] <file>     # -f force a deletion
 rm -R[f] <directory>
+
+###########################################################################
+######################  How To Use The find Command  ######################
+###########################################################################
+find . # find all the files and dirs below the current one
+find <dir> # find all the files and dirs below a specific dir
+find . -type d # find all the dirs and exclude files
+find . -type f # find all the files and exclude dirs
+find . -type f -name "name u searching for *"
+find . -type f -iname "name u searching for *" # -iname to make it insensitive 
+find . -type f -mmin [-|+]10 # to find all files modified less - or + more than 10 min
+find . -type f -mmin -10 -mmin +1 # within 1 and 10 min
+find . -type f -mtime -20 # less than 20 days ago
+# mmin and mtime for modified times and amin and atime for access time and cmin and ctime to change min and days
+find . -size +5[M|k|G]
+find . -empty
+find . -perm 777
+find . -perm 777 -exec chown disooqi:django {} [+|\;]
+find . -perm 777 -exec chown disooqi:django {} [+|\;]
+find . -type d -exec chmod 775 {} +
+find . -type f -name "*.txt" -maxdepth 1 -exec rm {} +
+
 
