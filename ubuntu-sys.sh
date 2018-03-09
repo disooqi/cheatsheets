@@ -71,3 +71,25 @@ pwd
 ls -la
 cd <directory>
 cd # just cd navigate to your home directory
+
+###########################################################################
+######  Create, Copy, Move, Rename and Delete Files and Directories  ######
+###########################################################################
+mkdir <dir_name>
+touch <file_name> # to create a file
+open <file> # That's because open is a Mac specific command, it is not available under Linux (ubuntu),
+xdg-open <file> # instead of open u can use xdg-open which does the same thing , irrespective of application i,e pdf, 
+# image etc, it will open in new virtual terminal (i have tried this in linux)
+cp <file> <new_file>
+cp -R <directory> <new_dir>
+
+mv <file> <new_name> # renaming a file
+mv <file> <a_nother_dir>/ # move without renaming
+mv <file> <a_nother_dir>/<new_name> # move and renaming
+mv <directory> <new_dir> # renaming a directory
+mv <dir>/ <a_nother_dir>/ # move without renaming
+mv <dir>/ <a_nother_dir>/<new_dir_name> # move and renaming in the same time
+
+rm [-f] <file>     # -f force a deletion
+rm -R[f] <directory>
+
