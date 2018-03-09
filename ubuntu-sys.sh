@@ -37,7 +37,6 @@ sudo hostnamectl set-hostname new-name
 adduser disooqi
 usermod -aG sudo disooqi
 su - disooqi
-
 mkdir ~/.ssh
 chmod 700 ~/.ssh
 sudo vim ~/.ssh/authorized_keys
@@ -64,3 +63,11 @@ sudo service lightdm stop
 sudo bash your-nvidia-driver.run
 
 
+###########################################################################
+#######################  Navigating your Filesystem  ######################
+###########################################################################
+pwd
+
+ls -la
+cd <directory>
+cd # just cd navigate to your home directory
