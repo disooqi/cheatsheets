@@ -84,3 +84,32 @@ curl [--data|-d] "para1=disooqi&para2=qcri" mohamed-eldesouki.com
 curl -X [PUT|DELETE] [--data|-d] "para1=disooqi&para2=qcri" mohamed-eldesouki.com
 curl -u disooqi:P@s$w0rD  mohamed-eldesouki.com
 curl [--output|-o] live-online.gif https://dialectid.qcri.org/static/did/img/live-online.gif
+
+###########################################################################
+#####  How To Use The rsync Command - Sync Files Locally and Remotely  ####
+###########################################################################
+rsync <dir>/* <packup_dir>/
+rsync -r <dir>[/] <packup_dir>/ # recursive
+rsync -a <dir>[/] <packup_dir>/ # a for archive it include the r option and also preserve the permissions and copy symlinks
+rsync -av --dry-run <dir>[/] <packup_dir>/ # v for verpose
+rsync -av --delete ..........  # it merrors both directory which means deleting extra files and dirs in the destination dir
+rsync -zaP <local_source_dir> disooqi@dialectid.qcri.org:/home/django/django_project/ # z for compress P for progress
+rsync -zaP disooqi@dialectid.qcri.org:/home/django/django_project/ <local_destination_dir>/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
