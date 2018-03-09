@@ -114,4 +114,30 @@ find . -perm 777 -exec chown disooqi:django {} [+|\;]
 find . -type d -exec chmod 775 {} +
 find . -type f -name "*.txt" -maxdepth 1 -exec rm {} +
 
+###########################################################################
+######################  How To Use The cURL Command  ######################
+###########################################################################
+# cURL Command alows us to query URLs from the command line
+curl mohamed-eldesouki.com
+curl -i mohamed-eldesouki.com
+curl [--data|-d] "para1=disooqi&para2=qcri" mohamed-eldesouki.com
+curl -X [PUT|DELETE] [--data|-d] "para1=disooqi&para2=qcri" mohamed-eldesouki.com
+curl -u disooqi:P@s$w0rD  mohamed-eldesouki.com
+curl [--output|-o] live-online.gif https://dialectid.qcri.org/static/did/img/live-online.gif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
