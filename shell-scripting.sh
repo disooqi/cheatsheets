@@ -97,11 +97,22 @@ rsync -av --delete ..........  # it merrors both directory which means deleting 
 rsync -zaP <local_source_dir> disooqi@dialectid.qcri.org:/home/django/django_project/ # z for compress P for progress
 rsync -zaP disooqi@dialectid.qcri.org:/home/django/django_project/ <local_destination_dir>/
 
+###########################################################################
+#####  How To Use The scp Command - copy Files Locally and Remotely  ####
+###########################################################################
+# http://www.hypexr.org/linux_scp_help.php
+# Copy the file "foobar.txt" from a remote host to the local host
+scp your_username@remotehost.edu:foobar.txt /some/local/directory
 
+# Copy the file "foobar.txt" from the local host to a remote host
+scp foobar.txt your_username@remotehost.edu:/some/remote/directory
 
+# Copy the directory "foo" from the local host to a remote host's directory "bar"
+scp -r foo your_username@remotehost.edu:/some/remote/directory/bar
 
-
-
+#  Using the Blowfish cipher has been shown to increase speed.
+# It is often suggested that the -C option for compression should also be used to increase speed
+scp -c blowfish -C local_file your_username@remotehost.edu:~
 
 
 
