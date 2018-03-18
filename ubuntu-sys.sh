@@ -47,3 +47,6 @@ sudo update-initramfs -u
 sudo service lightdm stop
 
 sudo bash your-nvidia-driver.run
+############################################################################
+sudo apt update 
+sudo apt install nvidia-384
