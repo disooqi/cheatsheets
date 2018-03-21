@@ -3,6 +3,9 @@
 # https://www.youtube.com/watch?v=tPKdfbL1Zv4&t=2904s
 # https://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement
 
+# http://tldp.org/LDP/Bash-Beginners-Guide/html/
+# http://linuxcommand.org/lc3_writing_shell_scripts.php
+# https://www.linux.com/learn/writing-simple-bash-script
 lscpu
 ln -fs <file_or_dir>
 
