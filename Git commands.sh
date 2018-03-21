@@ -4,6 +4,12 @@ apt-get install git
 # git lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
+# Duplicating a repository
+# https://help.github.com/articles/duplicating-a-repository/
+
+# Open Source Guides
+# https://opensource.guide/
+
 git config --global user.name "Mohamed Eldesouki"
 git config --global user.email mohamohamed@qf.org.qa
 git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"
