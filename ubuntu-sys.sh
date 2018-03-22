@@ -9,6 +9,9 @@ sudo tar xf <pycharm-professional or pycharm-community>-*.tar.gz -C /opt/
 cd /opt/<pycharm-professional or pycharm-community>/bin
 bash pycharm.sh
 
+# Unpack the .zip file you downloaded to an appropriate location for your applications, such as within /usr/local/ for 
+# your user profile, or /opt/ for shared users.
+
 # bootable USB to install Window 
 # https://help.ubuntu.com/community/mkusb#Windows_USB_install_drive
 
