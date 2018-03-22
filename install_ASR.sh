@@ -119,3 +119,9 @@ python -m SimpleHTTPServer 2018
 # https://github.com/Kaljurand/K6nele
 # https://askubuntu.com/questions/318246/complete-installation-guide-for-android-sdk-adt-bundle-on-ubuntu/466302
 # https://developer.android.com/studio/install.html
+curl -s "https://get.sdkman.io" | bash
+sdk install gradle 4.6
+export ANDROID_HOME=${HOME}/Android/Sdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+gradle assemble
+
