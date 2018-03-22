@@ -11,3 +11,6 @@ When contributing, please follow these steps:
 - Lint your code with Flake8.
 - Add your name to the list of contributers.
 - Submit a Pull Request.
+
+# Open Source Guides
+# https://opensource.guide/
