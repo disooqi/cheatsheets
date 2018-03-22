@@ -112,3 +112,10 @@ var ASR_SERVER = "qatslive4520.cloudapp.net:8888";
 
 # start a local server
 python -m SimpleHTTPServer 2018
+
+###############################################
+###########   Android Client
+###############################################
+# https://github.com/Kaljurand/K6nele
+# https://askubuntu.com/questions/318246/complete-installation-guide-for-android-sdk-adt-bundle-on-ubuntu/466302
+# https://developer.android.com/studio/install.html
