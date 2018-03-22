@@ -43,8 +43,10 @@ tar xJvf <compressed_file_name>.tar.xz
 
 
 # To extract an archive to a directory different from the current, use the -C, or --directory, tar option, as in
-
 tar -x**f archive.tar -C /target/directory
+
+# https://askubuntu.com/questions/854201/unable-to-unzip-to-opt-directory
+sudo unzip -d /opt/ jstock-1.0.7.17-bin.zip
 
 
 
