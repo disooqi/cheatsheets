@@ -4,11 +4,6 @@ apt-get install git
 # git lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
-# Duplicating a repository
-# https://help.github.com/articles/duplicating-a-repository/
-
-# Open Source Guides
-# https://opensource.guide/
 
 git config --global user.name "Mohamed Eldesouki"
 git config --global user.email mohamohamed@qf.org.qa
@@ -192,9 +187,12 @@ git lfs install # verify installation
 git lfs track "*.bin"
 git lfs track
 
+# How to remove/delete a large file from commit history in Git repository?
+# https://stackoverflow.com/questions/2100907/how-to-remove-delete-a-large-file-from-commit-history-in-git-repository
 
 
-
+# Duplicating a repository
+# https://help.github.com/articles/duplicating-a-repository/
 
 gcc -c -fpic cylinder.c cylinder_wrap.c -I/home/meldesouki/python/include -I/home/meldesouki/python/include/python2.5
 
