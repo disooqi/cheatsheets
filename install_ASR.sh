@@ -124,4 +124,8 @@ sdk install gradle 4.6
 export ANDROID_HOME=${HOME}/Android/Sdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 gradle assemble
-
+# AND THEN 
+# https://github.com/Kaljurand/K6nele/issues/38
+# https://github.com/jcsilva/docker-kaldi-gstreamer-server
+# https://stackoverflow.com/questions/9997720/how-to-register-a-custom-speech-recognition-service
+# https://gist.github.com/aryeharmon/85673d69b07c5b7061c38ac4323f409c
