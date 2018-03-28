@@ -7,7 +7,10 @@ http://www.cs.utexas.edu/users/mckinley/notes/reviewing-smith.pdf
 https://acl2017.wordpress.com/2017/02/23/last-minute-reviewing-advice/
 https://www.aclweb.org/adminwiki/index.php?title=ACL_Reviewer_Guidelines
 
+
+
 ### Last Minute Writing Advice
 https://acl2017.wordpress.com/2017/02/02/last-minute-writing-advice/
+https://www.aclweb.org/adminwiki/index.php?title=ACL_Author_Guidelines
 
 
