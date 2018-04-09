@@ -14,3 +14,4 @@ When contributing, please follow these steps:
 
 # Open Source Guides
 # https://opensource.guide/
+# https://guides.github.com/activities/hello-world/
