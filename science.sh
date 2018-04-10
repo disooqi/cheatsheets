@@ -25,6 +25,7 @@ https://rare-technologies.com/making-sense-of-word2vec/
 ##########################
 # https://arxiv.org/abs/1704.00051
 https://github.com/facebookresearch/DrQA
+https://allenai.github.io/bi-att-flow/
 
 
 ############################
