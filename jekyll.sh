@@ -10,3 +10,10 @@ sudo apt-get install gem
 
 # Intall Jekyll
 sudo gem install jekyll bundler
+
+# for the first time run
+bundle exec jekyll serve
+
+
+
+jekyll serve
