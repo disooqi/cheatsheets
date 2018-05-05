@@ -16,6 +16,6 @@ jekyll new .
 # for the first time run
 bundle exec jekyll serve
 
-
+bundle install
 
 jekyll serve
