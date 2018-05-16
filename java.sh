@@ -16,3 +16,6 @@ sudo apt-get install oracle-java8-installer
 # To install JDK 9, use the following command:
 sudo apt-get install oracle-java9-installer
 
+
+# https://www.youtube.com/watch?v=VrOhA-I3aFs
+
