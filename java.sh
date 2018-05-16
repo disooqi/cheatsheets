@@ -19,3 +19,10 @@ sudo apt-get install oracle-java9-installer
 
 # https://www.youtube.com/watch?v=VrOhA-I3aFs
 
+# set environment variable JAVA_HOME
+sudo vim /etc/environment
+source /etc/environment
+
+# to know the where did you install your sdk
+readlink -f  `which javac`
+dirname `dirname "the-output of last line"`
