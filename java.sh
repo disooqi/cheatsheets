@@ -26,3 +26,5 @@ source /etc/environment
 # to know the where did you install your sdk
 readlink -f  `which javac`
 dirname `dirname "the-output of last line"`
+
+CATALINA_HOME="/home/disooqi/apache-tomcat-8.0.27"
