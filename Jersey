@@ -1,2 +1,13 @@
 # RESTful Web Services in Java.
 
+# In Development
+
+## This will compile the project and run the project unit tests. 
+mvn clean test
+
+## execute the application in a standalone mode
+mvn exec:java
+
+
+http GET http://localhost:8080/myapp/myresource
+curl -i http://localhost:8080/myapp/myresource
