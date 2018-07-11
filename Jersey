@@ -11,3 +11,19 @@ mvn exec:java
 
 http GET http://localhost:8080/myapp/myresource
 curl -i http://localhost:8080/myapp/myresource
+curl -v http://localhost:8080/myapp/myresource
+
+
+###############################################################################################################
+########  To create a Web Application that can be packaged as WAR and deployed in a Servlet container #########
+###############################################################################################################
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-webapp \
+                -DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=false \
+                -DgroupId=com.example -DartifactId=simple-service-webapp -Dpackage=com.example \
+                -DarchetypeVersion=2.27
+
+## To compile and package the application into a WAR, invoke the following maven command in your console: 
+mvn clean package
+
+
+
