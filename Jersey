@@ -25,5 +25,32 @@ mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-webapp \
 ## To compile and package the application into a WAR, invoke the following maven command in your console: 
 mvn clean package
 
+# it looks like we need to put a main class to use the Grizzly container in development
+create Main.java class
+
+# add the following to the POM.xml
+<dependency>
+   <groupId>org.glassfish.jersey.containers</groupId>
+   <artifactId>jersey-container-grizzly2-http</artifactId>
+</dependency>
+
+<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.example.Main</mainClass>
+                </configuration>
+</plugin>
+ 
+ 
+
 
 
