@@ -1,1 +1,9 @@
+# Tomcat 
+# create user tomcat
 
+sudo apt-get update
+sudo apt-get install default-jdk
+
+## For security purposes, Tomcat should be run as an unprivileged user (i.e. not root). We will create a new user and group that 
+## will run the Tomcat service.
+sudo groupadd tomcat
