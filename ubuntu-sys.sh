@@ -5,7 +5,7 @@
 ###### First-time installation #########
 ########################################
 # pycharm
-sudo tar xf <pycharm-professional or pycharm-community>-*.tar.gz -C /opt/
+sudo tar xf <pycharm-professional or pycharm-community>-*.tar.gz -C /opt/ [--strip-component]
 cd /opt/<pycharm-professional or pycharm-community>/bin
 bash pycharm.sh
 
