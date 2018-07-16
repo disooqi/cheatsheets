@@ -9,7 +9,13 @@
 lscpu
 ln -fs <file_or_dir>
 
+############################################################################################
+lsof -i :8080
+# COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+# java    8445 disooqi   83u  IPv6  76005      0t0  TCP localhost:http-alt (LISTEN)
 
+kill -9 8135
+##############################################################################################
  ls -l, which only displays the size of the individual files in a directory, nor
  df -h, which only displays the free and used space on my disks.
     
