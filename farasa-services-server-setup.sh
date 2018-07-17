@@ -17,3 +17,7 @@ sudo systemctl restart tomcat
 
 ## To prevent access to Tomcat 
 /opt/tomcat/conf/server.xml
+
+
+
+ab -k -c 350 -n 10000 https://farasa-api.qcri.org/farasa/webapi/lemma?text="الحمد لله"
