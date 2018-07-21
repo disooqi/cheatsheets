@@ -9,6 +9,8 @@
 lscpu
 ln -fs <file_or_dir>
 
+echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
+
 ############################################################################################
 lsof -i :8080
 # COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
