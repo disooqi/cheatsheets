@@ -97,6 +97,7 @@ curl -u disooqi:P@s$w0rD  mohamed-eldesouki.com
 curl [--output|-o] live-online.gif https://dialectid.qcri.org/static/did/img/live-online.gif
 # http://www.thenerdary.net/post/24889968081/debugging-websockets-with-curl
 curl -i -N -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Host: echo.websocket.org" -H "Origin: http://www.websocket.org" http://echo.websocket.org
+curl -X POST https://farasa-api.qcri.org/farasa/webapi/segmenter -H 'content-type: application/json' -d '{"text": "حسبي الله ونعم الوكيل"}'
 ###########################################################################
 #####  How To Use The rsync Command - Sync Files Locally and Remotely  ####
 ###########################################################################
