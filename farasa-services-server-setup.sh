@@ -18,6 +18,7 @@ sudo systemctl restart tomcat
 ## To prevent access to Tomcat 
 /opt/tomcat/conf/server.xml
 
+## https://github.com/NitorCreations/tomcat8-war-runner#readme
 
 
 ab -k -c 350 -n 10000 https://farasa-api.qcri.org/farasa/webapi/lemma?text="الحمد لله"
