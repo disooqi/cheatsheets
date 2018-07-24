@@ -58,6 +58,7 @@ sudo apt install nvidia-384
 #######################  remove PPA repository  ###########################
 ###########################################################################
 sudo apt-get intall ppa-purge
+sudo ppa-purge ppa:<your package>/ppa
 
 # or 
 # search for 'software & update' and choose 'Other Software' tap
