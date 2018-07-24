@@ -53,3 +53,12 @@ sudo bash your-nvidia-driver.run
 ############################################################################
 sudo apt update 
 sudo apt install nvidia-384
+
+###########################################################################
+#######################  remove PPA repository  ###########################
+###########################################################################
+sudo apt-get intall ppa-purge
+
+# or 
+# search for 'software & update' and choose 'Other Software' tap
+# and then remove the ppa you want.
