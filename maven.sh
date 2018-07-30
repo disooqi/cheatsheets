@@ -15,4 +15,6 @@ mvn package
 # install it in my local repository
 mvn install
 
+mvn install:install-file -Dfile=/home/disooqi/projects/Farasa/FarasaNERJar/lib/mallet.jar -DgroupId=cc.mallet -DartifactId=mallet  -Dpackaging=jar -Dversion={version}
+
 
