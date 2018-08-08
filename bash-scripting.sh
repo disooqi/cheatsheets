@@ -110,7 +110,7 @@ rsync -zaP <local_source_dir> disooqi@dialectid.qcri.org:/home/django/django_pro
 rsync -zaP disooqi@dialectid.qcri.org:/home/django/django_project/ <local_destination_dir>/
 
 ###########################################################################
-#####  How To Use The scp Command - copy Files Locally and Remotely  ####
+#####  How To Use The scp Command - copy Files Locally and Remotely  ######
 ###########################################################################
 # http://www.hypexr.org/linux_scp_help.php
 # Copy the file "foobar.txt" from a remote host to the local host
@@ -126,7 +126,58 @@ scp -r foo your_username@remotehost.edu:/some/remote/directory/bar
 # It is often suggested that the -C option for compression should also be used to increase speed
 scp -c blowfish -C local_file your_username@remotehost.edu:~
 
+##########################################################################
+#####################   	compression   ###################################
+##########################################################################
 
+# https://www.digitalocean.com/community/tutorials/an-introduction-to-file-compression-tools-on-linux-servers
+# Using Tar Archiving with different Compression Tools i.e. gzip, bzip2, xz
+
+###########################
+### Using TAR with gzip ###
+###########################
+tar czvf <target_name>.tar.gz  <source_directory_name>
+
+# c for achive
+# z for 'use gzip for compression'
+# v for verbose
+# f for file 'must come in the end'
+
+tar tzvf <compressed_file_name>.tar.gz
+
+# to for peeking inside the compressed file
+
+
+tar xzvf <compressed_file_name>.tar.gz
+
+# x for extract using gzip
+
+############################
+### Using TAR with bzip2 ###
+############################
+
+# for using bzip2 you can just repalce the z flag with the j flag.
+
+tar cjvf <target_name>.tar.bz2  <source_directory_name>
+tar tjvf <compressed_file_name>.tar.bz2
+tar xjvf <compressed_file_name>.tar.bz2
+
+
+#########################
+### Using TAR with xz ###
+#########################
+
+# for using xz you can just use the J flag instead of the z or j flags
+tar cJvf <target_name>.tar.xz  <source_directory_name>
+tar tJvf <compressed_file_name>.tar.xz
+tar xJvf <compressed_file_name>.tar.xz
+
+
+# To extract an archive to a directory different from the current, use the -C, or --directory, tar option, as in
+tar -x**f archive.tar -C /target/directory
+
+# https://askubuntu.com/questions/854201/unable-to-unzip-to-opt-directory
+sudo unzip -d /opt/ jstock-1.0.7.17-bin.zip
 
 
 
