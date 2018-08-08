@@ -127,7 +127,7 @@ scp -r foo your_username@remotehost.edu:/some/remote/directory/bar
 scp -c blowfish -C local_file your_username@remotehost.edu:~
 
 ##########################################################################
-#####################   	compression   ###################################
+#####################    compression   ###################################
 ##########################################################################
 
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-file-compression-tools-on-linux-servers
@@ -179,8 +179,18 @@ tar -x**f archive.tar -C /target/directory
 # https://askubuntu.com/questions/854201/unable-to-unzip-to-opt-directory
 sudo unzip -d /opt/ jstock-1.0.7.17-bin.zip
 
+##########################################################################
+##########################    Screen   ###################################
+##########################################################################
+screen -dmS app_server_core sh
+screen -S app_server_core -p 0 -X stuff "cd diacritize_core_python/"
+screen -S app_server_core -p 0 -X stuff "python app_server_core.py"
 
+screen -ls
 
+screen -X -S [session_no you want to kill] kill
+# "kill" will only kill one screen window. To "kill" the complete session, use quit.
+screen -X -S [session_no you want to kill] quit
 
 
 
