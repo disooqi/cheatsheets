@@ -42,3 +42,24 @@ http://codingnights.com/coding-fully-tested-python-chat-server-using-sockets-par
 
 * Event-driven programming 
 * 
+
+#############################################
+#####   Build and Install Python from SRC code
+#############################################
+
+# https://realpython.com/installing-python/#ubuntu
+wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
+
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev  libncursesw5-dev xz-utils tk-dev
+
+tar xvf Python-3.6.5.tgz
+cd Python-3.6.5
+
+./configure --enable-optimizations --with-ensurepip=install
+
+make -j 8
+
+sudo make altinstall
