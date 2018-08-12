@@ -54,6 +54,15 @@ sudo apt-get update
 sudo apt-get upgrade
 
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev  libncursesw5-dev xz-utils tk-dev
+sudo apt-get install -y checkinstall
+sudo apt-get install -y libreadline-gplv2-dev
+sudo apt-get install -y libgdbm-dev
+sudo apt-get install -y libc6-dev
+sudo apt-get install -y openssl
+sudo apt-get install -y libffi-dev
+sudo apt-get install -y python3-dev
+sudo apt-get install -y python3-setuptools
+
 
 tar xvf Python-3.6.5.tgz
 cd Python-3.6.5
