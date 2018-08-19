@@ -1,0 +1,5 @@
+#python tip: It is easy to capture the output of functions that print to the terminal:
+
+with open('help.txt', 'w') as f:
+    with contextlib.redirect_stdout(f):
+        help(pow)
