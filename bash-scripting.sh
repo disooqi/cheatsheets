@@ -193,6 +193,9 @@ screen -X -S [session_no you want to kill] kill
 # "kill" will only kill one screen window. To "kill" the complete session, use quit.
 screen -X -S [session_no you want to kill] quit
 
+# to attach to already attached screen
+screen -d -r <screen>
+
 
 
 
