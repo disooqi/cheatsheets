@@ -8,6 +8,7 @@
 # https://www.linux.com/learn/writing-simple-bash-script
 lscpu
 ln -fs <file_or_dir>
+ln -s /etc/nginx/sites-available/dialectid /etc/nginx/sites-enabled
 
 echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
 
