@@ -78,11 +78,16 @@ git merge --abort
 ########################################################################################
 ############################### Stashing changes #######################################
 ########################################################################################
+# save into stash
 git stash save  "Massage"
 git stash list
 git stash [-p] show stash@{0}
-git stash pop     [stash@{0}]
-git stash apply   [stash@{0}]
+
+# use what in the stash
+git stash pop     [stash@{0}]  # # gets the stash out from stash list and remove from there
+git stash apply   [stash@{0}]    # same as pop but does not remove it from the stash list
+
+# delete changes in the stash
 git stash drop    stash@{0}
 git stash clear
 
