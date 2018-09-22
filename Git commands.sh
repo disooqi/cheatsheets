@@ -80,6 +80,7 @@ git merge --abort
 ########################################################################################
 git stash save  "Massage"
 git stash list
+git stash [-p] show stash@{0}
 git stash pop     [stash@{0}]
 git stash apply   [stash@{0}]
 git stash drop    stash@{0}
