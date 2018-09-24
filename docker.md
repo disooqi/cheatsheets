@@ -6,8 +6,8 @@ it is recommended to fix the issue by adding the current user to the docker grou
 sudo usermod -a -G docker disooqi
 ```
 
-
-docjer push ..........
+```bash
+docker push ..........
 docker pull mongo:latest
 sudo docker images | grep 578c3e
 sudo docker ps -a
@@ -21,10 +21,11 @@ docker rm 7c2c0e1df721
 docker system prune
 sudo docker run -it --rm ubuntu:16.04
 sudo docker run -it --rm docker101:v1 /bin/bash
-
+```
 
 
 ##############################################################
+```Dockerfile
 # FROM ubuntu:16.04
 FROM python:3.6
 LABEL maintainer="MOHAMED ELDESOUKI <disooqi@gmail.com>"
@@ -42,14 +43,18 @@ COPY . /app
 
 RUN pip install -r requirments.txt
 CMD ["python3", "app.py", ""]
+```
 #################################################################
+
+```bash
 docker run -it --rm -p "5432:5432" postgres:9.6
 
 docker run -it --rm --link postgres:goofy  -e DATABASE_URL=wtyuytrewretyuy -p "5000:3000" server_name:v0.1
  pgcli
-
+```
 
 ######################## docker-compose.yaml ####################################
+```yaml
 # declartative vs impritive
 version: '3.5'
 services: 
@@ -71,15 +76,19 @@ services:
 volumes:
   dbdata:
     driver: local
-#######################################################################3
+```
+#######################################################################
+```bash
 docker-compose up
 docker-compose ps
 docker-compose down
 docker-compose start server
 docker volume ls
-
+```
 # Production
 ############
+```bash
 docker swarm
 kopernares
 orecsterating
+```
