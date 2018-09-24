@@ -84,9 +84,20 @@ docker image ls
 List the hello-world container (spawned by the image) which exits after displaying its message. If it were still running, you would not need the `--all` option:
 ```bash
 docker container ls [-a|--all] [-q]
+docker container list
+docker ps -a
 ```
 
 
+Remove Image
+```bash
+docker rmi <Image ID>
+```
+
+Remove container
+```bash
+docker rm <CONTAINER ID>
+```
 ##################################################################################################################
 ```bash
 docker push ..........
