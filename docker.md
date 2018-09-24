@@ -26,7 +26,19 @@ sudo docker run hello-world
 ```
 It is recommended to fix the issue by adding the current user to the docker group:
 ```bash
+sudo groupadd docker
 sudo usermod -a -G docker disooqi
+
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "/home/$USER/.docker" -R
+```
+
+Configure Docker to start on boot
+---------------------------------
+https://docs.docker.com/install/linux/linux-postinstall/#configure-where-the-docker-daemon-listens-for-connections
+```bash
+sudo systemctl enable docker
+sudo chkconfig docker on
 ```
 
 Upgrade Docker CE
