@@ -1,5 +1,6 @@
 Install Docker
 -----------------
+https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker
 ```bash
 sudo apt-get update
 
@@ -73,6 +74,20 @@ sudo rm -rf /var/run/docker.sock
 You have removed Docker from the system completely.
 
 
+Use Docker
+===========
+To list all images
+```bash
+docker image ls
+```
+
+List the hello-world container (spawned by the image) which exits after displaying its message. If it were still running, you would not need the `--all` option:
+```bash
+docker container ls [-a|--all] [-q]
+```
+
+
+##################################################################################################################
 ```bash
 docker push ..........
 docker pull mongo:latest
