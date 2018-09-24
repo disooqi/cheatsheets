@@ -1,10 +1,38 @@
 Install Docker
 -----------------
+```bash
+sudo apt-get update
 
-it is recommended to fix the issue by adding the current user to the docker group:
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   
+sudo apt-get update
+
+sudo apt-get install docker-ce
+
+sudo docker run hello-world
+```
+It is recommended to fix the issue by adding the current user to the docker group:
 ```bash
 sudo usermod -a -G docker disooqi
 ```
+
+Upgrade Docker CE
+-----------------
+To upgrade Docker CE, first run `sudo apt-get update`, then follow the installation instructions, choosing the new version you want to install.
+
 
 Uninstall Docker
 -----------------
@@ -19,17 +47,17 @@ dpkg -l | grep -i docker
 To identify what installed package you have:
 
 Step 2
-
+```bash
 sudo apt-get purge -y docker-engine docker docker.io docker-ce  
 sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce  
-
+```
 The above commands will not remove images, containers, volumes, or user created configuration files on your host. If you wish to delete all images, containers, and volumes run the following commands:
-
+```bash
 sudo rm -rf /var/lib/docker
 sudo rm /etc/apparmor.d/docker
 sudo groupdel docker
 sudo rm -rf /var/run/docker.sock
-
+```
 You have removed Docker from the system completely.
 
 
