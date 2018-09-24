@@ -1,3 +1,12 @@
+Installing Docker
+-----------------
+
+it is recommended to fix the issue by adding the current user to the docker group:
+```bash
+sudo usermod -a -G docker disooqi
+```
+
+
 docjer push ..........
 docker pull mongo:latest
 sudo docker images | grep 578c3e
