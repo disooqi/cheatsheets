@@ -200,7 +200,18 @@ git lfs track
 # Duplicating a repository
 # https://help.github.com/articles/duplicating-a-repository/
 
+
+#############################################################
+#################  MISC MISC MISC MISC  #####################
+#############################################################
+
+# to force add files even if they are ignored
+git add -f directory/*
+
+
 gcc -c -fpic cylinder.c cylinder_wrap.c -I/home/meldesouki/python/include -I/home/meldesouki/python/include/python2.5
+
+
 
 
 
