@@ -184,8 +184,10 @@ sudo unzip -d /opt/ jstock-1.0.7.17-bin.zip
 ##########################    Screen   ###################################
 ##########################################################################
 screen -dmS app_server_core sh
-screen -S app_server_core -p 0 -X stuff "cd diacritize_core_python/"
-screen -S app_server_core -p 0 -X stuff "python app_server_core.py"
+screen -S app_server_core -p 0 -X stuff "cd diacritize_core_python/
+"
+screen -S app_server_core -p 0 -X stuff "python app_server_core.py
+"
 
 screen -ls
 
