@@ -13,7 +13,9 @@ ssh-keygen -t rsa -C "your_email@example.com"
 # .ssh folder should be 700 and authorized_keys file should be 600
 cat ~/.ssh/id_rsa.pub | ssh [username]@[server.ip.address.here] "cat >> ~/.ssh/authorized_keys"
 # or, use the following to automatically copy the public key
-ssh-copy-id username@hostname
+ssh-copy-id [username]@hostname
+# or, if you don't have access using password you can use the following
+rsync --archive --chown=[username]:[username] ~/.ssh /home/[username]
 
 
 # https://serverfault.com/questions/221760/multiple-public-keys-for-one-user
