@@ -7,6 +7,13 @@ pip install scrapy==1.4.0
 # If project_dir wasn’t specified, project_dir will be the same as myproject.
 scrapy startproject myproject [project_dir]
 
+# Run the spider defined in the given file
+# for option u can use "-o" direct output to json or plain file
+scrapy runspider [options] <spider_file>
+
+# Run a spider
+scrapy crawl [options] <spider>
+
 # Deploying and running Scrapy spiders to Scrapy Cloud
 # https://www.youtube.com/watch?v=JYch0zRmcgU
 pip install shub
