@@ -14,7 +14,7 @@ ssh-keygen -t rsa -C "your_email@example.com"
 cat ~/.ssh/id_rsa.pub | ssh [username]@[server.ip.address.here] "cat >> ~/.ssh/authorized_keys"
 # or, use the following to automatically copy the public key
 ssh-copy-id [username]@hostname
-# or, if you don't have access using password you can use the following
+# or, if you don't have access using password you can run the following while you are in the root
 rsync --archive --chown=[username]:[username] ~/.ssh /home/[username]
 
 
