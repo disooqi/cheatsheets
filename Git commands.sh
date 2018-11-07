@@ -139,6 +139,15 @@ git push <alias> --deleted <branch_name_todelete>
 
 # in case you want to discard changes in working diretory
 git checkout -- <file_name>
+git checkout .
+git checkout -f
+
+# If you want to remove untracked files (e.g., new files, generated files):
+git clean -f
+
+# Or untracked directories (e.g., new or automatically generated directories):
+git clean -fd
+
 
 # in case you want to discard changes that have been staged
 git reset HEAD <file_name>
