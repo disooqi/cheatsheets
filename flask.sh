@@ -18,7 +18,9 @@ pip install flask-wtf
 import secrets;secrets.token_hex(16)
 pip install flask-sqlalchemy
 
-# Flask SQLalchemy
+############################################################################
+##################     Flask SQLalchemy     ################################
+############################################################################
 db.create_all()
 from app import db
 from app import User, Pos
@@ -34,10 +36,24 @@ User.query.filter_by(username='ahmed').first()
 User.query.get(1)
 
 user_1.posts
-
 post_1.author
 
 db.drop_all()
+
+############################################################################
+## The process of converting Flask project from module to a package ########
+############################################################################
+1. Create models.py and all the database models to it. Move all the relevant imported packeges to module
+2. take care of the circular import; by converting flask app into package
+    (a) create the package directory 
+    (b) move every module into the new package except for the main module of flask app.py
+    (c) initialize the flask application in the __init__.py module of the newly created packege 
+    (d) move the importing of the DB modules to the end of the init module "from models import User, Post"
+    (e) sparate the routes by moving all of them into their own module file named routes.py
+    (f) within the runner module "app.py" import the app object from the package
+ :
+ :
+ :
 
 ############################################################
 ############     RESTful API     ###########################
