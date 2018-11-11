@@ -11,6 +11,13 @@ flask run
 app.config['SECRET_KEY'] = ''
 import secrets
 secrets.token_hex(16)
+
+# From Corey Schafer
+pip install flask
+pip install flask-wtf
+import secrets;secrets.token_hex(16)
+pip install flask-sqlalchemy
+
 ############################################################
 ############     RESTful API     ###########################
 ############################################################
