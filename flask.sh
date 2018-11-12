@@ -17,6 +17,8 @@ pip install flask
 pip install flask-wtf
 import secrets;secrets.token_hex(16)
 pip install flask-sqlalchemy
+pip install flask-bcrypt
+pip install flask-login
 
 ############################################################################
 ##################     Flask SQLalchemy     ################################
@@ -64,6 +66,7 @@ bcrypt = Bcrypt()
 bcrypt.generate_password_hash('P@s$W0rd') # bytes
 hashed_pwd = bcrypt.generate_password_hash('P@s$W0rd').decode('utf-8') # decode to text
 bcrypt.check_password_hash(hashed_pwd, 'P@s$W0rd')
+
 ############################################################
 ############     RESTful API     ###########################
 ############################################################
