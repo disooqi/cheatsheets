@@ -54,7 +54,16 @@ db.drop_all()
  :
  :
  :
+############################################################################
+####### Hashing passwords and flask-bcrypt ########
+############################################################################
+pip install flask-bcrypt
 
+from flask_bcrypt import Bcrypt
+bcrypt = Bcrypt()
+bcrypt.generate_password_hash('P@s$W0rd') # bytes
+hashed_pwd = bcrypt.generate_password_hash('P@s$W0rd').decode('utf-8') # decode to text
+bcrypt.check_password_hash(hashed_pwd, 'P@s$W0rd')
 ############################################################
 ############     RESTful API     ###########################
 ############################################################
