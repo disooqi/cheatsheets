@@ -67,6 +67,21 @@ bcrypt.generate_password_hash('P@s$W0rd') # bytes
 hashed_pwd = bcrypt.generate_password_hash('P@s$W0rd').decode('utf-8') # decode to text
 bcrypt.check_password_hash(hashed_pwd, 'P@s$W0rd')
 
+############################################################################
+#######  User Authentication  ########
+############################################################################
+1. pip install flask-login
+2. login_manager = LoginManager(app)
+3. In models.py, define the following function
+        (a)
+        @login_manager.user_loader
+        def load_user(user_id):
+            return User.query.get(int(user_id))
+        
+        (b) from flask_login import UserMixin
+4. In routes.py, 
+
+
 ############################################################
 ############     RESTful API     ###########################
 ############################################################
