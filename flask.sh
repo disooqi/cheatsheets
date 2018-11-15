@@ -86,6 +86,7 @@ bcrypt.check_password_hash(hashed_pwd, 'P@s$W0rd')
 #######  Dealing with Files  ########
 ############################################################################
 1. In forms, add "from flask_wtf.file import FileField, FileAllowed"
+2. Adding the following attribute to form element "enctype="multipart/form-data""
 
 ############################################################
 ############     RESTful API     ###########################
