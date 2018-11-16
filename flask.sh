@@ -19,6 +19,7 @@ import secrets;secrets.token_hex(16)
 pip install flask-sqlalchemy
 pip install flask-bcrypt
 pip install flask-login
+pip install Pillow
 
 ############################################################################
 ##################     Flask SQLalchemy     ################################
@@ -87,6 +88,20 @@ bcrypt.check_password_hash(hashed_pwd, 'P@s$W0rd')
 ############################################################################
 1. In forms, add "from flask_wtf.file import FileField, FileAllowed"
 2. Adding the following attribute to form element "enctype="multipart/form-data""
+3. In the routes.py, import os;import secrets
+4. In the routes.py, 
+    def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, picture_ext = os.path.splitext(form_picture.filename)
+    picture_fn = random_hex + picture_ext
+    picture_path = os.path.join(app.root_path, 'static', 'images', 'profile_pcs', picture_fn)
+    form_picture.save(picture_path)
+    return picture_fn
+5. In the routes.py, 
+    if form.validate_on_submit():
+    if form.picture.data:
+        picture_file = save_picture(form.picture.data)
+        current_user.image_file = picture_file
 
 ############################################################
 ############     RESTful API     ###########################
