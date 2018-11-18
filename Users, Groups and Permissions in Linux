@@ -37,5 +37,8 @@ sudo chmod 777   file/dir   [-R]
 sudo chown -R <username> file
 sudo chgrp -R <group_name> file
 
+#  If we want our regular user to be able to modify files in our web directories, we can change the ownership by doing this:
+sudo chown -R $USER:$USER /var/www/example.com/public_html
+
 
 
