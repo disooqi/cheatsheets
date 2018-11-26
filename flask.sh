@@ -24,9 +24,10 @@ pip install Pillow
 ############################################################################
 ##################     Flask SQLalchemy     ################################
 ############################################################################
-db.create_all()
 from app import db
 from app import User, Pos
+
+db.create_all()
 
 db.session.add(user_1)
 db.session.commit()
@@ -106,6 +107,18 @@ bcrypt.check_password_hash(hashed_pwd, 'P@s$W0rd')
 ############################################################
 ############     RESTful API     ###########################
 ############################################################
+
+
+############################################################################
+###################  Adding A field to a database  #########################
+############################################################################
+
+1) Add field to the Model 
+        fullname = db.Column(db.String(50), nullable=False)
+2) Drop the database and create a new one (for Relational DB)
+3) Add field to the FlaskForm
+4) Show the Field in the jinja2 template
+5) update the field in the routes.py
 
 
 
