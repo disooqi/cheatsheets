@@ -120,5 +120,19 @@ bcrypt.check_password_hash(hashed_pwd, 'P@s$W0rd')
 4) Show the Field in the jinja2 template
 5) update the field in the routes.py
 
-
-
+############################################################################
+################  Create the WSGI Entry Point  #############################
+############################################################################
+1) install either uWSGI or Gunicorn
+2) Next, we'll create a file (wsgi.py) that will serve as the entry point for our application. 
+    This will tell our Gunicorn server how to interact with the application. 
+3) Create a systemd Unit File
+        Create a unit file ending in .service within the /etc/systemd/system directory to begin: "sudo vim /etc/systemd/system/arabic-speech.service"
+        sudo systemctl start myproject
+        sudo systemctl enable myproject
+4) Configuring Nginx to Proxy Requests
+    sudo vim /etc/nginx/sites-available/myproject
+    sudo ln -s /etc/nginx/sites-available/arabic-speech /etc/nginx/sites-enabled
+    sudo nginx -t
+    sudo systemctl restart nginx
+5) 
