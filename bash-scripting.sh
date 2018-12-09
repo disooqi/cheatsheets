@@ -149,7 +149,7 @@ tar tzvf <compressed_file_name>.tar.gz
 # to for peeking inside the compressed file
 
 
-tar xzvf <compressed_file_name>.tar.gz
+tar xzvf <compressed_file_name>.tar.gz [-C /where/do/you/want/to/extract/] [--strip-components=1]
 
 # x for extract using gzip
 
@@ -198,8 +198,10 @@ screen -X -S [session_no you want to kill] quit
 # to attach to already attached screen
 screen -d -r <screen>
 
-
-
+#########################################################################
+##############   tail   ##########################
+#####################################################################
+sudo tail -f /var/log/apache2/access.log
 
 
 
