@@ -6,6 +6,7 @@
 # http://tldp.org/LDP/Bash-Beginners-Guide/html/
 # http://linuxcommand.org/lc3_writing_shell_scripts.php
 # https://www.linux.com/learn/writing-simple-bash-script
+# https://explainshell.com/explain/1/ln
 lscpu
 ln -fs <file_or_dir>
 ln -s /etc/nginx/sites-available/dialectid /etc/nginx/sites-enabled
