@@ -29,7 +29,11 @@ from app import User, Pos
 
 db.create_all()
 
-db.session.add(user_1)
+disooqi = User(fullname='Mohamed Eldesouki', email='disooqi@gmail.com', password='123', position='Research Associate',
+            affiliation='Qatar Computing Research Associate', department='ALT', address='QCRI/Research Complex/HBKU/QF',
+            telephone='+974-33542583')
+
+db.session.add(disooqi)
 db.session.commit()
 db.session.rollback()
 
