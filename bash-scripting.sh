@@ -20,12 +20,14 @@ lsof -i :8080
 
 kill -9 8135
 ##############################################################################################
- ls -l, which only displays the size of the individual files in a directory, nor
- df -h, which only displays the free and used space on my disks.
-    
- du -hs /path/to/directory
- #   -h is to get the numbers "human readable", e.g. get 140M instead of 143260 (size in KBytes)
- #   -s is for summary (otherwise you'll get not only the size of the folder but also for everything in the folder separately)
+ls -l, which only displays the size of the individual files in a directory, nor
+df -h, which only displays the free and used space on my disks.
+ 
+#   -h is to get the numbers "human readable", e.g. get 140M instead of 143260 (size in KBytes)
+#   -s is for summary (otherwise you'll get not only the size of the folder but also for everything in the folder separately)   
+du -hs /path/to/directory
+
+df -alkh /
 
 ## SCP
 ####################
