@@ -19,6 +19,9 @@ lsof -i :8080
 # java    8445 disooqi   83u  IPv6  76005      0t0  TCP localhost:http-alt (LISTEN)
 
 kill -9 8135
+ps fx
+awk '{print $1}' /var/log/nginx/access.log  | sort | uniq -c
+date
 ##############################################################################################
 ls -l, which only displays the size of the individual files in a directory, nor
 df -h, which only displays the free and used space on my disks.
