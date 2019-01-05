@@ -232,7 +232,23 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow?fbc
 
 
 
+# Contributing
+#############
 
+# https://help.github.com/articles/about-pull-requests/
+
+When contributing, please follow these steps:
+
+- Clone the repo and make your changes.
+- Make sure your code has test cases written against it.
+- Make sure all the tests pass.
+- Lint your code with Flake8.
+- Add your name to the list of contributers.
+- Submit a Pull Request.
+
+# Open Source Guides
+# https://opensource.guide/
+# https://guides.github.com/activities/hello-world/
 
 
 
