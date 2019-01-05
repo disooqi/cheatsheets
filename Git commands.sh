@@ -221,8 +221,14 @@ git add -f directory/*
 gcc -c -fpic cylinder.c cylinder_wrap.c -I/home/meldesouki/python/include -I/home/meldesouki/python/include/python2.5
 
 
+#############################################################
+#############################  READING  #####################
+#############################################################
+https://nvie.com/posts/a-successful-git-branching-model/?fbclid=IwAR2xUD8mNkug3kk70SOT8undMw-J_sA5wqlZo3gY3HACTnDCIuFcxxLyW7Q
 
+https://developer.github.com/
 
+https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow?fbclid=IwAR3cCb3_wwKY-kSSuOrDh3ae-8pmeW1fEIX96jmu0ag3RZCbKhQcQWM1gVU
 
 
 
