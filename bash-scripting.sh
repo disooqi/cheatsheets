@@ -210,5 +210,5 @@ screen -d -r <screen>
 sudo tail -f /var/log/apache2/access.log
 
 
-
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 
