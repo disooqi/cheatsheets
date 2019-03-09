@@ -228,6 +228,9 @@ https://nvie.com/posts/a-successful-git-branching-model/?fbclid=IwAR2xUD8mNkug3k
 
 https://developer.github.com/
 
+# The legal side of github
+https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
+
 https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow?fbclid=IwAR3cCb3_wwKY-kSSuOrDh3ae-8pmeW1fEIX96jmu0ag3RZCbKhQcQWM1gVU
 
 
