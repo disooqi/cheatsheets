@@ -210,6 +210,14 @@ git lfs track
 # https://help.github.com/articles/duplicating-a-repository/
 
 
+###########################################################
+################   Git lfs installation  ##################
+###########################################################
+https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
+https://developer.github.com/v3/guides/delivering-deployments/
+https://developer.github.com/v3/repos/deployments/
+
+
 #############################################################
 #################  MISC MISC MISC MISC  #####################
 #############################################################
