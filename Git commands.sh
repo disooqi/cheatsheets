@@ -222,6 +222,22 @@ https://developer.github.com/v3/repos/deployments/
 #################  MISC MISC MISC MISC  #####################
 #############################################################
 
+warning: adding embedded git repository: SRILM/eval2
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> SRILM/eval2
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached SRILM/eval2
+hint: 
+hint: See "git help submodule" for more information.
+-----------------------------------------------------------------
+
 # to force add files even if they are ignored
 git add -f directory/*
 
