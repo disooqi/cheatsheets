@@ -8,6 +8,8 @@
 # https://www.linux.com/learn/writing-simple-bash-script
 # https://explainshell.com/explain/1/ln
 
+sudo shutdown -h now
+
 readlink -f `which command`
 
 lscpu
