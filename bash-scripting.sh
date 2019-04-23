@@ -8,6 +8,10 @@
 # https://www.linux.com/learn/writing-simple-bash-script
 # https://explainshell.com/explain/1/ln
 
+{ cat /var/log/apache2/qatats.access.log.1 /var/log/apache2/qatats.access.log ; zcat /var/log/apache2/qatats.access.log.*.gz;} | grep "/farasa/requestExecuter.php" | cut -f1,4,9,10 -d' ' | grep " 200 "  > Farasa_usage_requests.txt
+
+cat Farasa_usage_requests.txt Farasa_Downloads_requests.txt | cut -d' ' -f1 | sort | uniq | awk '{system("geoiplookup "$1" | grep Country ;echo "$1)}'  > Farasa_Country_lookup.txt
+
 sudo shutdown -h now
 
 readlink -f `which command`
