@@ -35,3 +35,8 @@ python manage.py makemigrations <app_name>
 
  # run the migrations for you and manage your database schema automatically
  python manage.py migrate
+
+#############################################################################################
+#########################  Deployment and Configuring Database  #############################
+#############################################################################################
+
