@@ -114,6 +114,18 @@ curl [--output|-o] live-online.gif https://dialectid.qcri.org/static/did/img/liv
 # http://www.thenerdary.net/post/24889968081/debugging-websockets-with-curl
 curl -i -N -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Host: echo.websocket.org" -H "Origin: http://www.websocket.org" http://echo.websocket.org
 curl -X POST https://farasa-api.qcri.org/farasa/webapi/segmenter -H 'content-type: application/json' -d '{"text": "حسبي الله ونعم الوكيل"}'
+
+curl [-i|--include] [-I|--head] [-N|--no-buffer]
+[-H|--header] 'Accept: application/json; indent=4' 
+[-F|--form] "name=content"
+[--data|-d] ["para1=disooqi&para2=qcri"|'{"text": "حسبي الله ونعم الوكيل"}']
+--data-urlencode ["para1=disooqi&para2=qcri"|'{"text": "حسبي الله ونعم الوكيل"}']
+-X [PUT|DELETE|POST]
+-u admin:password123
+[--output|-o] live-online.gif https://dialectid.qcri.org/static/did/img/live-online.gif
+
+--data-binary or --data-urlencode
+http://127.0.0.1:8000/farasa/segmentation/v01/
 ###########################################################################
 #####  How To Use The rsync Command - Sync Files Locally and Remotely  ####
 ###########################################################################
