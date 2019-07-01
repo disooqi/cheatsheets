@@ -1,0 +1,50 @@
+server {
+server_name 40.118.90.86 arabicspeech.org www.arabicspeech.org;
+
+# root /var/www/html;
+# index index.html index.htm index.nginx-debian.html;
+# proxy_pass_header X-Accel-Redirect;
+# location /mgb2/ {
+    # autoindex on;
+    # internal;
+    # alias '/data/mgb2/';
+    # index index.html index.htm index.nginx-debian.html;
+# }
+location /static/data_resources {
+    alias '/work/arabic-speech-website/arabic_speech_community/static/data_resources/';
+}
+
+location /mgb2/download {
+    internal;
+    alias '/data/mgb2/';
+}
+
+location / {
+    include proxy_params;
+    proxy_pass http://unix:/work/arabic-speech-website/arabicspeech.sock;
+}
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/arabicspeech.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/arabicspeech.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = www.arabicspeech.org) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = arabicspeech.org) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+listen 80;
+server_name 40.118.90.86 arabicspeech.org www.arabicspeech.org;
+    return 404; # managed by Certbot
+}

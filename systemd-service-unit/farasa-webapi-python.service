@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve farasa-webapi-python
+After=network.target
+
+[Service]
+User=altqcri
+Group=www-data
+WorkingDirectory=/home/altqcri/farasa-webapi-python
+Environment="PATH=/home/altqcri/farasa-webapi-python/.env366/bin"
+ExecStart=/home/altqcri/farasa-webapi-python/.env366/bin/gunicorn --workers 3 --bind unix:farasa-webapi-python.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

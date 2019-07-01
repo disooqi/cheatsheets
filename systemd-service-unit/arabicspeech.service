@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn instance to Arabic Speech
+After=network.target
+
+[Service]
+User=speech
+Group=www-data
+WorkingDirectory=/work/arabic-speech-website
+Environment="PATH=/work/arabic-speech-website/venv/bin"
+EnvironmentFile=/work/arabicspeech.env
+ExecStart=/work/arabic-speech-website/venv/bin/gunicorn --workers 3 --bind unix:arabicspeech.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
