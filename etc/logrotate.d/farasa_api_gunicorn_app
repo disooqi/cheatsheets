@@ -1,0 +1,11 @@
+/projects/gunicorn-access.log /projects/gunicorn-error.log {
+    monthly
+    dateext
+    dateformat -%Y-%m
+    dateyesterday
+    rotate 10000
+}
+
+
+
+
