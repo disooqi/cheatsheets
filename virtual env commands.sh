@@ -84,4 +84,15 @@ conda env create [-f <filename>]
 # To delete an environement just run
 conda remove --name <env_name> --all
 
+#####################################################################
+#####################################################################
 
+# You have chosen to not have conda modify your shell scripts at all. 
+# To activate conda's base environment in your current shell session:
+eval "$(/home/disooqi/miniconda2/bin/conda shell.YOUR_SHELL_NAME hook)"
+# To install conda's shell functions for easier access, first activate, then:
+conda init
+# If you'd prefer that conda's base environment not be activated on startup,  
+# set the auto_activate_base parameter to false:  
+conda config --set auto_activate_base false
+# Thank you for installing Miniconda2! 
