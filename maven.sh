@@ -1,3 +1,8 @@
+sudo tar xzvf Downloads/apache-maven-3.6.2-bin.tar.gz -C /opt/
+# Add the bin directory of the created directory apache-maven-x.x.x to the PATH environment variable
+export PATH=/opt/apache-maven-3.6.2/bin:$PATH
+
+
 # artifacts (plugin jars and other files) 
 
 # An archetype is defined as an original pattern or model from which all other things of the same kind are made. In Maven, 
