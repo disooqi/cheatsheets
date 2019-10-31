@@ -1,4 +1,30 @@
 #!/bin/sh
+
+## Go to https://www.oracle.com/technetwork/java/javase/downloads/index.html
+## Download jdk-xxx.xx.xx_linux-x64_bin.tar.gz 
+## Extract it here
+sudo tar xzvf jdk-13.0.1_linux-x64_bin.tar.gz -C /opt/
+
+
+# copy the following to set JAVA_HOME in file /etc/environment 
+JAVA_HOME="/opt/jdk-xx.xx.xx"
+
+# and then 
+source /etc/environment
+echo $JAVA_HOME
+
+# Then, copy the following to ~/.bashrc
+source /etc/environment
+export PATH=$PATH:$JAVA_HOME/bin
+
+# and then 
+source ~/.bashrc
+
+
+
+
+update-alternatives --config java
+
 # https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
 
 # Installing the Oracle JDK
@@ -28,3 +54,10 @@ readlink -f  `which javac`
 dirname `dirname "the-output of last line"`
 
 CATALINA_HOME="/home/disooqi/apache-tomcat-8.0.27"
+
+
+
+
+
+
+
