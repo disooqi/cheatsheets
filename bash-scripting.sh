@@ -12,6 +12,7 @@
 export PATH=/home/qcri/miniconda3/bin:$PATH
 
 
+
 { cat /var/log/apache2/qatats.access.log.1 /var/log/apache2/qatats.access.log ; zcat /var/log/apache2/qatats.access.log.*.gz;} | grep "/farasa/requestExecuter.php" | cut -f1,4,9,10 -d' ' | grep " 200 "  > Farasa_usage_requests.txt
 
 cat Farasa_usage_requests.txt Farasa_Downloads_requests.txt | cut -d' ' -f1 | sort | uniq | awk '{system("geoiplookup "$1" | grep Country ;echo "$1)}'  > Farasa_Country_lookup.txt
@@ -19,6 +20,10 @@ cat Farasa_usage_requests.txt Farasa_Downloads_requests.txt | cut -d' ' -f1 | so
 sudo shutdown -h now
 
 readlink -f `which command`
+
+# If you do not know the number of cores your processor, you can find it by typing
+nproc
+
 
 lscpu
 ln -fs <file_or_dir>
