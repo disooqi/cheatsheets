@@ -96,3 +96,27 @@ conda init
 # set the auto_activate_base parameter to false:  
 conda config --set auto_activate_base false
 # Thank you for installing Miniconda2! 
+
+
+######################################################################
+Using venv module
+######################################################################
+In Windows
+----------
+# Create environemnt
+python -m venv env
+
+# Activate environment
+env\Scripts\activate.bat
+
+# Update pip 
+python -m pip install --upgrade pip
+
+# Create requirements.txt file
+pip freeze  # copy the output from the screen and past it into a file
+
+# Deactivate our environment 
+deactivate
+
+# delete our environment 
+rmdir env /s
