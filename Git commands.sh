@@ -1,8 +1,7 @@
 #!/bin/sh
 # https://git-scm.com/download/linux
 apt-get install git
-# git lfs
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
 
 
 git config --global user.name "Mohamed Eldesouki"
@@ -20,6 +19,15 @@ git config --global color.ui true
 
 # Use the following project to change the bash prompt
 # https://github.com/magicmonty/bash-git-prompt
+
+
+########################################################################################
+################################### Git log ###########################################
+########################################################################################
+git log --graph --decorate --all --oneline
+
+git log -p -2 --stat --pretty=[oneline|short|full|filter|format=""] --graph
+
 ########################################################################################
 ################################### Branches ###########################################
 ########################################################################################
@@ -43,9 +51,6 @@ git checkout <branch_name>
 
 * To create a branch and check it out at the same time
 git checkout -b <branch_name>
-
-*
-git log --graph --decorate --all --oneline
 
 * Comparing branches
 git --color-words diff <branch_name1>..<branch_name2>
@@ -194,6 +199,12 @@ git config --global http.postBuffer 524288000
 ###########################################################
 ################   Git lfs installation  ##################
 ###########################################################
+
+
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
+# OR
+
 # Navigate to git-lfs.github.com and click Download.
 # locate and unzip the downloaded file.
 # then CD and run:
@@ -210,8 +221,9 @@ git lfs track
 # https://help.github.com/articles/duplicating-a-repository/
 
 
+
 ###########################################################
-################   Git lfs installation  ##################
+################   Git Deployments  ##################
 ###########################################################
 https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
 https://developer.github.com/v3/guides/delivering-deployments/
