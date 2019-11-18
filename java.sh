@@ -1,5 +1,6 @@
 #!/bin/sh
 
+wget  --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie"  https://download.oracle.com/otn-pub/java/jdk/13.0.1+9/cec27d702aa74d5a8630c65ae61e4305/jdk-13.0.1_linux-x64_bin.tar.gz
 ## Go to https://www.oracle.com/technetwork/java/javase/downloads/index.html
 ## Download jdk-xxx.xx.xx_linux-x64_bin.tar.gz 
 ## Extract it here
