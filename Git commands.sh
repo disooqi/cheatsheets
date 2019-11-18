@@ -5,8 +5,10 @@ apt-get install git
 
 
 git config --global user.name "Mohamed Eldesouki"
-git config --global user.email mohamohamed@qf.org.qa
+git config --global user.email disooqi@gmail.com
+
 git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"
+git config --global core.editor "vim"
 
 # storing your credential i.e. username and password
 # cache option for 15min and store option for ever, --global just to store it in the home directory instead of the project dir
