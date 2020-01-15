@@ -21,6 +21,10 @@ sudo shutdown -h now
 
 readlink -f `which command`
 
+# Check whether Ubuntu OS architecture is 32-bit or 64-bit. 
+file /sbin/init
+file /lib/systemd/systemd
+
 # If you do not know the number of cores your processor, you can find it by typing
 nproc
 
