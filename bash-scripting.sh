@@ -253,6 +253,8 @@ sudo tail -f /var/log/apache2/access.log
 ls -l /etc/alternatives
 
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0.05/bin/java 1
+sudo update-alternatives --install /usr/bin/java java ${JAVA_HOME%*/}/bin/java 20000
+sudo update-alternatives --install /usr/bin/javac javac ${JAVA_HOME%*/}/bin/javac 20000
 
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
