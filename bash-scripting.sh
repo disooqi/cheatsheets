@@ -247,5 +247,17 @@ screen -d -r <screen>
 sudo tail -f /var/log/apache2/access.log
 
 
+##########################################################################
+#####################    update-alternatives   ###########################
+##########################################################################
+ls -l /etc/alternatives
+
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0.05/bin/java 1
+
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+
+##########################################################################
 ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 
