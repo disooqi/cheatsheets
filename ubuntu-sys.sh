@@ -63,3 +63,8 @@ sudo ppa-purge ppa:<your package>/ppa
 # or 
 # search for 'software & update' and choose 'Other Software' tap
 # and then remove the ppa you want.
+
+##############################################################################
+###################### Ubuntu-Windows Dual Boot ##############################
+##############################################################################
+Found Windows Boot Manager on /dev/nvme0n1p1@/EFI/Microsoft/Boot/bootmgfw.efi
