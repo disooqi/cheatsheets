@@ -14,6 +14,8 @@ JAVA_HOME="/opt/jdk-xx.xx.xx"
 source /etc/environment
 echo $JAVA_HOME
 
+# OPTION 1
+#============
 # Then, copy the following to ~/.bashrc
 source /etc/environment
 export PATH=$PATH:$JAVA_HOME/bin
@@ -22,11 +24,18 @@ export PATH=$PATH:$JAVA_HOME/bin
 source ~/.bashrc
 
 
+# OPTION 2
+#============
+sudo update-alternatives --install /usr/bin/java java ${JAVA_HOME%*/}/bin/java 20000
+sudo update-alternatives --install /usr/bin/javac javac ${JAVA_HOME%*/}/bin/javac 20000
+sudo update-alternatives --install /usr/bin/javaws javaws ${JAVA_HOME%*/}/bin/javaws 20000
+
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+sudo update-alternatives --config javaws
 
 
-update-alternatives --config java
-
-# https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
+# https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04
 
 # Installing the Oracle JDK
 # If you want to install the Oracle JDK, which is the official version distributed by Oracle, you will need to follow a few more steps.
@@ -55,10 +64,3 @@ readlink -f  `which javac`
 dirname `dirname "the-output of last line"`
 
 CATALINA_HOME="/home/disooqi/apache-tomcat-8.0.27"
-
-
-
-
-
-
-
