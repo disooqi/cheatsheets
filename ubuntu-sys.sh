@@ -4,6 +4,12 @@
 ########################################
 ###### First-time installation #########
 ########################################
+#jet-brains toolbox 
+1  sudo tar -xzf Downloads/jetbrains-toolbox-1.16.6016.tar.gz -C /opt
+2  cd /opt/jetbrains-toolbox-1.16.6016/
+3  bash jetbrains-toolbox 
+4  ./jetbrains-toolbox
+
 # pycharm
 sudo tar xf <pycharm-professional or pycharm-community>-*.tar.gz -C /opt/ [--strip-component]
 cd /opt/<pycharm-professional or pycharm-community>/bin
