@@ -53,7 +53,7 @@ wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
 sudo apt-get update
 sudo apt-get upgrade
 
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev  libncursesw5-dev xz-utils tk-dev
+sudo apt-get install -y make  wget curl llvm xz-utils 
 sudo apt-get install -y checkinstall
 sudo apt-get install -y libreadline-gplv2-dev
 sudo apt-get install -y libgdbm-dev
@@ -63,6 +63,7 @@ sudo apt-get install -y libffi-dev
 sudo apt-get install -y python3-dev
 sudo apt-get install -y python3-setuptools
 
+# One more word, full necessary dependencies on my Ubuntu 18.04:
 sudo apt-get install -y build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev \
 zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev \
 libncursesw5-dev libffi-dev uuid-dev
