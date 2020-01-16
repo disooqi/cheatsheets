@@ -63,6 +63,9 @@ sudo apt-get install -y libffi-dev
 sudo apt-get install -y python3-dev
 sudo apt-get install -y python3-setuptools
 
+sudo apt-get install -y build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev \
+zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev \
+libncursesw5-dev libffi-dev uuid-dev
 
 tar xvf Python-3.6.5.tgz
 cd Python-3.6.5
