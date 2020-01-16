@@ -14,6 +14,8 @@ JAVA_HOME="/opt/jdk-xx.xx.xx"
 source /etc/environment
 echo $JAVA_HOME
 
+##  https://java.com/en/download/help/linux_x64_install.xml
+
 # OPTION 1
 #============
 # Then, copy the following to ~/.bashrc
