@@ -10,6 +10,12 @@ ssh-keygen -t rsa
 ssh-keygen -t rsa -C "your_email@example.com"
 ssh-keygen -t rsa -f cloud.key
 
+############################################################
+# On your local machine (not the VM), you will need to     #
+# change key permissions with the chmod 400 <key name>.pem # 
+# command in order to connect with this key.               #
+############################################################
+
 # copy the public key into the server
 # .ssh folder should be 700 and authorized_keys file should be 600
 cat ~/.ssh/id_rsa.pub | ssh [username]@[server.ip.address.here] "cat >> ~/.ssh/authorized_keys"
