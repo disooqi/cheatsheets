@@ -26,6 +26,8 @@ https://antonyagnel.com/2016/09/18/things-to-do-after-installing-ubuntu-16-04-lt
 # On newer systems running systemd (e.g. Ubuntu 16.04), you should use:
 sudo hostnamectl set-hostname new-name
 
+
+ssh-keygen -t rsa -f cloud.key
 ###########################################################################
 ###############  Initial Server Setup with Ubuntu 16.04  ##################
 ###########################################################################
