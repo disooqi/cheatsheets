@@ -246,8 +246,8 @@ screen -X -S [session_no you want to kill] quit
 screen -d -r <screen>
 
 #########################################################################
-##############   tail   ##########################
-#####################################################################
+###############################   tail   ################################
+#########################################################################
 sudo tail -f /var/log/apache2/access.log
 
 
@@ -262,6 +262,10 @@ sudo update-alternatives --install /usr/bin/javac javac ${JAVA_HOME%*/}/bin/java
 
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
+
+sudo update-alternatives --remove java ${JAVA_HOME%*/}/bin/java
+
+sudo update-alternatives --remove-all java
 
 
 ##########################################################################
