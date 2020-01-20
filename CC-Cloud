@@ -1,0 +1,1 @@
+ssh -i /path/where/your/key/is/my_key.key ubuntu@<public IP of your server>
