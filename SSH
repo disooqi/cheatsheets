@@ -15,6 +15,9 @@ ssh-keygen -t rsa -f cloud.key
 # change key permissions with the chmod 400 <key name>.pem # 
 # command in order to connect with this key.               #
 ############################################################
+# refer to the private key you want to use
+ssh -i /path/where/your/key/is/my_key.key <user name>@<public IP of your server>
+
 
 # copy the public key into the server
 # .ssh folder should be 700 and authorized_keys file should be 600
