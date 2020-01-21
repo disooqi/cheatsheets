@@ -1,1 +1,3 @@
 ssh -i /path/where/your/key/is/my_key.key ubuntu@<public IP of your server>
+scp -i projects/encs.key Downloads/jdk-13.0.2_linux-x64_bin.tar.gz  ubuntu@206.12.92.208:/home/ubuntu/
+
