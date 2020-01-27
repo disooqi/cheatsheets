@@ -33,6 +33,9 @@ ssh-keygen -t rsa -f cloud.key
 ###########################################################################
 adduser disooqi
 usermod -aG sudo disooqi
+
+sudo useradd -U -m -G sudo -s /bin/bash lorisadmin
+
 su - disooqi
 mkdir ~/.ssh
 chmod 700 ~/.ssh
