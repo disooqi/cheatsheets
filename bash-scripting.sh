@@ -146,6 +146,8 @@ curl [-i|--include] [-I|--head] [-N|--no-buffer]
 
 --data-binary or --data-urlencode
 http://127.0.0.1:8000/farasa/segmentation/v01/
+
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 ###########################################################################
 #####  How To Use The rsync Command - Sync Files Locally and Remotely  ####
 ###########################################################################
