@@ -28,6 +28,17 @@ sudo hostnamectl set-hostname new-name
 
 
 ssh-keygen -t rsa -f cloud.key
+
+# Install Eclipse, https://websiteforstudents.com/how-to-install-eclipse-oxygen-ide-on-ubuntu-167-04-17-10-18-04/
+# Step 1: Install Java JDK 
+# Step 2: Download Eclipse; something like eclipse-inst-linux64.tar.gz
+# Step 3: Install Eclipse IDE
+sudo tar -xzf ~/Downloads/eclipse-inst-linux64.tar.gz -C /opt
+# run 
+/opt/eclipse-installer/eclipse-inst
+# Create Eclipse App Launcher
+vim .local/share/applications/eclipse.desktop
+
 ###########################################################################
 ###############  Initial Server Setup with Ubuntu 16.04  ##################
 ###########################################################################
