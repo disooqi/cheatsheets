@@ -33,8 +33,23 @@ tail -f virtuoso.log
 # commandline (in unixODBC, an ODBC DSN; in Virtuoso, the SQL interface). In order to allow both packages to 
 # coexist, Ubuntu rename Virutoso's isql command to isql-vt.
 
+###  Loging into Console
+###############################################################
+isql-vt 1111 dba encs123
+
+
 ################################################################
 ###  LOADING RDF Knowledge base to "Virtuoso open source"    ###
 ###  http://vos.openlinksw.com/owiki/wiki/VOS/VOSUbuntuNotes ###
 ################################################################
+# http://vos.openlinksw.com/owiki/wiki/VOS/VirtBulkRDFLoader
+# https://github.com/dbpedia/dbpedia-docs/wiki/Loading-Data-Virtuoso
+# https://3.basecamp.com/4345710/buckets/15349961/messages/2391160806
+
+
+
+
+
+
+
 
