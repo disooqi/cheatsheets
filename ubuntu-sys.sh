@@ -90,3 +90,14 @@ sudo ppa-purge ppa:<your package>/ppa
 ###################### Ubuntu-Windows Dual Boot ##############################
 ##############################################################################
 Found Windows Boot Manager on /dev/nvme0n1p1@/EFI/Microsoft/Boot/bootmgfw.efi
+
+
+## SWAP file
+sudo fallocate -l  1G /swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+sudo chmod 600 /swapfile # to be readable only by the root
+sudo mkswap /swapfile
+sudo swapon /swapfile
+# edit file /etc/fstab to add this [/swapfile swap swap defaults 0 0]
+sudo vim /etc/fstab
+sudo mount -a # do this after reboot to make sure there no misspellings in there
