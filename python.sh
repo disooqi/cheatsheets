@@ -98,3 +98,15 @@ sudo apt-get update \
   --enable-ipv6 --with-threads --with-pydebug --disable-rpath \
   && make \
   && sudo make altinstall
+  
+###############################################################
+###   Writing simpler and more maintainable Python  ####
+###############################################################
+# TALK: Anthony Shaw - Wily Python: Writing simpler and more maintainable Python - PyCon 2019 [https://www.youtube.com/watch?v=dqdsNoApJ80]
+pip install radon
+radon cc wise.py -s
+radon mi wise.py -s
+radon hal  wise.py
+
+# Also you can use wily python to look at the complexity development of your code through looking at the github repo 
+
