@@ -91,8 +91,14 @@ sudo ppa-purge ppa:<your package>/ppa
 ##############################################################################
 Found Windows Boot Manager on /dev/nvme0n1p1@/EFI/Microsoft/Boot/bootmgfw.efi
 
+###############################################################
+###################### SWAP file ##############################
+###############################################################
 
-## SWAP file
+# For swap size in Ubuntu: https://itsfoss.com/swap-size/
+# https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-18-04
+
+
 sudo fallocate -l  1G /swapfile
 sudo dd if=/dev/zero of=/swapfile bs=1024 count=1048576
 sudo chmod 600 /swapfile # to be readable only by the root
