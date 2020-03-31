@@ -34,7 +34,7 @@ git log -p -2 --stat --pretty=[oneline|short|full|filter|format=""] --graph
 ################################### Branches ###########################################
 ########################################################################################
 
-* To look to the current branch
+# To look to the current branch
 git branch
 
 git branch -r # show you remote branches
@@ -45,41 +45,44 @@ cat .git/HEAD
 ls -la .git/refs/heads
 cat .git/refs/heads/master
 
-* To create a new branch
+# To create a new branch
 git branch <branch_name>
 
-* To switch to another branch
+# To switch to another branch
 git checkout <branch_name>
 
-* To create a branch and check it out at the same time
+# To create a branch and check it out at the same time
 git checkout -b <branch_name>
 
-* Comparing branches
+# To create the branch via a hash
+git checkout -b <branch_name> <sha1-of-commit>
+
+# Comparing branches
 git --color-words diff <branch_name1>..<branch_name2>
 
-* To show all branches that it is completely included in the current branch
+# To show all branches that it is completely included in the current branch
 git branch --merged
 
-* To rename a branch
+# To rename a branch
 git branch (-m|--move) <old_branch_name> <new_branch_name>
 
-* To delete a branch
+# To delete a branch
 git branch (-d|--delete) <branch_name>
 git branch -D <branch_name>
 
 ########################################################################################
 ############################### Merging Branches #######################################
 ########################################################################################
-* Merging a branch to the current branch (the reciever)
+# Merging a branch to the current branch (the reciever)
 git merge <branch_name>
 
-* TO force git making new commit in Fast-forward  merge
+# TO force git making new commit in Fast-forward  merge
 git merge --no-ff <branch_name>
 
-* To do a merge only if you can do a fast-forward
+# To do a merge only if you can do a fast-forward
 git merge --ff-only <branch_name>
 
-* To abort merge
+# To abort merge
 git merge --abort
 
 ########################################################################################
