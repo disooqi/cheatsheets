@@ -1,5 +1,10 @@
 #!/bin/bash
 
+## Creating a Flask Project
+# https://www.jetbrains.com/help/pycharm/creating-flask-project.html#
+# https://blog.miguelgrinberg.com/post/setting-up-a-flask-application-in-pycharm
+
+
 pip install flask
 pip install flask-wtf
 
