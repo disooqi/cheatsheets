@@ -51,9 +51,15 @@ pipenv lock
 
 # Create .env file for your environement variables
 #SECRET_KEY="fgfm4534kfdgdklnml5498"
-################
-## virtualenv ##
-################
+
+
+# if you already have an old virtual env created using `virtualenv` command and you want to use it with pipenv, do the following:
+# 1) Activate the old environment, then 
+# 2) run sh`pipenv install`
+
+######################################################
+################ virtualenv ##########################
+######################################################
 
 # to install virtualenv
 pip install virtualenv
