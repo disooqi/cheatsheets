@@ -1,4 +1,21 @@
 #!/bin/sh
+
+1) Install PyEnv
+  A. git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+  B. echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+  C. echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+  D. echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >>  ~/.bashrc
+  E. restart the shell
+  F. exec "$SHELL"
+  G. Install build dependencies i.e. (sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev)
+  H. Install Python versions into $(pyenv root)/versions (pyenv install 2.7.8)
+  I. To update pyenv (cd $(pyenv root)) and then (git pull)
+2) Install pipEnv
+3) Install PyCharm
+4) Install Git-shell_prompt
+
+
+
 https://repo.continuum.io/
 # Python tutorials
 # http://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/quickstart.html
