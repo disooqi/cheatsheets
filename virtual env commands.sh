@@ -7,7 +7,9 @@
 sudo -H pip install -U pipenv
 
 # To create of update existed ENV for "pipfile"
+# Be ware of this issue https://github.com/pypa/pipenv/issues/1914#issuecomment-429515521 and use --skip-lock
 pipenv install [--python 3.8]
+pipenv  install -v --skip-lock allennlp==0.9.0 --python 3.7
 
 # For production 
 pipenv install --ignore-pipfile
@@ -19,7 +21,7 @@ pipenv --venv
 pipenv install -r ../the/path/to/your/requirements.txt
 
 # To delete an ENV 
-pipenv ==rm
+pipenv --rm
 
 # To activate the environment
 pipenv shell
