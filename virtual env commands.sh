@@ -1,6 +1,54 @@
 #!/bin/sh
-# Please check https://conda.io/docs/user-guide/tasks/manage-environments.html for more details
 
+################
+#### Pipenv ####
+################
+# Installing pipenv 
+sudo -H pip install -U pipenv
+
+# To create of update existed ENV for "pipfile"
+pipenv install [--python 3.8]
+
+# For production 
+pipenv install --ignore-pipfile
+
+# To get the DIR of the virtual env
+pipenv --venv
+
+# To install packages from an old requirements.txt file this will create an ENV if does not exist
+pipenv install -r ../the/path/to/your/requirements.txt
+
+# To delete an ENV 
+pipenv ==rm
+
+# To activate the environment
+pipenv shell
+
+# To deactivate an environment
+exit
+
+# To install a package (use the --dev flag only if you want packages installed only for dev environment)
+pipenv install <package_name> [--dev]
+
+pipenv uninstall <package_name> [--dev]
+
+# To install packages from an old requirements.txt file
+pipenv install -r ../the/path/to/your/requirements.txt
+
+# To run a python script without activating the virtual environment.
+pipenv run python <my_script.py>
+
+# To run the interactive python of an ENV without activating it
+pipenv run python
+
+# To generate requirements.txt file to distribute it with your project so people who still use virtualenv can generate the same env:
+pipenv lock -r
+
+# To update pipfile.lock
+pipenv lock
+
+# Create .env file for your environement variables
+#SECRET_KEY="fgfm4534kfdgdklnml5498"
 ################
 ## virtualenv ##
 ################
@@ -59,7 +107,7 @@ rm -rf <myenvname>
 ################
 ### Anaconda ###
 ################
-
+# Please check https://conda.io/docs/user-guide/tasks/manage-environments.html for more details
 # conda is used to install non-python packages and dependencies 
 conda --help
 conda list
