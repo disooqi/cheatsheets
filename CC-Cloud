@@ -1,3 +1,51 @@
 ssh -i /path/where/your/key/is/my_key.key ubuntu@<public IP of your server>
 scp -i projects/encs.key Downloads/jdk-13.0.2_linux-x64_bin.tar.gz  ubuntu@206.12.92.208:/home/ubuntu/
 
+# Network
+##############
+Provider networks are created by administrators. These networks map to an existing physical network in the data center.
+
+Project networks are created by users. These networks are fully isolated and are project-specific.
+
+An External network is set up by an administrator. If you want an instance to communicate outside of the data center, then attach a router between your Project network and the External network. You can use the Network Topology view to connect the router to the two networks.
+
+A floating IP allows instances to be addressable from an external network. Floating IPs are not allocated to instances at creation time and may be assigned after the instance is created. To attach a floating IP, go to the Instances view and click the Actions menu to the right of an instance. Then, select the Associate Floating IP option and enter the necessary details.
+
+Administrators set up the pool of floating IPs that are available to attach to instances.
+Network characteristics
+
+The subnet identifies a sub-section of a network. A subnet is specified in CIDR format. A typical CIDR format looks like 192.xxx.x.x/24.
+
+If a network is shared, then all users in the project can access the network.
+
+When the Admin State for a network is set to Up, then the network is available for use. You can set the Admin State to Down if you are not ready for other users to access the network.
+
+The status indicates whether the network has an active connection.
+
+# Network Ports
+############
+Ports provide extra communication channels to your instances. You can select ports instead of networks or a mix of both.
+
+A port represents a virtual switch port on a logical network switch.
+
+Ports can be created under a network by administrators.
+
+Virtual instances attach their interfaces to ports.
+
+The logical port also defines the MAC address and the IP address(es) to be assigned to the interfaces plugged into them.
+
+When IP addresses are associated to a port, this also implies the port is associated with a subnet, as the IP address was taken from the allocation pool for a specific subnet.
+
+When the Admin State for a port is set to Up and it has no Device Owner, then the port is available for use. You can set the Admin State to Down if you are not ready for other users to use the port.
+
+The status indicates whether the port has an active connection.
+
+
+# Server Group
+##############
+Server groups define collections of VM's so that the entire collection can be given specific properties. For example, the policy of a server group may specify that VM's in this group should not be placed on the same physical hardware due to availability requirements.
+
+Server groups are project-specific and cannot be shared across projects.
+
+
+
