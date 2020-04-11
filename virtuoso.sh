@@ -4,8 +4,11 @@
 ################################################################
 
 sudo apt-get update
+sudo apt-get -y install aptitude
+
 apt-cache search '^virtuoso'
-sudo apt install  virtuoso-opensource
+sudo apt install  virtuoso-opensource # DON'T USE SPECIAL CHARACHTER TO SETUP YOUR PASSWORD
+
 
 # check existance of path /usr/bin/isql-vt
 
