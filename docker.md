@@ -1,3 +1,13 @@
+https://docs.docker.com/
+https://realpython.com/tutorials/docker/
+https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask-application-using-docker-on-ubuntu-18-04
+https://www.digitalocean.com/community/tags/docker?subtype=tutorial
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
+https://medium.com/@riken.mehta/full-stack-tutorial-flask-react-docker-ee316a46e876
+https://medium.com/@dwernychukjosh/setting-up-nginx-gunicorn-celery-redis-supervisor-and-postgres-with-django-to-run-your-python-73c8a1c8c1ba
+
+https://www.tensorflow.org/tfx/serving/docker
+
 Install Docker
 -----------------
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker
