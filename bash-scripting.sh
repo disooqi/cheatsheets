@@ -68,6 +68,9 @@ grep -r -i "some string" /home/yourusername
 ###########################################################################
 wget -O /tmp/model.tar.gz https://qcristore.blob.core.windows.net/public/asrlive/models/arabic/nnet3sac.tar.gz
 
+# If you insert no -l option, wget will use -l 5 automatically.
+wget -r --no-parent -A .ttl.bz2 -l 1 http://downloads.dbpedia.org/2016-10/core-i18n/en/
+
 
 
 ###########################################################################
