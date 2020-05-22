@@ -41,4 +41,6 @@ bundle exec jekyll serve
 
 bundle install
 
-jekyll serve
+# set baseurl to empty when run locally
+jekyll serve --watch --baseurl ""
+
