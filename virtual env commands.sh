@@ -6,10 +6,11 @@
 # Installing pipenv 
 sudo -H pip install -U pipenv
 
-# To create of update existed ENV for "pipfile"
+# To create or update existed ENV for "pipfile"
 # Be ware of this issue https://github.com/pypa/pipenv/issues/1914#issuecomment-429515521 and use --skip-lock
 pipenv install [--python 3.8]
 pipenv  install -v --skip-lock allennlp==0.9.0 --python 3.7
+
 
 # For production 
 pipenv install --ignore-pipfile
@@ -43,7 +44,8 @@ pipenv run python <my_script.py>
 # To run the interactive python of an ENV without activating it
 pipenv run python
 
-# To generate requirements.txt file to distribute it with your project so people who still use virtualenv can generate the same env:
+# To generate requirements.txt file to distribute it with your project so people who still use virtualenv can generate 
+# the same env:
 pipenv lock -r
 
 # To update pipfile.lock
@@ -53,9 +55,14 @@ pipenv lock
 #SECRET_KEY="fgfm4534kfdgdklnml5498"
 
 
-# if you already have an old virtual env created using `virtualenv` command and you want to use it with pipenv, do the following:
+# if you already have an old virtual env created using `virtualenv` command and you want to use it with pipenv, do the 
+# following:
 # 1) Activate the old environment, then 
 # 2) run sh`pipenv install`
+
+# It’s worth adding the Pipfiles to your Git repository, so that if another user were to clone the repository, all they would
+# have to do is install Pipenv on their system and then type,
+pipenv install
 
 ######################################################
 ################ virtualenv ##########################
@@ -133,7 +140,8 @@ source deactivate <env_name>
 conda env export > environment.yml
 
 # if you want to recreate the environment run the following
-# it requires that you are in the same directory of file environment.yml and the name of the file should either has the name of "environment.yml" or "environment.yaml"
+# it requires that you are in the same directory of file environment.yml and the name of the file should either has 
+# the name of "environment.yml" or "environment.yaml"
 conda env create [-f <filename>]
 
 
