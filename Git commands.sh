@@ -67,6 +67,9 @@ git branch --merged
 git branch (-m|--move) <old_branch_name> <new_branch_name>
 
 # To delete a branch
+# The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in 
+# its upstream branch. You could also use -D, which is an alias for --delete --force, which deletes the branch 
+# "irrespective of its merged status." [Source: man git-branch]
 git branch (-d|--delete) <branch_name>
 git branch -D <branch_name>
 
@@ -139,8 +142,9 @@ git branch <branch_name>  <remote_branch_name>
 
 git checkout -b <branch_name>  <remote_branch_name>
 
-git push <alias> :<branch_name_todelete>
-git push <alias> --deleted <branch_name_todelete> 
+# Delete remote branch
+git push <alias> :<branch_name_todelete> # or
+git push <alias> [-d|--delete] <branch_name_todelete> 
 
 
 ###############################################################################################
