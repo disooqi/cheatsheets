@@ -195,3 +195,52 @@ docker swarm
 kopernares
 orecsterating
 ```
+#########################################################################
+sudo apt install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   
+   
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+sudo systemctl status docker
+ 
+sudo usermod -aG docker ${USER}
+su - ${USER}
+id -nG
+
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+  curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+  sudo mv /tmp/docker-machine /usr/local/bin/docker-machine &&
+  chmod +x /usr/local/bin/docker-machine
+  
+docker-machine  --version
+
+sudo apt-get install virtualbox
+
+vim Dockerfile
+docker build -t cowsay .
+docker run --rm cowsay
+docker run -it --rm python:rc
+
+docker images
+docker ps -a
+
+docker rmi fa50228a2a35
+docker rm fa50228a2a35
