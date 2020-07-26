@@ -26,6 +26,7 @@ curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
 
 # To store your virtualenv inside your project directory
 export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_CACHE_DIR=""
 
 # To create or update existed ENV for "pipfile"
 # Be ware of this issue https://github.com/pypa/pipenv/issues/1914#issuecomment-429515521 and use --skip-lock
