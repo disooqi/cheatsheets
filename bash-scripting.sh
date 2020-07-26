@@ -44,6 +44,11 @@ kill -9 8135
 ps fx
 awk '{print $1}' /var/log/nginx/access.log  | sort | uniq -c
 date
+
+# To find pids (process numbers) that are using /tmp
+fuser -m /tmp
+# stop or kill processes
+ps -elf <pids>
 ##############################################################################################
 ls -l, which only displays the size of the individual files in a directory, nor
 df -h, which only displays the free and used space on my disks.
@@ -56,7 +61,7 @@ du -h --max-depth=1 . | sort -hr # -h is to get the numbers "human readable", e.
 du -hs /path/to/directory # -s is for summary (otherwise you'll get not only the size of the folder but also for everything in the folder separately) 
 
 df -alkh /
-
+sudo lsblk
 
 ## SCP
 ####################
