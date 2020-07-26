@@ -48,11 +48,15 @@ date
 ls -l, which only displays the size of the individual files in a directory, nor
 df -h, which only displays the free and used space on my disks.
  
-#   -h is to get the numbers "human readable", e.g. get 140M instead of 143260 (size in KBytes)
-#   -s is for summary (otherwise you'll get not only the size of the folder but also for everything in the folder separately)   
-du -hs /path/to/directory
+
+# To get the size of each dir in the in a specific dir use the following
+du -h --max-depth=1 . | sort -hr # -h is to get the numbers "human readable", e.g. get 140M instead of 143260 (size in KBytes)
+
+# To get the only the summary of the dir
+du -hs /path/to/directory # -s is for summary (otherwise you'll get not only the size of the folder but also for everything in the folder separately) 
 
 df -alkh /
+
 
 ## SCP
 ####################
