@@ -11,6 +11,14 @@
 # You may wish to edit your .bashrc to prepend the Miniconda3 install location to PATH:
 export PATH=/home/qcri/miniconda3/bin:$PATH
 
+######################################################################
+########   How to (safely) move /tmp to a different volume?  #########
+######################################################################
+https://unix.stackexchange.com/questions/5489/how-to-safely-move-tmp-to-a-different-volume/5503#5503
+https://linuxhint.com/lvm-ubuntu-tutorial/
+https://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/
+https://wiki.ubuntu.com/Lvm
+https://unix.stackexchange.com/questions/282393/union-mount-on-linux#386758
 
 
 { cat /var/log/apache2/qatats.access.log.1 /var/log/apache2/qatats.access.log ; zcat /var/log/apache2/qatats.access.log.*.gz;} | grep "/farasa/requestExecuter.php" | cut -f1,4,9,10 -d' ' | grep " 200 "  > Farasa_usage_requests.txt
