@@ -21,7 +21,8 @@ pyenv global 3.7.6
 #### Pipenv ####
 ################
 # Installing pipenv 
-sudo -H pip install -U pipenv
+pip install --user pipenv # sudo -H pip install -U pipenv
+
 
 # If you don’t even have pip installed, you can use this crude installation method, which will bootstrap your whole system:
 curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
