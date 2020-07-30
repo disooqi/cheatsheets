@@ -196,6 +196,7 @@ kopernares
 orecsterating
 ```
 #########################################################################
+```bash
 sudo apt install \
     apt-transport-https \
     ca-certificates \
@@ -244,3 +245,4 @@ docker ps -a
 
 docker rmi fa50228a2a35
 docker rm fa50228a2a35
+```
