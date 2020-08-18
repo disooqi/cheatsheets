@@ -36,7 +36,8 @@ file /lib/systemd/systemd
 # If you do not know the number of cores your processor, you can find it by typing
 nproc
 
-
+cat /etc/os-release
+uname -a
 lscpu
 ln -fs <file_or_dir>
 ln -s /etc/nginx/sites-available/dialectid /etc/nginx/sites-enabled
