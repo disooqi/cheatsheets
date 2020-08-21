@@ -1,5 +1,16 @@
 #!/bin/sh
 
+##########################################################################################################
+#############################################  THIS IS IT  ###############################################
+### https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-20-04#installing-oracle-jdk-11
+### https://www.fosstechnix.com/install-oracle-java-8-on-ubuntu-20-04/
+### JAVA_HOME vs update-alternatives
+### https://unix.stackexchange.com/questions/123412/what-is-the-difference-between-java-home-and-update-alternatives
+### https://stackoverflow.com/questions/41059994/default-java-java-home-vs-sudo-update-alternatives-config-java
+### 
+##########################################################################################################
+##########################################################################################################
+
 wget  --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie"  https://download.oracle.com/otn-pub/java/jdk/13.0.1+9/cec27d702aa74d5a8630c65ae61e4305/jdk-13.0.1_linux-x64_bin.tar.gz
 ## Go to https://www.oracle.com/technetwork/java/javase/downloads/index.html
 ## Download jdk-xxx.xx.xx_linux-x64_bin.tar.gz 
