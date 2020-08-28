@@ -2,7 +2,7 @@
 # https://git-scm.com/download/linux
 apt-get install git
 
-
+# https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 
 git config --global user.name "Mohamed Eldesouki"
 git config --global user.email disooqi@gmail.com
