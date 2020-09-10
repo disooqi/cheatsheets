@@ -1,0 +1,23 @@
+
+
+############################################
+################  Windows  #################
+############################################
+# Install PowerShell for windows:
+  - https://github.com/powershell/powershell
+  - https://github.com/PowerShell/PowerShell/tree/master/docs/learning-powershell
+  - https://docs.microsoft.com/en-us/powershell/?view=powershell-7
+# get syntax from here https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7
+# Example:
+Get-FileHash C:\Users\disoo\Downloads\jdk-14.0.2_windows-x64_bin.exe -Algorithm SHA256 | Format-List
+
+
+
+# Using Microsoft FCIV
+https://www.microsoft.com/en-us/download/details.aspx?id=11533
+
+
+############################################
+#################  Linux  ##################
+############################################
+On Linux use the sha256sum or md5sum command line utilities to verify the integrity of the downloaded file.
