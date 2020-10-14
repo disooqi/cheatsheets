@@ -292,7 +292,13 @@ sudo update-alternatives --remove java ${JAVA_HOME%*/}/bin/java
 
 sudo update-alternatives --remove-all java
 
+#############################################################
+https://linoxide.com/linux-how-to/few-command-helps-to-get-linux-hardware-details/
 
 ##########################################################################
 ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 
+####################################
+#### get linux hardware details
+#####################################3
+https://linoxide.com/linux-how-to/few-command-helps-to-get-linux-hardware-details/
