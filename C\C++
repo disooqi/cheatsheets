@@ -1,3 +1,69 @@
 ## https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html
 ## http://www.lurklurk.org/linkers/linkers.html
 
+
+#######################################################################################################
+##    -o: specifies the output executable filename. 
+##    -Wall: prints "all" Warning messages.
+##    -g: generates additional symbolic debuggging information for use with gdb debugger.
+##    -c: Compile into object file "Hello.o". 
+##    -v: verpose mode
+##    -D: You can use the -Dname option to define a macro, or -Dname=value to define a macro with a value. The value should be enclosed in double quotes if it contains spaces.
+#######################################################################################################
+// object file (*.o)
+// executable  (*)
+// shared library (*.so)
+
+// Compile-only with -c option
+$ g++ -c -Wall -g Hello.cpp
+// Link object file(s) into an executable
+$ g++ -g -o Hello Hello.o
+
+// compile the source file into object file and link with other object files and system libraries into executable in one step. 
+$ g++ -Wall -g -o Hello Hello.cpp
+
+
+// ---------------------------------------
+// Compile and Link Multiple Source Files
+//----------------------------------------
+
+g++ -o myprog file1.cpp file2.cpp  //compile and link all of them in a single command
+
+// However, we usually compile each of the source files separately into object file, and link them together in the later stage. 
+// In this case, changes in one file does not require re-compilation of the other files.
+g++ -c file1.cpp
+g++ -c file2.cpp
+g++ -o myprog file1.o file2.o
+
+//-------------------------------
+// Compile into a Shared Library
+//-------------------------------
+// To compile and link C/C++ program into a shared library (".dll" in Windows, ".so" in Unixes), use -shared option. Read "Java Native Interface" for example.
+g++ -fPIC -shared -o myLib.so file1.o file2.o
+
+        | source code (.c  .cpp   .h)
+        V
+|================================|
+|  Preprocessing (preprocessor)  | 
+| > cpp hello.c > hello.i        |
+|================================|
+        | include header, expand macro (.i   .ii)
+        V
+|===========================|
+|   Compilation (compiler)  |
+|   > gcc -S hello.i        |
+|===========================|  
+        | assembly code (.s)
+        V
+|=============================|
+|     Assemble (Assembler)    |
+|     > as -o hello.o hello.s |
+|=============================|  
+        | machine code (.o   .obj)
+        V
+|==============================================|
+|     Linking (Linker)                         |<------------------ static libraries (.a  .lib)
+|     ld -o hello.exe hello.o ...libraries...  |
+|==============================================|  
+        | Executable machine code
+        V
