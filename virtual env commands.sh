@@ -31,7 +31,9 @@ pip install --user pipenv # sudo -H pip install -U pipenv
 curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
 
 # To store your virtualenv inside your project directory
-export PIPENV_VENV_IN_PROJECT=1
+
+echo 'export PIPENV_VENV_IN_PROJECT=1' >> ~/.bashrc
+
 export PIPENV_CACHE_DIR=""
 
 # To create or update existed ENV for "pipfile"
