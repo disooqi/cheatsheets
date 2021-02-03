@@ -13,6 +13,9 @@ exec "$SHELL"
 
 sudo apt-get update; sudo apt-get install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
+# If you wanted to see all the available CPython 3.6 through 3.8, you can do this:
+pyenv install --list | grep " 3\.[678]"
+
 pyenv install 3.7.6
 
 pyenv global 3.7.6
