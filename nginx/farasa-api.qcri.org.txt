@@ -67,6 +67,7 @@ server {
 
         location /v2.0 {
                 include proxy_params;
+                # may look at https://stackoverflow.com/questions/54375834/run-multiple-django-project-with-nginx-and-gunicorn
                 proxy_pass http://unix:/home/altqcri/farasa-webapi-python/farasa-webapi-python.sock;
         }
 }
