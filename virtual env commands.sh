@@ -20,6 +20,10 @@ pyenv install 3.7.6
 
 pyenv global 3.7.6
 
+# The 'versions' command displays all currently installed Python versions:
+pyenv version
+
+
 ################
 #### Pipenv ####
 ################
