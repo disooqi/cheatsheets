@@ -16,6 +16,7 @@ git config [--global] credential.helper [store|cache]
 # Use should also specify caching expire
 # After enabling credential caching, it will be cached for 7200 seconds (2 hour).
 git config --global credential.helper 'cache --timeout 7200'
+git config --global credential.helper store
 
 git config --global color.ui true
 
