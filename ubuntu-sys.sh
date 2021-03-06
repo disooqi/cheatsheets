@@ -2,6 +2,17 @@
 # https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-ubuntu-16-04-lts
 
 ########################################
+######  Removing A package  ############
+########################################
+# find all related packages
+dpkg -l | grep postgres
+
+# delete with --purge
+sudo apt --purge remove postgresql-client-12 postgresql postgresql-contrib
+
+
+
+########################################
 ###### First-time installation #########
 ########################################
 #jet-brains toolbox 
