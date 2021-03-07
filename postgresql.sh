@@ -14,3 +14,7 @@ sudo -u arabagent psql
 
 # to quit
 arabagent-# \q
+
+# Datagrip need user’s password to connect. Empty password will throw irrelevant error. That’s why we need to add password to postgres user
+sudo -u postgres psql postgres
+postgres-# \password postgres
