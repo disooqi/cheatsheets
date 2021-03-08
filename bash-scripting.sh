@@ -77,9 +77,14 @@ sudo lsblk
 # http://www.hypexr.org/linux_scp_help.php
 
 
+##########################################################################
+###########################       GREP      ##############################
+##########################################################################
 # This will find "some string" in /home/yourusername directory. The search will ignore case (-i) and recurse directories (-r). 
 # You can use / as the directory to search in the whole directory but that might not be very efficient. 
-grep -r -i "some string" /home/yourusername
+grep -r -i SEARCHTERM /your/dir # search files within directory tree 
+grep -i SEARCHTERM /etc/apt/sources.list # you can specify one file
+grep -n SEARCHTERM file1 file2  # -n to show line number
 
 ###########################################################################
 ############################  wget command  ###############################
@@ -122,7 +127,7 @@ rm [-f] <file>     # -f force a deletion
 rm -R[f] <directory>
 
 ###########################################################################
-######################  How To Use The find Command  ######################
+######################    find (compare with grep)   ######################
 ###########################################################################
 find . # find all the files and dirs below the current one
 find <dir> # find all the files and dirs below a specific dir
@@ -271,9 +276,21 @@ screen -X -S [session_no you want to kill] quit
 screen -d -r <screen>
 
 #########################################################################
+###############################   sed   ################################
+#########################################################################
+sudo sed -i '2d' /etc/apt/sources.list # you can remove line 2 using your favorite editor or use sed:
+sudo sed -i '2 s/^/# /' /etc/apt/sources.list # comment out the 2nd line:
+
+
+
+
+
+#########################################################################
 ###############################   tail   ################################
 #########################################################################
 sudo tail -f /var/log/apache2/access.log
+
+
 
 
 ##########################################################################
