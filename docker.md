@@ -11,8 +11,10 @@
 
 Install Docker
 -----------------
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
-https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker
+* https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+* https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker
+* https://docs.docker.com/engine/install/linux-postinstall/
+* 
 ```bash
 sudo apt-get update
 
@@ -22,6 +24,7 @@ sudo apt-get install \
     curl \
     software-properties-common
 
+# this is old. get the latest from the official website
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo apt-key fingerprint 0EBFCD88
@@ -37,10 +40,10 @@ sudo apt-get install docker-ce
 
 sudo docker run hello-world
 ```
-It is recommended to fix the issue by adding the current user to the docker group:
+
+If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
 ```bash
-sudo groupadd docker
-sudo usermod -a -G docker disooqi
+sudo usermod -aG docker ${USER}
 
 sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo chmod g+rwx "/home/$USER/.docker" -R
@@ -58,6 +61,11 @@ Upgrade Docker CE
 -----------------
 To upgrade Docker CE, first run `sudo apt-get update`, then follow the installation instructions, choosing the new version you want to install.
 
+
+Learn Docker
+------------
+https://docs.docker.com/get-started/
+https://docs.docker.com/develop/
 
 Uninstall Docker
 -----------------
@@ -91,13 +99,15 @@ Use Docker
 To list all images
 ```bash
 docker image ls
+docker images
 ```
 
-List the hello-world container (spawned by the image) which exits after displaying its message. If it were still running, you would not need the `--all` option:
+List the containers (spawned by the image). If it were still running, you would not need the `--all` option:
+To view all containers — active and inactive, run docker ps with the -a switch:
 ```bash
 docker container ls [-a|--all] [-q]
 docker container list
-docker ps -a
+docker ps [-a]
 ```
 
 
@@ -113,6 +123,8 @@ docker rm <CONTAINER ID>
 ##################################################################################################################
 ```bash
 docker push ..........
+
+# Execute the following command to download the official mongo image to your computer:
 docker pull mongo:latest
 sudo docker images | grep 578c3e
 sudo docker ps -a
