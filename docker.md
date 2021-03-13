@@ -40,18 +40,25 @@ sudo apt-get install docker-ce
 
 sudo docker run hello-world
 ```
-
 If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
 ```bash
 sudo usermod -aG docker ${USER}
 
 sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 sudo chmod g+rwx "/home/$USER/.docker" -R
+
 ```
+
+Make sure that docker deamon is working by running `sudo systemctl status docker`
+
+As an example, let’s run a container using the latest image of Ubuntu. The combination of the -i and -t switches gives you interactive shell access into the container: `docker run -it ubuntu`
+
+To exit the container, type `exit` at the prompt.
+
 
 Configure Docker to start on boot
 ---------------------------------
-https://docs.docker.com/install/linux/linux-postinstall/#configure-where-the-docker-daemon-listens-for-connections
+* https://docs.docker.com/install/linux/linux-postinstall/#configure-where-the-docker-daemon-listens-for-connections
 ```bash
 sudo systemctl enable docker
 sudo chkconfig docker on
@@ -64,8 +71,8 @@ To upgrade Docker CE, first run `sudo apt-get update`, then follow the installat
 
 Learn Docker
 ------------
-https://docs.docker.com/get-started/
-https://docs.docker.com/develop/
+* https://docs.docker.com/get-started/
+* https://docs.docker.com/develop/
 
 Uninstall Docker
 -----------------
