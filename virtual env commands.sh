@@ -84,6 +84,23 @@ pipenv run python
 # To generate requirements.txt file to distribute it with your project so people who still use virtualenv can generate 
 # the same env:
 pipenv lock -r
+pipenv lock -r --keep-outdated > requirements.txt
+# The --keep-outdated flag ensures pipenv doesn’t try to update dependencies if the lockfile is out of sync. 
+# This scheme ensures that your Dockerfile doesn’t need to know anything about pipenv. This does require you 
+# to remember to regenerate requirements.txt every time you update Pipfile.lock.
+
+```
+FROM python:3.9
+RUN pip install pipenv
+COPY Pipfile* /tmp
+RUN cd /tmp && pipenv lock --keep-outdated --requirements > requirements.txt
+RUN pip install -r /tmp/requirements.txt
+COPY . /tmp/myapp
+RUN pip install /tmp/myapp
+CMD flask run exampleapp:app
+```
+
+
 
 # To update pipfile.lock
 pipenv lock
