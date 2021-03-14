@@ -276,3 +276,19 @@ docker ps -a
 docker rmi fa50228a2a35
 docker rm fa50228a2a35
 ```
+
+### Postgres-docker
+```bash
+docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -e POSTGRES_USER=arabagent -e POSTGRES_DB=a2db -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+docker run -d --name dev-pgadmin -e 'PGADMIN_DEFAULT_PASSWORD=Retrieval7.' -e 'PGADMIN_DEFAULT_EMAIL=disooqi@gmail.com' -p 80:80 dpage/pgadmin4
+
+postgresql://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
+
+docker logs pg-docker
+sudo rm docker/ -r
+
+docker exec -it pg-docker bash
+psql -U arabagent -d a2db
+
+docker inspect dev-postgres -f "{{json .NetworkSettings.Networks }}"
+docker volume rm arabagent-data```
