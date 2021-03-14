@@ -291,4 +291,22 @@ docker exec -it pg-docker bash
 psql -U arabagent -d a2db
 
 docker inspect dev-postgres -f "{{json .NetworkSettings.Networks }}"
-docker volume rm arabagent-data```
+docker volume rm arabagent-data
+```
+
+### .env file 
+https://docs.docker.com/compose/environment-variables/#the-env-file
+* You can set default values for any environment variables referenced in the Compose file, or used to configure Compose, in an environment file named .env:
+
+```bash
+
+$ cat .env
+TAG=v1.5
+
+$ cat docker-compose.yml
+version: '3'
+services:
+  web:
+    image: "webapp:${TAG}"
+
+```
