@@ -6,7 +6,7 @@ apt-get install git
 
 git config --global user.name "Mohamed Eldesouki"
 git config --global user.email disooqi@gmail.com
-
+git config --global core.filemode false
 git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"
 git config --global core.editor "vim"
 
