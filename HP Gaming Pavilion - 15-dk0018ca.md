@@ -7,13 +7,13 @@ https://partsurfer.hp.com/Search.aspx
 
 To Install NVIDIA Driver for Ubuntu 20.04
 ------
-https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-20-04-focal-fossa-linux
-https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/
-http://ubuntuhandbook.org/index.php/2019/04/nvidia-430-09-gtx-1650-support/
-https://askubuntu.com/questions/1262948/black-screen-on-laptop-with-nvidia-proprietary-drivers-hp-pavilion-15-ec1001na
-https://linuxconfig.org/graphics-driver-check-ubuntu-20-04-focal-fossa
-https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/
-https://askubuntu.com/questions/1235698/cant-change-display-driver-on-ubuntu-20-04
+* https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-20-04-focal-fossa-linux
+* https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/
+* http://ubuntuhandbook.org/index.php/2019/04/nvidia-430-09-gtx-1650-support/
+* https://askubuntu.com/questions/1262948/black-screen-on-laptop-with-nvidia-proprietary-drivers-hp-pavilion-15-ec1001na
+* https://linuxconfig.org/graphics-driver-check-ubuntu-20-04-focal-fossa
+* https://sourcedigit.com/25531-install-nvidia-graphics-driver-on-ubuntu-20-04/
+* https://askubuntu.com/questions/1235698/cant-change-display-driver-on-ubuntu-20-04
 
 
 <div xmlns:hash="com.hp.concentra.wrapper.util.PriorityLoaderDirectoryHashUtil" class="section">
