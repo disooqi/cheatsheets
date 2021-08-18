@@ -26,6 +26,11 @@ pyenv versions
 # If you only care about the current active version, you can use the following command:
 pyenv version
 
+# If you installed pyenv via Git:
+cd $(pyenv root) && git pull
+
+# If you installed pyenv via [pyenv installer](https://github.com/pyenv/pyenv-installer): pyenv update
+
 
 ################
 #### Pipenv ####
