@@ -3,6 +3,7 @@
 ################
 #### pyenv ####
 ################
+
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -26,10 +27,26 @@ pyenv versions
 # If you only care about the current active version, you can use the following command:
 pyenv version
 
-# If you installed pyenv via Git:
+# For updating
 cd $(pyenv root) && git pull
 
-# If you installed pyenv via [pyenv installer](https://github.com/pyenv/pyenv-installer): pyenv update
+
+
+###   UPDATE: Use autoamtic installation
+############################################
+curl https://pyenv.run | bash
+exec $SHELL
+
+# Put the following 3 lines in .bashrc
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
+# For updating
+pyenv update  # If you installed pyenv via [pyenv installer](https://github.com/pyenv/pyenv-installer):
+
+# To uninstall
+rm -fr ~/.pyenv # then remove the 3 line from .bashrc
 
 
 ################
@@ -122,6 +139,12 @@ pipenv lock
 # It’s worth adding the Pipfiles to your Git repository, so that if another user were to clone the repository, all they would
 # have to do is install Pipenv on their system and then type,
 pipenv install
+
+###  UPDATE: Using pipx (beware I only tried this with auto installer from pyenv-installer)
+#####################################################################################
+pip install --user pipx
+pipx install pipenv
+
 
 ######################################################
 ################ virtualenv ##########################
