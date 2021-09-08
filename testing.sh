@@ -3,19 +3,12 @@
 ### source: https://www.youtube.com/watch?v=kwj6Hk1kJYU
 #########################################################
 
-# Remove Tool Window Bars
-View > Appearance > Tool Window Bars
-
-# Remove Navigation Bar
-View > Appearance > Navigation Bar
-
-# Turn of Tabs
-1) Type Ctrl+Shift+A (Wins and Linux)
-2) Select Actions tab, and type "ta pl non"
-3) For action [Tab Placement | None], turn the button to be ON 
-
-# Split screen Vertically
-Window > Editor Tabs > Split Right
+# Type Ctrl+Shift+A (Wins and Linux), then select Actions Tap
+1) Type "View | Appearance: Tool Window Bars" to remove Tool Window Bars
+2) Type "View | Appearance: Navigation Bar" to remove Navigation Bar
+3) Type "View | Appearance: Main Menu" to turn off Main Menu
+4) Type "ta pl non" and turn ON "Tab Placement | None" to turn off Tabs
+5) Type "Window | Editor Tabs | Split Right" or "sp ri" and press OK to split screen vertically
 
 # Editable Dependencies (e.g. -e . )
 # note that [tests] part will install the extras in setup.py
