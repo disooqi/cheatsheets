@@ -1,3 +1,9 @@
+Best Practices (for Python Developers)
+=========================================
+* https://testdriven.io/blog/docker-best-practices/
+
+Resources
+=========
 * https://docs.docker.com/
 * https://realpython.com/tutorials/docker/
 * https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-18-04
