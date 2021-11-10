@@ -4,13 +4,21 @@
 ########################################
 ######  Removing A package  ############
 ########################################
+ps -aux | grep mq
+ps -eaf | grep erl
+
 # find all related packages
 dpkg -l | grep postgres
 
 # delete with --purge
 sudo apt --purge remove postgresql-client-12 postgresql postgresql-contrib
 
+# OR 
+sudo apt-get remove --auto-remove rabbitmq-server
+sudo apt-get purge --auto-remove rabbitmq-server
 
+# also look inside:
+ls -la /etc/apt/sources.list.d
 
 ########################################
 ###### First-time installation #########
