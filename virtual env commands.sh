@@ -24,7 +24,7 @@ pyenv global 3.7.6
 # The 'versions' command displays all currently installed Python versions:
 pyenv versions
 
-# If you only care about the current active version, you can use the following command:
+# To show the current active version, you can use the following command:
 pyenv version
 
 # For updating
