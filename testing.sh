@@ -15,7 +15,7 @@
 # The following will set up a symlink to your code in site-packages, allowing you to edit your code while your tests run against it as if it were installed.
 # -e : Editable Dependencies; for setting up your project in development mode lets you avoid having to reinstall every time you want to run your tests, and is less brittle than mucking about with sys.path to point your tests at local code.
 # --dev : to prevent the project to be installed in production 
-# .[tests] : consider installing the `tests` part under `extras_require` in setup.py file
+# .[tests] : consider installing the `tests` part under `extras_require` in setup.py file. It is useful in case you want to install packages not in Pipfile
 pipenv install --dev -e .[tests] 
 
 # New Test 
