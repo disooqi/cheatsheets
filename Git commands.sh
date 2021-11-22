@@ -195,6 +195,20 @@ git push -f <remote-name> <branch-name>
 
 
 ###########################################################
+#######   Merging A Pull Request via command line  ########
+###########################################################
+# Step 1: From your project repository, bring in the changes and test.
+git fetch origin
+git checkout -b my-slide origin/my-slide
+git merge main
+
+# Step 2: Merge the changes and update on GitHub.
+git checkout main
+git merge --no-ff my-slide
+git push origin main
+
+
+###########################################################
 #######   Push Big Files  #################################
 ###########################################################
 git config --global http.postBuffer 524288000
