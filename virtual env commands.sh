@@ -28,7 +28,17 @@ pyenv install --list | grep " 3\.[678]"
 
 pyenv install 3.7.6
 
+
+# NOTE: You can activate multiple versions at the same time, including multiple versions of Python2 or Python3 simultaneously. 
+# This allows for parallel usage of Python2 and Python3, and is required with tools like tox. For example, to set your path to first 
+# use your system Python and Python3 (set to 2.7.9 and 3.4.2 in this example), but also have Python 3.3.6, 3.2, and 2.5 available on 
+# your PATH, one would first pyenv install the missing versions, then set pyenv global system 3.3.6 3.2 2.5. At this point, one should 
+# be able to find the full executable path to each of these using pyenv which, 
+# e.g. pyenv which python2.5 (should display $(pyenv root)/versions/2.5/bin/python2.5), or 
+# pyenv which python3.4 (should display path to system Python3). You can also specify multiple versions in a .python-version file, 
+# separated by newlines. Lines starting with a # are ignored.
 pyenv global 3.7.6
+pyenv global 3.7.12 3.8.11 3.9.9 3.10.0
 
 # The 'versions' command displays all currently installed Python versions:
 pyenv versions
