@@ -1,6 +1,35 @@
+
+#########################################################
+#########################  TOX  #########################
+#########################################################
+# Prerequisites
+1. Pyenv is installed and all python vers are globalized (e.g. pyenv global 3.7.12 3.8.11 3.9.9 3.10.0) or use deadsnakes 
+2. install tox (pip install tox) no virtual environment needed.
+3. Create tox.ini
+
+# How to run TOX
+$ tox
+
+# to prevent tox from failing tests for missing interpreters: {config,true,false} choice (default: config)
+$ tox -s true
+
+# to run only on Python 3.10
+$ tox -e py27 
+
+# -- means "hey tox don't handle the rest of these args"
+$ tox -e py310 -- tests -k test_cal.py
+$ tox -e py310 -- tests -k cal
+
+# To intractively work faster with tox do the following:
+# this will create an env outside '.tox/' and install your library (a.k.a package) in an editable mode
+$ tox --devenv <env-name>
+# OR 
+$ tox -e py310 --devenv .venv
+
+
 #########################################################
 ###### Strip down the PyCharm UI into "TDD Mode"  #######
-### source: https://www.youtube.com/watch?v=kwj6Hk1kJYU
+### source: https://www.youtube.com/watch?v=kwj6Hk1kJYU #
 #########################################################
 
 # Type Ctrl+Shift+A (Wins and Linux),
