@@ -103,13 +103,16 @@ pipenv run python <my_script.py>
 # To run the interactive python of an ENV without activating it
 pipenv run python
 
-# To generate requirements.txt file to distribute it with your project so people who still use virtualenv can generate 
-# the same env:
+# To generate requirements.txt file:
 pipenv lock -r
-pipenv lock -r --keep-outdated > requirements.txt
+
 # The --keep-outdated flag ensures pipenv doesn’t try to update dependencies if the lockfile is out of sync. 
 # This scheme ensures that your Dockerfile doesn’t need to know anything about pipenv. This does require you 
 # to remember to regenerate requirements.txt every time you update Pipfile.lock.
+pipenv lock -r --keep-outdated > requirements.txt
+
+# passing --dev will include both the default and development dependencies
+pipenv lock -r [--dev|--dev-only]
 
 ```
 FROM python:3.9
