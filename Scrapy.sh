@@ -14,6 +14,9 @@ scrapy runspider [options] <spider_file>
 # Run a spider
 scrapy crawl [options] <spider>
 
+# To try out selectors to extract data with Scrapy use the following:
+scrapy shell 'http://quotes.toscrape.com/page/1/'
+
 # Deploying and running Scrapy spiders to Scrapy Cloud
 # https://www.youtube.com/watch?v=JYch0zRmcgU
 pip install shub
