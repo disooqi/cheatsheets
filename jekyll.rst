@@ -1,7 +1,20 @@
-#!/bin/sh
-# https://jekyllrb.com/tutorials/home/
-# https://scotch.io/tutorials/getting-started-with-jekyll-plus-a-free-bootstrap-3-starter-theme
 
+https://jekyllrb.com/tutorials/home/
+https://scotch.io/tutorials/getting-started-with-jekyll-plus-a-free-bootstrap-3-starter-theme
+
+Installation
+=============
+
+.. code-block:: python
+   :emphasize-lines: 3,5
+
+   def some_function():
+       interesting = False
+       print 'This line is highlighted.'
+       print 'This one is not...'
+       print '...but this one is.'
+
+For a more automated install, you can use rbenv-installer. If you prefer a manual approach, follow the steps below.
 
 
 sudo apt-get remove --purge ruby-full
