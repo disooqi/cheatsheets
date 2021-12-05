@@ -3,7 +3,7 @@
 
 **Compatibility note:** rbenv is incompatible with RVM. Please make sure to fully uninstall RVM and remove any references to it from your shell initialization files before installing rbenv.
 
-Installation
+Installation (Don't forget to install Ruby after installing rbenv)
 =============
 OPTION 1: using Package Managers
 ---------------------------------
