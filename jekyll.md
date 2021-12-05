@@ -1,10 +1,16 @@
 * https://jekyllrb.com/tutorials/home/
 * https://scotch.io/tutorials/getting-started-with-jekyll-plus-a-free-bootstrap-3-starter-theme
+* https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-20-04
+
+I think the following:
+* _rbenv_ is similar to _pyenv_
+* _gem_ is similar to _pip_
+* _bundler_ is similar to _virtualenv_
 
 **Compatibility note:** rbenv is incompatible with RVM. Please make sure to fully uninstall RVM and remove any references to it from your shell initialization files before installing rbenv.
 
-Installation (Don't forget to [install Ruby](https://github.com/rbenv/rbenv-installer#rbenv-installer) after installing rbenv)
-=============
+Installation of rbenv & Ruby 
+=====================================
 OPTION 1: using Package Managers (I tried it 1 time; Not recommended because all ruby versions are outdated)
 ---------------------------------
 ```bash
@@ -13,6 +19,7 @@ rbenv init # Close your Terminal window and open a new one so your changes take 
 # Verify that rbenv is properly set up using this rbenv-doctor script:
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
 ```
+Don't forget to [install Ruby](https://github.com/rbenv/rbenv-installer#rbenv-installer) after installing rbenv
 
 OPTION 2: using rbenv-installer (I tried it 1 time)
 ---------
@@ -33,6 +40,7 @@ wget -q "https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor" -O-
 # To install Ruby:
 rbenv install -l  # list latest stable versions
 rbenv install 3.0.3 # or whatever version you want
+rbenv global 3.0.3
 ```
 
 OPTION 3: Basic GitHub Checkout (I tried it 1 time)
@@ -55,54 +63,69 @@ rbenv global 2.7.0
 gem install bundler
 rbenv rehash
 ```
-# Intall Jekyll
-sudo gem install jekyll bundler
 
-jekyll new .
+Working with Gems
+==================
+gem is similar to pip
+```bash
+echo "gem: --no-document" > ~/.gemrc
 
-# for the first time run
-bundle exec jekyll serve
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 
-bundle install
+# You can confirm where gems are being installed by using the home argument, like this:
+gem env home
+```
 
-# set baseurl to empty when run locally
-jekyll serve --watch --baseurl ""
+Working with Jekyll
+====================
+```sh
+gem install jekyll
+jekyll new jekyll-website
+cd jekyll-website/
+bundle add webrick  # If you are using Ruby version 3.0.0 or higher
+bundle exec jekyll serve --livereload
+```
 
-######################################
-######  To use specific Theme  #######
-######################################
-# references:
-# https://learn.siteleaf.com/themes/gem-based-themes/
-# https://jekyllrb.com/docs/themes/
 
-# Installation may vary depending on the theme, but typically involves two steps.
-# 1) If the theme is a Gem-based theme, add it to the Gemfile e.g.
+set baseurl to empty when run locally
+`jekyll serve --watch --baseurl ""`
+
+
+To use specific Theme  
+-----------------------
+references:
+* https://learn.siteleaf.com/themes/gem-based-themes/
+* https://jekyllrb.com/docs/themes/
+
+Installation may vary depending on the theme, but typically involves two steps.
+1) If the theme is a Gem-based theme, add it to the Gemfile e.g.
 gem "minima", "~> 2.5"
 gem "jekyll-theme-hydeout", "~> 3.3"
-# Then run 
-bundle install
-# You may need to follow additional instructions, so make sure to review the theme’s documentation.
+Then run 
+`bundle install`
+You may need to follow additional instructions, so make sure to review the theme’s documentation.
 
-# 2) Next, enable theme theme in your site’s _config.yml file
+2) Next, enable theme theme in your site’s _config.yml file
 theme: minima
-# To test your site locally, install and build your site using bundle exec:
+To test your site locally, install and build your site using bundle exec:
 bundle install
 bundle exec jekyll serve
 
-# If you have the theme gem, you can (if you desire) run bundle update to update all gems in your project. Or you can 
-# run bundle update <THEME>, replacing <THEME> with the theme name, such as minima, to just update the theme gem. Any 
-# new files or updates the theme developer has made (such as to stylesheets or includes) will be pulled into your 
-# project automatically.
+If you have the theme gem, you can (if you desire) run bundle update to update all gems in your project. Or you can 
+run bundle update <THEME>, replacing <THEME> with the theme name, such as minima, to just update the theme gem. Any 
+new files or updates the theme developer has made (such as to stylesheets or includes) will be pulled into your 
+project automatically.
 
-##  Installing themes from GitHub repositories
-###############################################
-# Add the following to the Gemfile 
-gem 'minima', git: 'https://github.com/jekyll/minima.git'
-# or
-gem 'minima', github: 'jekyll/minima'
+### Installing themes from GitHub repositories
+Add the following to the Gemfile 
+`gem 'minima', git: 'https://github.com/jekyll/minima.git'`
+or
+`gem 'minima', github: 'jekyll/minima'`
 
 
-# Jekyll Themes
+### Jekyll Themes
 http://jekyllthemes.org/page6/
 https://thelehhman.com/
 https://wowthemesnet.github.io/jekyll-theme-memoirs/ (I like the most)
