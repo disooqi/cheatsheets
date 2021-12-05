@@ -3,9 +3,9 @@
 
 **Compatibility note:** rbenv is incompatible with RVM. Please make sure to fully uninstall RVM and remove any references to it from your shell initialization files before installing rbenv.
 
-Installation (Don't forget to install Ruby after installing rbenv)
+Installation (Don't forget to [install Ruby](https://github.com/rbenv/rbenv-installer#rbenv-installer) after installing rbenv)
 =============
-OPTION 1: using Package Managers
+OPTION 1: using Package Managers (I tried it 1 time; Not recommended because all ruby versions are outdated)
 ---------------------------------
 ```bash
 sudo apt install rbenv
@@ -14,12 +14,28 @@ rbenv init # Close your Terminal window and open a new one so your changes take 
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
 ```
 
-OPTION 2: using rbenv-installer
+OPTION 2: using rbenv-installer (I tried it 1 time)
 ---------
 For a more automated install, you can use rbenv-installer. If you prefer a manual approach, follow the steps below.
 https://github.com/rbenv/rbenv-installer#rbenv-installer
 
-OPTION 3: Basic GitHub Checkout
+The `rbenv-installer` script idempotently installs or updates rbenv on your system.
+
+```bash
+# Run
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+# You'll want to ensure that `~/.rbenv/bin' is added to PATH. (same as pyenv)
+# Close terminal and open a new one.
+# Run `rbenv init' to view instructions on how to configure rbenv for your shell.
+# Launch a new terminal window after editing shell configuration files.
+# (Optional) Run the doctor command to verify the installation:
+wget -q "https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor" -O- | bash
+# To install Ruby:
+rbenv install -l  # list latest stable versions
+rbenv install 3.0.3 # or whatever version you want
+```
+
+OPTION 3: Basic GitHub Checkout (I tried it 1 time)
 --------------------------------
 
 ```sh
