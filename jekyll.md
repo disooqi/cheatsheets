@@ -1,22 +1,28 @@
+* https://jekyllrb.com/tutorials/home/
+* https://scotch.io/tutorials/getting-started-with-jekyll-plus-a-free-bootstrap-3-starter-theme
 
-https://jekyllrb.com/tutorials/home/
-https://scotch.io/tutorials/getting-started-with-jekyll-plus-a-free-bootstrap-3-starter-theme
+**Compatibility note:** rbenv is incompatible with RVM. Please make sure to fully uninstall RVM and remove any references to it from your shell initialization files before installing rbenv.
 
 Installation
 =============
+OPTION 1: using Package Managers
+---------------------------------
+```bash
+sudo apt install rbenv
+rbenv init # Close your Terminal window and open a new one so your changes take effect.
+# Verify that rbenv is properly set up using this rbenv-doctor script:
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
+```
 
-.. code-block:: python
-   :emphasize-lines: 3,5
-
-   def some_function():
-       interesting = False
-       print 'This line is highlighted.'
-       print 'This one is not...'
-       print '...but this one is.'
-
+OPTION 2: using rbenv-installer
+---------
 For a more automated install, you can use rbenv-installer. If you prefer a manual approach, follow the steps below.
+https://github.com/rbenv/rbenv-installer#rbenv-installer
 
+OPTION 3: Basic GitHub Checkout
+--------------------------------
 
+```sh
 sudo apt-get remove --purge ruby-full
 sudo apt-get update
 sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
@@ -32,7 +38,7 @@ rbenv install 2.7.0
 rbenv global 2.7.0
 gem install bundler
 rbenv rehash
-
+```
 # Intall Jekyll
 sudo gem install jekyll bundler
 
