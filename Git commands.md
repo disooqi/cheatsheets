@@ -33,17 +33,16 @@ git config --global color.ui true
 * https://github.com/magicmonty/bash-git-prompt
 
 
-########################################################################################
-################################### Git log ###########################################
-########################################################################################
+## Git log
+
 ```bash
 git log --graph --decorate --all --oneline
 
 git log -p -2 --stat --pretty=[oneline|short|full|filter|format=""] --graph
 ```
-########################################################################################
-################################### Branches ###########################################
-########################################################################################
+
+## Branches 
+
 
 * To look to the current branch
 ```bash
@@ -103,9 +102,9 @@ git branch (-d|--delete) <branch_name>
 git branch -D <branch_name>
 ```
 
-########################################################################################
-############################### Merging Branches #######################################
-########################################################################################
+
+## Merging Branches
+
 * Merging a branch to the current branch (the reciever)
 ```bash
 git merge <branch_name>
@@ -126,9 +125,8 @@ git merge --ff-only <branch_name>
 git merge --abort
 ```
 
-########################################################################################
-############################### Stashing changes #######################################
-########################################################################################
+
+## Stashing changes
 * save into stash
 ```bash
 git stash save  "Massage"
@@ -148,9 +146,8 @@ git stash drop    stash@{0}
 git stash clear
 ```
 
-########################################################################################
-############################### Remotes ################################################
-########################################################################################
+
+## Remotes 
 ```bash
 git remote
 git remote add <alias> <url>
@@ -164,8 +161,6 @@ git push -u <alias> --tags # pushes up any tags
 
 
 echo "# This is my README" >> README.md
-
-
 
 git clone <url> [dir_name]
 
@@ -184,13 +179,19 @@ git fetch
 git pull  # = git fetch + git merge
 ```
 
-* to track a remote branch you just need to clone the repo first (if it not in your machine yet) or fetch it and 
+* To track a remote branch you just need to clone the repo first (if it not in your machine yet) or fetch it and 
 * then do {{git branch <branch_name>  <remote_branch_name>}} to create a new branch that is a copy of 
 * that <remote_branch_name>
 * The remote_branch_name is the one in you git that tracks the one in the server (it is not the one in the server)
 ```bash
-git branch <branch_name>  <remote_branch_name>
+git branch <branch_name>  <remote_branch_name>  # or
 git checkout -b <branch_name>  <remote_branch_name>
+```
+* The above is old you can use the new command of `git switch` as following:
+```
+git switch -c <branch> --track <remote>/<branch>
+# or simply, (if you use the same name as the remote branch and you don't have different remotes with same branch)
+git switch <branch>
 ```
 
 
@@ -200,10 +201,8 @@ git push <alias> :<branch_name_todelete> # or
 git push <alias> [-d|--delete] <branch_name_todelete> 
 ```
 
-###############################################################################################
-#####################  Removing Changes  ######################################################
-###############################################################################################
 
+##  Removing Changes
 * in case you want to discard changes in working diretory
 ```bash
 git checkout -- <file_name>
@@ -257,9 +256,7 @@ git reset --hard <SHA_KEY>
 git push -f <remote-name> <branch-name>
 ```
 
-###########################################################
-#######   Merging A Pull Request via command line  ########
-###########################################################
+## Merging A Pull Request via command line
 * Step 1: From your project repository, bring in the changes and test.
 ```bash
 git fetch origin
@@ -273,110 +270,89 @@ git merge --no-ff my-slide
 git push origin main
 ```
 
-###########################################################
-#######   Push Big Files  #################################
-###########################################################
+
+## Push Big Files  
 ```bash
 git config --global http.postBuffer 524288000
 * https://medium.com/@AyunasCode/how-to-push-large-files-to-github-253d05cc6a09
 ```
-##############  versions and releases  ###########3########
+## versions and releases
 * https://git-scm.com/book/en/v2/Git-Basics-Tagging
 
 ## Workflow
 * https://www.atlassian.com/git/tutorials/comparing-workflows
 
-###########################################################
-################   Git lfs installation  ##################
-###########################################################
-
-
+## Git lfs installation
+```bash
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-
+```
 * OR
 
 * Navigate to git-lfs.github.com and click Download.
 * locate and unzip the downloaded file.
 * then CD and run:
-sudo bash install.sh
 ```bash
+sudo bash install.sh
 git lfs install # verify installation
 git lfs track "*.bin"
 git lfs track
 ```
-* How to remove/delete a large file from commit history in Git repository?
-* https://stackoverflow.com/questions/2100907/how-to-remove-delete-a-large-file-from-commit-history-in-git-repository
+* How to remove/delete a large file from commit history in Git repository? https://stackoverflow.com/questions/2100907/how-to-remove-delete-a-large-file-from-commit-history-in-git-repository
 
 
-* Duplicating a repository
-* https://help.github.com/articles/duplicating-a-repository/
+* Duplicating a repository: https://help.github.com/articles/duplicating-a-repository/
 
+## Git Deployments
+* https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
+* https://developer.github.com/v3/guides/delivering-deployments/
+* https://developer.github.com/v3/repos/deployments/
 
+## MISC MISC MISC MISC
 
-###########################################################
-################   Git Deployments  ##################
-###########################################################
-https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys
-https://developer.github.com/v3/guides/delivering-deployments/
-https://developer.github.com/v3/repos/deployments/
-
-
-#############################################################
-#################  MISC MISC MISC MISC  #####################
-#############################################################
-
-warning: adding embedded git repository: SRILM/eval2
-hint: You've added another git repository inside your current repository.
-hint: Clones of the outer repository will not contain the contents of
-hint: the embedded repository and will not know how to obtain it.
-hint: If you meant to add a submodule, use:
-hint: 
-hint: 	git submodule add <url> SRILM/eval2
-hint: 
-hint: If you added this path by mistake, you can remove it from the
-hint: index with:
-hint: 
-hint: 	git rm --cached SRILM/eval2
-hint: 
-hint: See "git help submodule" for more information.
------------------------------------------------------------------
+> warning: adding embedded git repository: SRILM/eval2<br />
+hint: You've added another git repository inside your current repository.<br />
+hint: Clones of the outer repository will not contain the contents of<br />
+hint: the embedded repository and will not know how to obtain it.<br />
+hint: If you meant to add a submodule, use:<br />
+hint: <br />
+hint: 	git submodule add <url> SRILM/eval2<br />
+hint: <br />
+hint: If you added this path by mistake, you can remove it from the<br />
+hint: index with:<br />
+hint: <br />
+hint: 	git rm --cached SRILM/eval2<br />
+hint: <br />
+hint: See "git help submodule" for more information.<br />
 
 * to force add files even if they are ignored
 ```bash
 git add -f directory/*
 
-
-gcc -c -fpic cylinder.c cylinder_wrap.c -I/home/meldesouki/python/include -I/home/meldesouki/python/include/python2.5
+  gcc -c -fpic cylinder.c cylinder_wrap.c -I/home/meldesouki/python/include -I/home/meldesouki/python/include/python2.5
 ```
 
-#############################################################
-#############################  READING  #####################
-#############################################################
-https://nvie.com/posts/a-successful-git-branching-model/?fbclid=IwAR2xUD8mNkug3kk70SOT8undMw-J_sA5wqlZo3gY3HACTnDCIuFcxxLyW7Q
+## READING
+* https://nvie.com/posts/a-successful-git-branching-model/?fbclid=IwAR2xUD8mNkug3kk70SOT8undMw-J_sA5wqlZo3gY3HACTnDCIuFcxxLyW7Q
+* https://developer.github.com/
+<br />
+  
+The legal side of github
+  
+* https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
+* https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow?fbclid=IwAR3cCb3_wwKY-kSSuOrDh3ae-8pmeW1fEIX96jmu0ag3RZCbKhQcQWM1gVU
 
-https://developer.github.com/
-
-* The legal side of github
-https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project
-
-https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow?fbclid=IwAR3cCb3_wwKY-kSSuOrDh3ae-8pmeW1fEIX96jmu0ag3RZCbKhQcQWM1gVU
-
-
-
-* Contributing
-#############
-
+## Contributing
 * https://help.github.com/articles/about-pull-requests/
-
+<br />
 When contributing, please follow these steps:
 
-- Clone the repo and make your changes.
-- Make sure your code has test cases written against it.
-- Make sure all the tests pass.
-- Lint your code with Flake8.
-- Add your name to the list of contributers.
-- Submit a Pull Request.
+* Clone the repo and make your changes.
+* Make sure your code has test cases written against it.
+* Make sure all the tests pass.
+* Lint your code with Flake8.
+* Add your name to the list of contributers.
+* Submit a Pull Request.
 
-* Open Source Guides
+### Open Source Guides
 * https://opensource.guide/
 * https://guides.github.com/activities/hello-world/
