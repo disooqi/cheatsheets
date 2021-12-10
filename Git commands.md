@@ -1,4 +1,4 @@
-#!/bin/sh
+
 * https://git-scm.com/download/linux
 ```bash
 apt-get install git
