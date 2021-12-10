@@ -134,14 +134,18 @@ git fetch
 
 git pull  # = git fetch + git merge
 
-# the remote_branch_name is the one in you git that tracks the one in the server (it is not the one in the server)
-git branch <branch_name>  <remote_branch_name> 
+
+
 
 # to track a remote branch you just need to clone the repo first (if it not in your machine yet) or fetch it and 
 # then do {{git branch <branch_name>  <remote_branch_name>}} to create a new branch that is a copy of 
 # that <remote_branch_name>
-
+* The remote_branch_name is the one in you git that tracks the one in the server (it is not the one in the server)
+```bash
+git branch <branch_name>  <remote_branch_name>
 git checkout -b <branch_name>  <remote_branch_name>
+```
+
 
 # Delete remote branch
 git push <alias> :<branch_name_todelete> # or
