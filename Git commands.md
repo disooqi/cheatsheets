@@ -276,7 +276,8 @@ git push origin main
 git config --global http.postBuffer 524288000
 * https://medium.com/@AyunasCode/how-to-push-large-files-to-github-253d05cc6a09
 ```
-## versions and releases
+## Tagging and releases
+* http://practicalseries.com/1002-vcs/09-06-github.html#js--090600
 * https://git-scm.com/book/en/v2/Git-Basics-Tagging
 
 ## Workflow
