@@ -7,7 +7,8 @@
 
 # Create the RSA Key Pair (if there is one exist you could use it you don't need to make new one)
 ssh-keygen -t rsa
-ssh-keygen -t rsa -C "your_email@example.com"
+# Using the new ed25519 algorithm
+ssh-keygen -t [rsa|ed25519] -C "your_email@example.com"
 ssh-keygen -t rsa -f cloud.key
 
 ############################################################
@@ -17,6 +18,17 @@ ssh-keygen -t rsa -f cloud.key
 ############################################################
 # refer to the private key you want to use
 ssh -i /path/where/your/key/is/my_key.key <user name>@<public IP of your server>
+
+# For Github you need to Start the ssh-agent in the background and then Add your SSH private key to the ssh-agent. 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+# Switching remote URLs from HTTPS to SSH
+# https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-https-to-ssh
+git remote -v
+git remote set-url origin git@github.com:disooqi/REPOSITORY.git
+git remote -v  # to verify
+
 
 
 # copy the public key into the server
