@@ -110,6 +110,9 @@ xdg-open <file> # instead of open u can use xdg-open which does the same thing ,
 # image etc, it will open in new virtual terminal (i have tried this in linux)
 cp <file> <new_file>
 cp -R <directory> <new_dir>
+# The -a option is an improved recursive option, that preserve all file attributes, and also preserve symlinks.
+# The . at end of the source path is a specific cp syntax that allow to copy all files and folders, included hidden ones.
+cp -a source/. dest/
 
 mv <file> <new_name> # renaming a file
 mv <file> <a_nother_dir>/ # move without renaming
