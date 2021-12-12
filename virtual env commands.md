@@ -11,13 +11,27 @@ Poetry "replaces" setuptools (setup.py) and requirements.txt (and also Pipenv) a
 Poetry has a lot of fans too. It seems that PyPA (the guys that run PyPI) is not endorsing Poetry for differences in their ideas of "how things should be done", but it seems that would be a perfectly good alternative too.
 
 
-
-
 # Pyenv
-### UPDATE: use (pyenv Installer to bypass all the following)[https://github.com/pyenv/pyenv-installer]
+### UPDATE: use [pyenv Installer](https://github.com/pyenv/pyenv-installer) as following:
+```bash
+curl https://pyenv.run | bash
+exec $SHELL
 
+# Put the following 3 lines in .bashrc
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 
+# For updating
+pyenv update  # If you installed pyenv via [pyenv installer](https://github.com/pyenv/pyenv-installer):
 
+# To uninstall
+rm -fr ~/.pyenv # then remove the 3 line from .bashrc
+```
+
+### The manual way
+
+```bash
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -32,16 +46,18 @@ sudo apt-get update; sudo apt-get install --no-install-recommends make build-ess
 pyenv install --list | grep " 3\.[678]"
 
 pyenv install 3.7.6
+```
 
+> NOTE: You can activate multiple versions at the same time, including multiple versions of Python2 or Python3 simultaneously. 
+This allows for parallel usage of Python2 and Python3, and is required with tools like tox. For example, to set your path to first 
+use your system Python and Python3 (set to 2.7.9 and 3.4.2 in this example), but also have Python 3.3.6, 3.2, and 2.5 available on 
+your PATH, one would first pyenv install the missing versions, then set pyenv global system 3.3.6 3.2 2.5. At this point, one should 
+be able to find the full executable path to each of these using pyenv which, 
+e.g. pyenv which python2.5 (should display $(pyenv root)/versions/2.5/bin/python2.5), or 
+pyenv which python3.4 (should display path to system Python3). You can also specify multiple versions in a .python-version file, 
+separated by newlines. Lines starting with a # are ignored.
 
-# NOTE: You can activate multiple versions at the same time, including multiple versions of Python2 or Python3 simultaneously. 
-# This allows for parallel usage of Python2 and Python3, and is required with tools like tox. For example, to set your path to first 
-# use your system Python and Python3 (set to 2.7.9 and 3.4.2 in this example), but also have Python 3.3.6, 3.2, and 2.5 available on 
-# your PATH, one would first pyenv install the missing versions, then set pyenv global system 3.3.6 3.2 2.5. At this point, one should 
-# be able to find the full executable path to each of these using pyenv which, 
-# e.g. pyenv which python2.5 (should display $(pyenv root)/versions/2.5/bin/python2.5), or 
-# pyenv which python3.4 (should display path to system Python3). You can also specify multiple versions in a .python-version file, 
-# separated by newlines. Lines starting with a # are ignored.
+```bash
 pyenv global 3.7.6
 pyenv global 3.7.12 3.8.11 3.9.9 3.10.0
 
@@ -53,38 +69,19 @@ pyenv version
 
 # For updating
 cd $(pyenv root) && git pull
+```
 
+# Virtual Enivronment for Python
+## Pipenv 
 
-
-###   UPDATE: Use autoamtic installation
-############################################
-curl https://pyenv.run | bash
-exec $SHELL
-
-# Put the following 3 lines in .bashrc
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
-
-# For updating
-pyenv update  # If you installed pyenv via [pyenv installer](https://github.com/pyenv/pyenv-installer):
-
-# To uninstall
-rm -fr ~/.pyenv # then remove the 3 line from .bashrc
-
-
-################
-#### Pipenv ####
-################
+```bash
 # Installing pipenv 
 pip install --user pipenv # sudo -H pip install -U pipenv
-
 
 # If you don’t even have pip installed, you can use this crude installation method, which will bootstrap your whole system:
 curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
 
 # To store your virtualenv inside your project directory
-
 echo 'export PIPENV_VENV_IN_PROJECT=1' >> ~/.bashrc
 
 export PIPENV_CACHE_DIR=""
@@ -93,7 +90,6 @@ export PIPENV_CACHE_DIR=""
 # Be ware of this issue https://github.com/pypa/pipenv/issues/1914#issuecomment-429515521 and use --skip-lock
 pipenv install [--python 3.8]
 pipenv  install -v --skip-lock allennlp==0.9.0 --python 3.7
-
 
 # For production 
 pipenv install --ignore-pipfile
@@ -139,7 +135,9 @@ pipenv lock -r --keep-outdated > requirements.txt
 pipenv lock -r [--dev|--dev-only]
 
 ```
-FROM python:3.9
+Dockerfile
+
+> FROM python:3.9
 RUN pip install pipenv
 COPY Pipfile* /tmp
 RUN cd /tmp && pipenv lock --keep-outdated --requirements > requirements.txt
@@ -147,7 +145,7 @@ RUN pip install -r /tmp/requirements.txt
 COPY . /tmp/myapp
 RUN pip install /tmp/myapp
 CMD flask run exampleapp:app
-```
+
 
 
 
