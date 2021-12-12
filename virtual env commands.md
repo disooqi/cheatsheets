@@ -71,6 +71,11 @@ pyenv version
 cd $(pyenv root) && git pull
 ```
 
+Sets  a  local  application-specific  Python  version  by writing the version name to a .python-version file in the current directory. This version overrides the global version
+```bash
+pyenv local 3.6.15
+```
+
 # Virtual Enivronment for Python
 ## Pipenv 
 
