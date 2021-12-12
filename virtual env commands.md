@@ -1,17 +1,18 @@
-#!/bin/sh
 
-###############################################################################
-# IMPORTANT NOTE
-# Pipenv is more for projects and apps that you (or your company) run directly, that's where the deterministic locking system comes into play. If you want to provide a way for others to install it, then you should have dependencies as ranges of compatible versions, instead of pinpointed (locked) versions. Pipenv with its Pipfile "replace" requirements.txt and venv. But not the tools for distribution.
-# If you want an alternative to setup.py for distribution, you can try one of the projects that use pyproject.toml. Mainly Flit and Poetry.
-# Flit "replaces" setuptools (setup.py), you don't need a setup.py anymore. Only the (for me, easier to maintain) pyproject.toml.
-# Poetry "replaces" setuptools (setup.py) and requirements.txt (and also Pipenv) at the same time. It puts everything in the same file. But the versions thing still applies. It's just in the same file now.
-# I created a couple packages with setuptools (setup.py) and it felt quite messy. I recently started using Flit and I'm loving it. It does a lot of the things you would have to hack around "by default". Try it once, check the tutorial, in 5 minutes you have a package ready, published and installable. That combination, Pipenv for development and Flit for releasing is what I'm using in FastAPI: https://github.com/tiangolo/fastapi
-# Poetry has a lot of fans too. It seems that PyPA (the guys that run PyPI) is not endorsing Poetry for differences in their ideas of "how things should be done", but it seems that would be a perfectly good alternative too.
+> IMPORTANT NOTE
+Pipenv is more for projects and apps that you (or your company) run directly, that's where the deterministic locking system comes into play. If you want to provide a way for others to install it, then you should have dependencies as ranges of compatible versions, instead of pinpointed (locked) versions. Pipenv with its Pipfile "replace" requirements.txt and venv. But not the tools for distribution.
+If you want an alternative to setup.py for distribution, you can try one of the projects that use pyproject.toml. Mainly Flit and Poetry.
+Flit "replaces" setuptools (setup.py), you don't need a setup.py anymore. Only the (for me, easier to maintain) pyproject.toml.
+Poetry "replaces" setuptools (setup.py) and requirements.txt (and also Pipenv) at the same time. It puts everything in the same file. But the versions thing still applies. It's just in the same file now.
+I created a couple packages with setuptools (setup.py) and it felt quite messy. I recently started using Flit and I'm loving it. It does a lot of the things you would have to hack around "by default". Try it once, check the tutorial, in 5 minutes you have a package ready, published and installable. That combination, Pipenv for development and Flit for releasing is what I'm using in FastAPI: https://github.com/tiangolo/fastapi
+Poetry has a lot of fans too. It seems that PyPA (the guys that run PyPI) is not endorsing Poetry for differences in their ideas of "how things should be done", but it seems that would be a perfectly good alternative too.
+
+
 
 ################
-#### pyenv ####
+#### pyenv ####  
 ################
+### UPDATE: use (pyenv Installer to bypass all the following)[https://github.com/pyenv/pyenv-installer]
 
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
