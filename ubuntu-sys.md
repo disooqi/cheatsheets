@@ -1,15 +1,11 @@
 https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-ubuntu-20-04-focal-fossa
 
-## Install starship
-```sh
-sudo snap install starship
-```
+
 
 ## Install zsh
 ```bash
 sudo apt install zsh
 chsh -s $(which zsh)
-
 ```
 * Test that it worked with echo $SHELL. Expected result: /bin/zsh or similar.
 * Install Oh My Zsh and configuring .zshrc
@@ -22,6 +18,19 @@ echo 'DEFAULT_USER=`whoami`' >> .zshrc
 In the .zshrc file, edit `plugins=(git bundler dotenv rake rbenv pyenv python pipenv ruby)`. Make sure that to 
 export pyenv before listing your plugins to get rid of the error.
 
+## Install starship
+```sh
+sudo snap install starship
+echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+```
+It is a good idea to comment out the ZSH_THEME entry in ~/.zshrc
+
+## Install Dracula Theme (gnome-terminal+gtk)
+* https://draculatheme.com/gnome-terminal
+* https://draculatheme.com/gtk
+```sh
+sudo apt install gnome-tweaks
+```
 
 
 ```bash
