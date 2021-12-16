@@ -19,24 +19,64 @@ https://vim-adventures.com/ <br />
 vimtutor <br />
 
 ## Navigation
-<pre>
+```vim
 hjkl 
 w (or b)
 e 
+f+<new char> (or F+<new char>)
 
-gg
-SHIFT+g
-44+SHIFT+g
+gg (or G)
+44+G
 
-0
+0 (or $)
 
+ctrl+o  # navigate to where you have been 
+ctrl+i  # the opposite of the above command
+
+```
+## Delete
+```vim
 x
 3x
 dw
 dd (10+dd)
+d$ = D
+
+```
+## Replace
+```vim
+r+<new char>
+ce
+c$=C
 
 
+%s/<old string>/<new string>/g
+3,9s/<old string>/<new string>/g
+s/<old string>/<new string>/gc
+```
+## Copy
+```vim
+yw
+y$=Y # copy the cursor to the end of the sentence
+yy  # copy entire sentence
+```
+## UNDO and REDO
+```vim
+u
+ctrl+r
+```
 
+## Prantheses
+```vim
+%
+```
+## Search
+```vim
+/ # for forward search
+? # for backword search
+```
 
-
-
+## Run bash commands
+```vim
+:!<command>
+```
