@@ -1,6 +1,30 @@
-#! /bin/bash
-# https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-ubuntu-16-04-lts
+https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-ubuntu-20-04-focal-fossa
 
+## Install starship
+```sh
+sudo snap install starship
+```
+
+## Install zsh
+```bash
+sudo apt install zsh
+chsh -s $(which zsh)
+
+```
+* Test that it worked with echo $SHELL. Expected result: /bin/zsh or similar.
+* Install Oh My Zsh and configuring .zshrc
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt-get install fonts-powerline # for theme agnoster to work fine
+echo 'ZSH_THEME="agnoster"' >> .zshrc
+echo 'DEFAULT_USER=`whoami`' >> .zshrc
+```
+In the .zshrc file, edit `plugins=(git bundler dotenv rake rbenv pyenv python pipenv ruby)`. Make sure that to 
+export pyenv before listing your plugins to get rid of the error.
+
+
+
+```bash
 ########################################
 ######  Removing A package  ############
 ########################################
@@ -126,3 +150,4 @@ sudo swapon /swapfile
 # edit file /etc/fstab to add this [/swapfile swap swap defaults 0 0]
 sudo vim /etc/fstab
 sudo mount -a # do this after reboot to make sure there no misspellings in there
+```
