@@ -31,6 +31,9 @@ It is a good idea to comment out the ZSH_THEME entry in ~/.zshrc
 ```sh
 sudo apt install gnome-tweaks
 ```
+## Other Terminal Emulators
+* [Kitty](https://sw.kovidgoyal.net/kitty/) - The fast, feature-rich, GPU based terminal emulator
+* [Tabby](https://tabby.sh/) - A terminal for the modern age
 
 
 ```bash
