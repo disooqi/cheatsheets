@@ -21,7 +21,7 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | 
 ```
 Don't forget to [install Ruby](https://github.com/rbenv/rbenv-installer#rbenv-installer) after installing rbenv
 
-OPTION 2: using rbenv-installer (I tried it 1 time)
+OPTION 2: (recommended) using rbenv-installer (I tried it 1 time)
 ---------
 For a more automated install, you can use rbenv-installer. If you prefer a manual approach, follow the steps below.
 https://github.com/rbenv/rbenv-installer#rbenv-installer
@@ -91,6 +91,9 @@ bundle exec jekyll serve --livereload
 
 set baseurl to empty when run locally
 `jekyll serve --watch --baseurl ""`
+
+## Deploy Jekyll to Github pages
+https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll
 
 
 To use specific Theme  
