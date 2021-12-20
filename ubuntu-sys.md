@@ -35,6 +35,23 @@ sudo apt install gnome-tweaks
 * [Kitty](https://sw.kovidgoyal.net/kitty/) - The fast, feature-rich, GPU based terminal emulator
 * [Tabby](https://tabby.sh/) - A terminal for the modern age
 
+### [Installing the NVIDIA Drivers Using the Command-Line](https://linuxize.com/post/how-to-nvidia-drivers-on-ubuntu-20-04/)
+Run the following command to get information about your graphic card and available drivers:
+```bash
+ubuntu-drivers devices
+```
+The output will shows the model of the system (e.g. "GeForce GTX 1650") and the recommended driver to install (e.g. "nvidia-driver-470") among other drivers you can install. You may see a different output depending on your system.<br />
+<br />
+Choose the recommended driver and run the following:
+
+```bash
+sudo apt install nvidia-driver-440
+sudo reboot
+```
+When the system is back, you can view the status of the graphic card using the `nvidia-smi` monitoring tool:
+```bash
+nvidia-smi
+```
 
 ```bash
 ########################################
