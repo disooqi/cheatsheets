@@ -7,14 +7,14 @@
 * https://www.linux.com/learn/writing-simple-bash-script
 * https://explainshell.com/explain/1/ln
 
-######################################################################
-########   How to (safely) move /tmp to a different volume?  #########
-######################################################################
-https://unix.stackexchange.com/questions/5489/how-to-safely-move-tmp-to-a-different-volume/5503#5503
-https://linuxhint.com/lvm-ubuntu-tutorial/
-https://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/
-https://wiki.ubuntu.com/Lvm
-https://unix.stackexchange.com/questions/282393/union-mount-on-linux#386758
+
+###   How to (safely) move /tmp to a different volume?
+
+* https://unix.stackexchange.com/questions/5489/how-to-safely-move-tmp-to-a-different-volume/5503#5503
+* https://linuxhint.com/lvm-ubuntu-tutorial/
+* https://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/
+* https://wiki.ubuntu.com/Lvm
+* https://unix.stackexchange.com/questions/282393/union-mount-on-linux#386758
 
 ```bash
 { cat /var/log/apache2/qatats.access.log.1 /var/log/apache2/qatats.access.log ; zcat /var/log/apache2/qatats.access.log.*.gz;} | grep "/farasa/requestExecuter.php" | cut -f1,4,9,10 -d' ' | grep " 200 "  > Farasa_usage_requests.txt
@@ -193,33 +193,41 @@ ssh-keygen -t rsa
 ssh-keygen -t rsa -C "your_email@example.com"
 ssh-keygen -t rsa -f cloud.key
 ```
-On your local machine (not the VM), you will need to change key permissions with the chmod 400 <key name>.pem command in order to connect with this key.               #
-
-refer to the private key you want to use
+On your local machine (not the VM), you will need to change key permissions with the chmod 400 <key name>.pem command in order to connect with this key.<br />
+Refer to the private key you want to use:
 ```bash
 ssh -i /path/where/your/key/is/my_key.key <user name>@<public IP of your server>
 ```
 
-# copy the public key into the server
-# .ssh folder should be 700 and authorized_keys file should be 600
+To copy the public key into the server, the .ssh folder should be 700 and authorized_keys file should be 600
+```bash
 cat ~/.ssh/id_rsa.pub | ssh [username]@[server.ip.address.here] "cat >> ~/.ssh/authorized_keys"
 # or, use the following to automatically copy the public key
 ssh-copy-id [username]@hostname
 # or, if you don't have access using password you can run the following while you are in the root
 rsync --archive --chown=[username]:[username] ~/.ssh /home/[username]
+```
 
-
-# https://serverfault.com/questions/221760/multiple-public-keys-for-one-user
-
-# the question if you have a new machine how to copy the key to it
-
-# tunnel
+* https://serverfault.com/questions/221760/multiple-public-keys-for-one-user
+  
+### [Github SSH](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-https-to-ssh)
+For Github you need to 
+```bash
+# 1. Start the ssh-agent in the background 
+eval "$(ssh-agent -s)"
+# 2. and then Add your SSH private key to the ssh-agent. for example:
+ssh-add ~/.ssh/id_ed25519
+# 3. Switching remote URLs from HTTPS to SSH
+git remote set-url origin git@github.com:disooqi/REPOSITORY.git
+git remote -v  # to verify
+```
+Tunnel
+```bash
 ssh -L 8888:localhost:8888 qcri@qatslive4520.cloudapp.net
 ```
 
-###########################################################################
-#####  How To Use The scp Command - copy Files Locally and Remotely  ######
-###########################################################################
+##  How To Use The scp Command - copy Files Locally and Remotely
+```bash
 # http://www.hypexr.org/linux_scp_help.php
 # Copy the file "foobar.txt" from a remote host to the local host
 scp your_username@remotehost.edu:foobar.txt /some/local/directory
@@ -235,17 +243,15 @@ scp -r foo your_username@remotehost.edu:/some/remote/directory/bar
 #  Using the Blowfish cipher has been shown to increase speed.
 # It is often suggested that the -C option for compression should also be used to increase speed
 scp -c blowfish -C local_file your_username@remotehost.edu:~
+```
 
-##########################################################################
-#####################    compression   ###################################
-##########################################################################
+## Compression
+* https://www.digitalocean.com/community/tutorials/an-introduction-to-file-compression-tools-on-linux-servers
+* Using Tar Archiving with different Compression Tools i.e. gzip, bzip2, xz
 
-# https://www.digitalocean.com/community/tutorials/an-introduction-to-file-compression-tools-on-linux-servers
-# Using Tar Archiving with different Compression Tools i.e. gzip, bzip2, xz
 
-###########################
-### Using TAR with gzip ###
-###########################
+### Using TAR with gzip
+```bash
 tar czvf <target_name>.tar.gz  <source_directory_name>
 
 # c for achive
@@ -261,34 +267,35 @@ tar tzvf <compressed_file_name>.tar.gz
 tar xzvf <compressed_file_name>.tar.gz [-C /where/do/you/want/to/extract/] [--strip-components=1]
 
 # x for extract using gzip
+```
 
-############################
-### Using TAR with bzip2 ###
-############################
+### Using TAR with bzip2
 
-# for using bzip2 you can just repalce the z flag with the j flag.
 
+* For using bzip2 you can just repalce the z flag with the j flag.
+```bash
 tar cjvf <target_name>.tar.bz2  <source_directory_name>
 tar tjvf <compressed_file_name>.tar.bz2
 tar xjvf <compressed_file_name>.tar.bz2
+```
 
 
-#########################
-### Using TAR with xz ###
-#########################
-
-# for using xz you can just use the J flag instead of the z or j flags
+### Using TAR with xz
+* for using xz you can just use the J flag instead of the z or j flags
+```bash
 tar cJvf <target_name>.tar.xz  <source_directory_name>
 tar tJvf <compressed_file_name>.tar.xz
 tar xJvf <compressed_file_name>.tar.xz
-
-
-# To extract an archive to a directory different from the current, use the -C, or --directory, tar option, as in
+```
+* To extract an archive to a directory different from the current, use the -C, or --directory, tar option, as in
+```bash
 tar -x**f archive.tar -C /target/directory
-
-# https://askubuntu.com/questions/854201/unable-to-unzip-to-opt-directory
+```
+* https://askubuntu.com/questions/854201/unable-to-unzip-to-opt-directory
+```bash
 sudo unzip -d /opt/ jstock-1.0.7.17-bin.zip
-
+```
+  
 ##########################################################################
 ##########################    Screen   ###################################
 ##########################################################################
