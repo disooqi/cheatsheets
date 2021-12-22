@@ -1,15 +1,11 @@
-#!/bin/sh
-# https://www.amazon.com/Linux-Command-Shell-Scripting-Bible/dp/111898384X/ref=as_li_ss_tl?ie=UTF8&qid=1465646324&sr=8-4&keywords=bash+shell+scripting&linkCode=sl1&tag=nethta-20&linkId=9cc1bff704b553e6ce0632106784334f
-# https://www.youtube.com/watch?v=tPKdfbL1Zv4&t=2904s
-# https://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement
-
-# http://tldp.org/LDP/Bash-Beginners-Guide/html/
-# http://linuxcommand.org/lc3_writing_shell_scripts.php
-# https://www.linux.com/learn/writing-simple-bash-script
-# https://explainshell.com/explain/1/ln
-
-# You may wish to edit your .bashrc to prepend the Miniconda3 install location to PATH:
-export PATH=/home/qcri/miniconda3/bin:$PATH
+## Some tutorial you might want to give a look
+* https://www.amazon.com/Linux-Command-Shell-Scripting-Bible/dp/111898384X/ref=as_li_ss_tl?ie=UTF8&qid=1465646324&sr=8-4&keywords=bash+shell+scripting&linkCode=sl1&tag=nethta-20&linkId=9cc1bff704b553e6ce0632106784334f
+* https://www.youtube.com/watch?v=tPKdfbL1Zv4&t=2904s
+* https://stackoverflow.com/questions/209470/can-i-use-python-as-a-bash-replacement
+* http://tldp.org/LDP/Bash-Beginners-Guide/html/
+* http://linuxcommand.org/lc3_writing_shell_scripts.php
+* https://www.linux.com/learn/writing-simple-bash-script
+* https://explainshell.com/explain/1/ln
 
 ######################################################################
 ########   How to (safely) move /tmp to a different volume?  #########
@@ -20,20 +16,21 @@ https://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-m
 https://wiki.ubuntu.com/Lvm
 https://unix.stackexchange.com/questions/282393/union-mount-on-linux#386758
 
-
+```bash
 { cat /var/log/apache2/qatats.access.log.1 /var/log/apache2/qatats.access.log ; zcat /var/log/apache2/qatats.access.log.*.gz;} | grep "/farasa/requestExecuter.php" | cut -f1,4,9,10 -d' ' | grep " 200 "  > Farasa_usage_requests.txt
 
 cat Farasa_usage_requests.txt Farasa_Downloads_requests.txt | cut -d' ' -f1 | sort | uniq | awk '{system("geoiplookup "$1" | grep Country ;echo "$1)}'  > Farasa_Country_lookup.txt
+```
 
-sudo shutdown -h now
-
-readlink -f `which command`
-
-# Check whether Ubuntu OS architecture is 32-bit or 64-bit. 
+readlink -f `which command`<br />
+Check whether Ubuntu OS architecture is 32-bit or 64-bit. 
+```bash
 file /sbin/init
 file /lib/systemd/systemd
+```
 
-# If you do not know the number of cores your processor, you can find it by typing
+If you do not know the number of cores your processor, you can find it by typing
+```bash
 nproc
 
 cat /etc/os-release
@@ -43,25 +40,32 @@ ln -fs <file_or_dir>
 ln -s /etc/nginx/sites-available/dialectid /etc/nginx/sites-enabled
 
 echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
-
-############################################################################################
+```
+```bash
 lsof -i :8080
+```
+<pre>
 # COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 # java    8445 disooqi   83u  IPv6  76005      0t0  TCP localhost:http-alt (LISTEN)
-
+</pre>
+```bash
 kill -9 8135
 ps fx
 awk '{print $1}' /var/log/nginx/access.log  | sort | uniq -c
 date
 
+```bash```
 # To find pids (process numbers) that are using /tmp
+
 fuser -m /tmp
 # stop or kill processes
 ps -elf <pids>
-##############################################################################################
-ls -l, which only displays the size of the individual files in a directory, nor
-df -h, which only displays the free and used space on my disks.
- 
+```
+
+```bash
+ls -l, # which only displays the size of the individual files in a directory, nor
+df -h  # which only displays the free and used space on my disks.
+
 
 # To get the size of each dir in the in a specific dir use the following
 du -h --max-depth=1 . | sort -hr # -h is to get the numbers "human readable", e.g. get 140M instead of 143260 (size in KBytes)
@@ -71,38 +75,32 @@ du -hs /path/to/directory # -s is for summary (otherwise you'll get not only the
 
 df -alkh /
 sudo lsblk
-
-##########################################################################
-###########################       GREP      ##############################
-##########################################################################
+```
+## GREP
+```bash
 # This will find "some string" in /home/yourusername directory. The search will ignore case (-i) and recurse directories (-r). 
 # You can use / as the directory to search in the whole directory but that might not be very efficient. 
 grep -r -i SEARCHTERM /your/dir # search files within directory tree 
 grep -i SEARCHTERM /etc/apt/sources.list # you can specify one file
 grep -n SEARCHTERM file1 file2  # -n to show line number
-
-###########################################################################
-############################  wget command  ###############################
-###########################################################################
+```
+## wget command
+```bash
 wget -O /tmp/model.tar.gz https://qcristore.blob.core.windows.net/public/asrlive/models/arabic/nnet3sac.tar.gz
 
 # If you insert no -l option, wget will use -l 5 automatically.
 wget -r --no-parent -A .ttl.bz2 -l 1 http://downloads.dbpedia.org/2016-10/core-i18n/en/
-
-
-
-###########################################################################
-#######################  Navigating your Filesystem  ######################
-###########################################################################
+```
+##  Navigating your Filesystem
+```bash
 pwd
 
 ls -lah
 cd <directory>
 cd # just cd navigate to your home directory
-
-###########################################################################
-######  Create, Copy, Move, Rename and Delete Files and Directories  ######
-###########################################################################
+```
+##  Create, Copy, Move, Rename and Delete Files and Directories
+```bash
 mkdir <dir_name>
 touch <file_name> # to create a file
 open <file> # That's because open is a Mac specific command, it is not available under Linux (ubuntu),
@@ -123,10 +121,10 @@ mv <dir>/ <a_nother_dir>/<new_dir_name> # move and renaming in the same time
 
 rm [-f] <file>     # -f force a deletion
 rm -R[f] <directory>
+```
 
-###########################################################################
-######################    find (compare with grep)   ######################
-###########################################################################
+## find (compare with grep)
+```bash
 find . # find all the files and dirs below the current one
 find <dir> # find all the files and dirs below a specific dir
 find . -type d # find all the dirs and exclude files
@@ -144,10 +142,9 @@ find . -perm 777 -exec chown disooqi:django {} [+|\;]
 find . -perm 777 -exec chown disooqi:django {} [+|\;]
 find . -type d -exec chmod 775 {} +
 find . -type f -name "*.txt" -maxdepth 1 -exec rm {} +
-
-###########################################################################
-######################  How To Use The cURL Command  ######################
-###########################################################################
+```
+##  How To Use The cURL Command
+```bash
 # cURL Command alows us to query URLs from the command line
 curl mohamed-eldesouki.com
 curl -i mohamed-eldesouki.com
@@ -172,39 +169,36 @@ curl [-i|--include] [-I|--head] [-N|--no-buffer]
 http://127.0.0.1:8000/farasa/segmentation/v01/
 
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-###########################################################################
-#####  How To Use The rsync Command - Sync Files Locally and Remotely  ####
-###########################################################################
-rsync <dir>/* <packup_dir>/
+```
+
+##  How To Use The rsync Command - Sync Files Locally and Remotely
+```bash
+sync <dir>/* <packup_dir>/
 rsync -r <dir>[/] <packup_dir>/ # recursive
 rsync -a <dir>[/] <packup_dir>/ # a for archive it include the r option and also preserve the permissions and copy symlinks
 rsync -av --dry-run <dir>[/] <packup_dir>/ # v for verpose
 rsync -av --delete ..........  # it merrors both directory which means deleting extra files and dirs in the destination dir
 rsync -zaP <local_source_dir> disooqi@dialectid.qcri.org:/home/django/django_project/ # z for compress P for progress
 rsync -zaP disooqi@dialectid.qcri.org:/home/django/django_project/ <local_destination_dir>/
+```
+## SSH
+Some references:
+* https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
+* https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets
+* https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
 
-########################################################################
-#############################  SSH SSH SSH #############################
-########################################################################
-# Public Key Authentication
-
-# https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
-# https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets
-# https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
-
-# Create the RSA Key Pair (if there is one exist you could use it you don't need to make new one)
+Create the RSA Key Pair (if there is one exist you could use it you don't need to make new one)
+```bash
 ssh-keygen -t rsa
 ssh-keygen -t rsa -C "your_email@example.com"
 ssh-keygen -t rsa -f cloud.key
+```
+On your local machine (not the VM), you will need to change key permissions with the chmod 400 <key name>.pem command in order to connect with this key.               #
 
-############################################################
-# On your local machine (not the VM), you will need to     #
-# change key permissions with the chmod 400 <key name>.pem # 
-# command in order to connect with this key.               #
-############################################################
-# refer to the private key you want to use
+refer to the private key you want to use
+```bash
 ssh -i /path/where/your/key/is/my_key.key <user name>@<public IP of your server>
-
+```
 
 # copy the public key into the server
 # .ssh folder should be 700 and authorized_keys file should be 600
@@ -221,7 +215,7 @@ rsync --archive --chown=[username]:[username] ~/.ssh /home/[username]
 
 # tunnel
 ssh -L 8888:localhost:8888 qcri@qatslive4520.cloudapp.net
-
+```
 
 ###########################################################################
 #####  How To Use The scp Command - copy Files Locally and Remotely  ######
