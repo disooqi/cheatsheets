@@ -29,3 +29,42 @@ For example, MQTT, which also supports bidirectional communication, is the go-to
 WebSockets, MQTT, and SSE are all TCP-based protocols. TCP is designed to be a reliable transport layer protocol, which provides message delivery and ordering guarantees. This is great for many realtime use cases. But for other use cases, a lightweight, speedier protocol is a better option. For example, if your purpose is to stream video data, you’re better off using UDP as your transport layer protocol.<br />
 
 Even if WebSocket is a good choice for your needs, depending on the complexity of your architecture and what you are trying to achieve with your system, you might want to have the flexibility of using multiple protocols, one for each specific use case. <br />
+
+## Mounting a Storage Device to your Raspberry Pi
+
+
+You can mount your storage device at a specific folder location. It is conventional to do this within the /mnt folder, for example /mnt/mydisk. Note that the folder must be empty.<br>
+Plug the storage device into a USB port on the Raspberry Pi.<br>
+
+List all the disk partitions on the Pi using the following command:
+```bash
+sudo lsblk -o UUID,NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL,MODEL
+```
+If your storage device uses an NTFS file system, you will have read-only access to it. If you want to write to the device, you can install the ntfs-3g driver:
+```bash
+sudo apt install ntfs-3g
+```
+Run the following command to get the location of the disk partition:
+```bash
+sudo blkid  # for example /dev/sda1
+```
+Create a target folder to be the mount point of the storage device. The mount point name used in this case is mydisk. You can specify a name of your choice:
+```bash
+sudo mkdir /mnt/My_Passport_07A8
+```
+Mount the storage device at the mount point you created:
+```bash
+sudo mount /dev/sda1 /mnt/my_passport
+```
+
+To setting up Automatic Mounting, get UUID of the storage device using `sudo blkid`. Then, modify the `fstab` file to define the location where the storage device will be automatically mounted when the Raspberry Pi starts up.
+```
+sudo blkid
+sudo vim /etc/fstab
+```
+Add the following to the fstab file; `UUID=F04668504668199C /mnt/my_passport ntfs defaults,auto,users,rw,nofail,umask=000 0 0` . Don't forget to change `ntfs` with your disk `fstype`  <br />
+If the filesystem type is FAT or NTFS, add `,umask=000` immediately after nofail - this will allow all users full read/write access to every file on the storage device.<br />
+if you do not have the storage device attached when the Pi starts, the Pi will take an extra 90 seconds to start up. You can shorten this by adding `,x-systemd.device-timeout=30` immediately after nofail in step 4. This will change the timeout to 30 seconds, meaning the system will only wait 30 seconds before giving up trying to mount the disk. 
+
+
+
