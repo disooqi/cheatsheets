@@ -30,6 +30,11 @@ WebSockets, MQTT, and SSE are all TCP-based protocols. TCP is designed to be a r
 
 Even if WebSocket is a good choice for your needs, depending on the complexity of your architecture and what you are trying to achieve with your system, you might want to have the flexibility of using multiple protocols, one for each specific use case. <br />
 
+## [How to setup a static IP address?](https://thepihut.com/blogs/raspberry-pi-tutorials/16683276-how-to-setup-a-static-ip-address-on-your-raspberry-pi)
+1. edit /etc/network/interfaces
+
+
+
 ## Mounting a Storage Device to your Raspberry Pi
 
 
