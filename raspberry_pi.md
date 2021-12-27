@@ -33,6 +33,10 @@ Even if WebSocket is a good choice for your needs, depending on the complexity o
 ## [How to setup a static IP address?](https://thepihut.com/blogs/raspberry-pi-tutorials/16683276-how-to-setup-a-static-ip-address-on-your-raspberry-pi)
 1. edit /etc/network/interfaces
 
+## Developing on the PI
+If installing an new virtual environment, don't forget to include `--system-site-packages` to consider some dependencies like GPIO.<br />
+If you already created the virtualenv, you can enable them by deleting following file:
+your_venv_dir/lib/pythonXXX/no-global-site-packages.txt
 
 
 ## Mounting a Storage Device to your Raspberry Pi
