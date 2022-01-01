@@ -29,10 +29,16 @@ The following companies are all Raspberry Pi Approved Resellers in Canada.
 
 ## Developing on the PI
 If installing an new virtual environment, don't forget to include `--system-site-packages` to consider some dependencies like GPIO.<br />
-If you already created the virtualenv, you can enable them by deleting following file:
-your_venv_dir/lib/pythonXXX/no-global-site-packages.txt
+<s>If you already created the virtualenv, you can enable them by deleting following file:
+your_venv_dir/lib/pythonXXX/no-global-site-packages.txt</s><pr />
 
-* After creating a new project in PyCharm you can use SSH to develop directly on the Pi.
+After creating a new project in PyCharm you can use SSH to develop directly on the Pi.
+1. Go to settings -> Python Interpreter -> Add -> choose 'SSH Interpreter'
+2. Enter your server information i.e IP, port, password 
+3. For Deployment Configuration, Go to settings -> Python Interpreter -> Show All -> Edit (the chosen Interpreter)
+4. Choose the the three dots '...' next to Deployment Configuration and choose the Mappings tap and change the Deployment path
+
+
 * [Configure Vim](https://roboticsbackend.com/install-use-vim-raspberry-pi/) to work on RPi
 
 
