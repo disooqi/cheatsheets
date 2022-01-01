@@ -97,4 +97,11 @@ WebSockets, MQTT, and SSE are all TCP-based protocols. TCP is designed to be a r
 
 Even if WebSocket is a good choice for your needs, depending on the complexity of your architecture and what you are trying to achieve with your system, you might want to have the flexibility of using multiple protocols, one for each specific use case. <br />
 
-
+### Socket communication
+Some useful URLs
+* https://realpython.com/python-sockets/#application-client-and-server
+* https://docs.python.org/3/howto/sockets.html#socket-howto
+* https://docs.python.org/3/library/codecs.html#encodings-and-unicode
+* https://flask-socketio.readthedocs.io/en/latest/
+* https://www.youtube.com/watch?v=YvsOUkTUsxg&list=WL&index=27&t=19s
+* https://www.youtube.com/watch?v=X4oVGnJLVUg&list=PLIO3UV9ODwNCJR462wvZZlve02-BMeQGh
