@@ -105,3 +105,4 @@ Some useful URLs
 * https://flask-socketio.readthedocs.io/en/latest/
 * https://www.youtube.com/watch?v=YvsOUkTUsxg&list=WL&index=27&t=19s
 * https://www.youtube.com/watch?v=X4oVGnJLVUg&list=PLIO3UV9ODwNCJR462wvZZlve02-BMeQGh
+* https://codingnights.com/coding-fully-tested-python-chat-server-using-sockets-part-1/
