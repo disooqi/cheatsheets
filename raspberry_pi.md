@@ -47,6 +47,7 @@ After creating a new project in PyCharm you can use SSH to develop directly on t
 
 ## Start Program on Booting
 * https://roboticsbackend.com/make-a-raspberry-pi-3-program-start-on-boot/
+* https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/
 
 ## Using Camera
 * https://roboticsbackend.com/raspberry-pi-camera-picamera-python-library/
