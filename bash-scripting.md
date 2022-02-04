@@ -41,20 +41,14 @@ ln -s /etc/nginx/sites-available/dialectid /etc/nginx/sites-enabled
 
 echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bashrc
 ```
+
 ```bash
-lsof -i :8080
-```
-<pre>
-# COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-# java    8445 disooqi   83u  IPv6  76005      0t0  TCP localhost:http-alt (LISTEN)
-</pre>
-```bash
-kill -9 8135
 ps fx
 awk '{print $1}' /var/log/nginx/access.log  | sort | uniq -c
 date
+```
 
-```bash```
+```bash
 # To find pids (process numbers) that are using /tmp
 
 fuser -m /tmp
@@ -250,6 +244,7 @@ scp -c blowfish -C local_file your_username@remotehost.edu:~
 * Using Tar Archiving with different Compression Tools i.e. gzip, bzip2, xz
 
 
+
 ### Using TAR with gzip
 ```bash
 tar czvf <target_name>.tar.gz  <source_directory_name>
@@ -295,10 +290,37 @@ tar -x**f archive.tar -C /target/directory
 ```bash
 sudo unzip -d /opt/ jstock-1.0.7.17-bin.zip
 ```
+
+### Useful Commands
   
-##########################################################################
-##########################    Screen   ###################################
-##########################################################################
+  ```bash
+  # List open files 
+  sudo lsof
+  
+  # shows the list of all network connections LISTENING & ESTABLISHED
+  lsof -i
+  
+  # List open ports (-i option to filter for a specific port, -P just return port number; no port names)
+  sudo lsof -i :6075 -P 
+  
+  # To return processes that listen on a specific port use -t flag 
+  sudo lsof -i :6075 -P -t 
+  
+  # To kill all processes listening on a specific port use
+  # If the process is more persistent, and kill did not work, try `kill -9` to kill it more aggressively.
+  lsof -ti tcp:6075 | xargs kill
+  
+  # To list all the running process of open files of TCP Port ranges from 1-1024
+  lsof -i TCP:1-1024
+  
+  # By user
+  lsof -u disooqi
+  lsof -u^disooqi
+  lsof -i -u disooqi
+  ```
+
+### Screen
+```bash
 screen -dmS app_server_core sh
 screen -S app_server_core -p 0 -X stuff "cd diacritize_core_python/
 "
@@ -313,25 +335,22 @@ screen -X -S [session_no you want to kill] quit
 
 # to attach to already attached screen
 screen -d -r <screen>
+```
 
-#########################################################################
-###############################   sed   ################################
-#########################################################################
+### sed
+```bash
 sudo sed -i '2d' /etc/apt/sources.list # you can remove line 2 using your favorite editor or use sed:
 sudo sed -i '2 s/^/# /' /etc/apt/sources.list # comment out the 2nd line:
+```
 
-
-
-#########################################################################
-###############################   tail   ################################
-#########################################################################
-sudo tail -f /var/log/apache2/access.log
-
-
-##########################################################################
-#####################    update-alternatives   ###########################
-##########################################################################
-ls -l /etc/alternatives
+### tail
+```bash
+  sudo tail -f /var/log/apache2/access.log
+```
+  
+### update-alternatives
+```bash
+  ls -l /etc/alternatives
 
 sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0.05/bin/java 1
 sudo update-alternatives --install /usr/bin/java java ${JAVA_HOME%*/}/bin/java 20000
@@ -343,7 +362,8 @@ sudo update-alternatives --config javac
 sudo update-alternatives --remove java ${JAVA_HOME%*/}/bin/java
 
 sudo update-alternatives --remove-all java
-
+```
+  
 #############################################################
 https://linoxide.com/linux-how-to/few-command-helps-to-get-linux-hardware-details/
 
