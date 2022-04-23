@@ -128,6 +128,9 @@ pipenv run python <my_script.py>
 # To run the interactive python of an ENV without activating it
 pipenv run python
 
+# To update pipfile.lock
+pipenv lock
+
 # To generate requirements.txt file:
 pipenv lock -r
 
@@ -153,9 +156,8 @@ CMD flask run exampleapp:app
 
 
 
+```
 
-# To update pipfile.lock
-pipenv lock
 
 # Create .env file for your environement variables
 #SECRET_KEY="fgfm4534kfdgdklnml5498"
@@ -296,3 +298,4 @@ deactivate
 
 # delete our environment 
 rmdir env /s
+```
