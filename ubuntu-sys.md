@@ -1,12 +1,15 @@
 https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-ubuntu-20-04-focal-fossa
 
-
+```bash
+sudo apt update
+```
 
 ## Install zsh
 ```bash
 sudo apt install zsh
 chsh -s $(which zsh)
 ```
+* logout and login to create the .zshrc file
 * Test that it worked with echo $SHELL. Expected result: /bin/zsh or similar.
 * Install Oh My Zsh and configuring .zshrc
 ```bash
