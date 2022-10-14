@@ -1,7 +1,10 @@
 https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-ubuntu-20-04-focal-fossa
 
 ```bash
-sudo apt update
+sudo apt update && sudo apt upgrade
+sudo apt install curl
+sudo apt-get install git-all
+sudo apt install vim 
 ```
 
 ## Install zsh
