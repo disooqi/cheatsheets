@@ -183,6 +183,8 @@ Some references:
 
 Create the RSA Key Pair (if there is one exist you could use it you don't need to make new one)
 ```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
 ssh-keygen -t rsa
 ssh-keygen -t rsa -C "your_email@example.com"
 ssh-keygen -t rsa -f cloud.key
