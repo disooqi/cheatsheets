@@ -1,7 +1,7 @@
 
 * https://git-scm.com/download/linux
 ```bash
-apt-get install git
+sudo apt-get install git-all
 ```
 
 * https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
