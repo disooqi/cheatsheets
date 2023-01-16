@@ -81,7 +81,7 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 gem env home
 ```
 
-Working with Jekyll (if you already have an existing project, see the following section)
+Working with Jekyll (if you already have an existing project, see the following subsection)
 ====================
 ```sh
 gem install jekyll
@@ -91,7 +91,7 @@ bundle add webrick  # If you are using Ruby version 3.0.0 or higher
 bundle exec jekyll serve --livereload
 ```
 If you already having an existing project do the following:
-====================
+---------
 ```sh
 cd <project_dir>
 bundle install
