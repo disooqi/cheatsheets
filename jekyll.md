@@ -67,6 +67,9 @@ rbenv rehash
 Working with Gems
 ==================
 gem is similar to pip
+WARNNING: you only need the following if you want to change the directory of gems. If you already used `rbenv`, the gems will be installed inside the
+version of ruby you are using as global. Hint: I don't know yet how to make a local env for each project, and I don't know if there is a connection between that and bundler or not.
+
 ```bash
 echo "gem: --no-document" > ~/.gemrc
 
@@ -78,7 +81,7 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 gem env home
 ```
 
-Working with Jekyll
+Working with Jekyll (if you already have an existing project, see the following section)
 ====================
 ```sh
 gem install jekyll
@@ -87,7 +90,12 @@ cd jekyll-website/
 bundle add webrick  # If you are using Ruby version 3.0.0 or higher
 bundle exec jekyll serve --livereload
 ```
-
+If you already having an existing project do the following:
+====================
+```sh
+cd <project_dir>
+bundle install
+```
 
 set baseurl to empty when run locally
 `jekyll serve --watch --baseurl ""`
