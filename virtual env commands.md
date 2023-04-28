@@ -28,6 +28,8 @@ pyenv update  # If you installed pyenv via [pyenv installer](https://github.com/
 # To uninstall
 rm -fr ~/.pyenv # then remove the 3 line from .bashrc
 ```
+[**Install Python build dependencies**](https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
+  before attempting to install a new Python version.
 
 ### The manual way
 
