@@ -14,6 +14,19 @@ git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe
 git config --global core.editor "vim"
 ```
 
+### [Github SSH](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-https-to-ssh)
+
+For Github you need to 
+```bash
+# 1. Start the ssh-agent in the background 
+eval "$(ssh-agent -s)"
+# 2. and then Add your SSH private key to the ssh-agent. for example:
+ssh-add ~/.ssh/id_ed25519
+# 3. Switching remote URLs from HTTPS to SSH
+git remote set-url origin git@github.com:disooqi/REPOSITORY.git
+git remote -v  # to verify
+```
+
 * storing your credential i.e. username and password
 * cache option for 15min and store option for ever, --global just to store it in the home directory instead of the project dir
 ```bash
