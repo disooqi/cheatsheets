@@ -11,7 +11,7 @@ I think the following:
 
 Installation of rbenv & Ruby 
 =====================================
-OPTION 1: using Package Managers (I tried it 1 time; Not recommended because all ruby versions are outdated)
+OPTION 1: using Package Managers (I tried it 1 time; [Not recommended] because all ruby versions are outdated)
 ---------------------------------
 ```bash
 sudo apt install rbenv
@@ -39,6 +39,11 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer
 wget -q "https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor" -O- | bash
 # To install Ruby:
 rbenv install -l  # list latest stable versions
+
+# You might need to install libyaml-dev if the build fails:
+sudo apt-get update
+sudo apt-get install libyaml-dev # Optional
+
 rbenv install 3.0.3 # or whatever version you want
 rbenv global 3.0.3
 ```
