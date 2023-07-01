@@ -107,3 +107,11 @@ Some useful URLs
 * https://www.youtube.com/watch?v=YvsOUkTUsxg&list=WL&index=27&t=19s
 * https://www.youtube.com/watch?v=X4oVGnJLVUg&list=PLIO3UV9ODwNCJR462wvZZlve02-BMeQGh
 * https://codingnights.com/coding-fully-tested-python-chat-server-using-sockets-part-1/
+
+## Plex Media Server
+### Can't find media External Hard Drive Problem
+https://askubuntu.com/questions/395291/plex-media-server-wont-find-media-external-hard-drive
+
+Some useful URLs
+* https://support.plex.tv/articles/200264746-quick-start-step-by-step-guides/
+* https://support.plex.tv/articles/200288596-linux-permissions-guide/
