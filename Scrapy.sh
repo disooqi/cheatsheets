@@ -1,6 +1,6 @@
 #!/bin/sh
 # it better to install scrapy from pip not from conda
-pip install scrapy==1.4.0
+pip install scrapy==2.10.1
 
 # create a project as follows
 # That will create a Scrapy project under the project_dir directory. 
@@ -33,3 +33,8 @@ projects:
   default:
     id: 234417
     stack: scrapy:1.4-py3
+
+## to check uptodate stacks
+https://hub.docker.com/r/scrapinghub/scrapinghub-stack-scrapy/tags
+https://github.com/scrapinghub/scrapinghub-stack-scrapy/tree/branch-2.10
+https://support.zyte.com/support/solutions/articles/22000200402-changing-the-deploy-environment-with-scrapy-cloud-stacks
