@@ -1,3 +1,20 @@
+To generate docker image:
+```bash
+docker build . -f Dockerfile -t <image-name>
+```
+
+To create a docker network:
+```bash
+docker network create <Network name>
+```
+
+To run a container:
+```bash
+docker run -p 127.0.0.1:50051:50051/tcp [--network <Network name>] [--name <DNS name>] [-e <ENV_VAR>=value] [--env-file .env] <image-name>
+
+```
+
+
 Best Practices (for Python Developers)
 =========================================
 * https://testdriven.io/blog/docker-best-practices/
