@@ -1,6 +1,6 @@
 To generate docker image:
 ```bash
-docker build . -f Dockerfile -t <image-name>
+docker build . [-f Dockerfile] --tag <image-name>
 ```
 
 To create a docker network:
