@@ -87,32 +87,36 @@ pyenv local 3.6.15
 
 ## Poetry
 
+- Install Poetry, run
 ```bash
 curl -sSL https://install.python-poetry.org | sudo POETRY_HOME=/etc/poetry python3 -
 ```
-
-Edit the `sudo vim ~/.bashrc` and the add:
+- Expose poetry to you prompt by adding to `~/.bashrc` the following:
 ```bash
 export PATH="/etc/poetry/bin:$PATH"
-
 ```
 
-and then run:
+- For autocompletion run the following:
 ```bash
 poetry completions bash >> ~/.bash_completion
 ```
 
+- create a new project,
 ```bash
-poetry new [--src] <project-name> [--name <package-name>]
+poetry new [--src] try-poetry [--name my_package]
 ```
+The `--src` flag put the created package under directory `src/`
 
+### Environment
+Check all env created by Poetry in your system
 ```bash
 poetry env list
 ```
-
-```bash
-poetry env use python3.10
+Create a new env
 ```
+poetry env use python3.11
+```
+
 
 
 ## Pipenv 
