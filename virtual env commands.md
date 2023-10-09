@@ -91,6 +91,7 @@ pyenv local 3.6.15
 ```bash
 curl -sSL https://install.python-poetry.org | sudo POETRY_HOME=/etc/poetry python3 -
 ```
+
 - Expose poetry to you prompt by adding to `~/.bashrc` the following:
 ```bash
 export PATH="/etc/poetry/bin:$PATH"
@@ -108,16 +109,22 @@ poetry new [--src] try-poetry [--name my_package]
 The `--src` flag put the created package under directory `src/`
 
 ### Environment
-Check all env created by Poetry in your system
+
+- Check all env created by Poetry in your system
 ```bash
 poetry env list
 ```
-Create a new env
-```
+
+- Create a new env
+```bash
 poetry env use python3.11
 ```
 
-
+- With the install command, Poetry checks your pyproject.toml file for dependencies then resolves and installs them.
+```bash
+poetry install
+```
+**N.B: Besides pytest and its requirements, Poetry also installs the project itself (i.e. `pip install -e .`). This way, you can import your package into your tests right away:**
 
 ## Pipenv 
 
