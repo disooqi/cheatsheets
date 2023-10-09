@@ -79,6 +79,42 @@ pyenv local 3.6.15
 ```
 
 # Virtual Enivronment for Python
+
+- Poetry
+- Pipenv
+- Anaconda
+- virtualenv
+
+## Poetry
+
+```bash
+curl -sSL https://install.python-poetry.org | sudo POETRY_HOME=/etc/poetry python3 -
+```
+
+Edit the `sudo vim ~/.bashrc` and the add:
+```bash
+export PATH="/etc/poetry/bin:$PATH"
+
+```
+
+and then run:
+```bash
+poetry completions bash >> ~/.bash_completion
+```
+
+```bash
+poetry new [--src] <project-name> [--name <package-name>]
+```
+
+```bash
+poetry env list
+```
+
+```bash
+poetry env use python3.10
+```
+
+
 ## Pipenv 
 
 ```bash
