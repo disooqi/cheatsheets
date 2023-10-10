@@ -87,6 +87,8 @@ pyenv local 3.6.15
 
 ## Poetry
 
+### Preparing the system
+
 - Install Poetry, run
 ```bash
 curl -sSL https://install.python-poetry.org | sudo POETRY_HOME=/etc/poetry python3 -
@@ -102,11 +104,18 @@ export PATH="/etc/poetry/bin:$PATH"
 poetry completions bash >> ~/.bash_completion
 ```
 
+### Creating Projects
+
 - create a new project,
 ```bash
 poetry new [--src] try-poetry [--name my_package]
 ```
 The `--src` flag put the created package under directory `src/`
+
+- Poetrising an Existing Project
+```bash
+Poetry init
+```
 
 ### Environment
 
