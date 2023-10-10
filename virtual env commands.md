@@ -86,6 +86,7 @@ pyenv local 3.6.15
 - virtualenv
 
 ## Poetry
+You should commit the poetry.lock file to your project repo so that all people working on the project are locked to the same versions of dependencies (more below).
 
 ### Preparing the system
 
@@ -97,6 +98,12 @@ curl -sSL https://install.python-poetry.org | sudo POETRY_HOME=/etc/poetry pytho
 - Expose poetry to you prompt by adding to `~/.bashrc` the following:
 ```bash
 export PATH="/etc/poetry/bin:$PATH"
+```
+
+By default, Poetry creates a virtual environment in `{cache-dir}/virtualenvs`. You can change the cache-dir value by editing the Poetry configuration. Additionally, you can use the `virtualenvs.in-project` configuration variable to create virtual environments within your project directory.
+- Setting Environment Variable:
+```bash
+export POETRY_VIRTUALENVS_IN_PROJECT=true
 ```
 
 - For autocompletion run the following:
@@ -124,6 +131,11 @@ Poetry init
 poetry env list
 ```
 
+- You can find out where the current project’s virtual environment (if there is one) is stored with
+```bash
+poetry env info --path
+```
+
 - Create a new env
 ```bash
 poetry env use python3.11
@@ -134,6 +146,11 @@ poetry env use python3.11
 poetry install
 ```
 **N.B: Besides pytest and its requirements, Poetry also installs the project itself (i.e. `pip install -e .`). This way, you can import your package into your tests right away:**
+
+- The easiest way to activate the virtual environment is to create a nested shell with `poetry shell`.
+- To deactivate the virtual environment and exit this new shell type `exit`. To deactivate the virtual environment without leaving the shell use `deactivate`.
+
+
 
 ## Pipenv 
 
