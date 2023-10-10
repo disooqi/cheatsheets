@@ -101,8 +101,12 @@ export PATH="/etc/poetry/bin:$PATH"
 ```
 
 By default, Poetry creates a virtual environment in `{cache-dir}/virtualenvs`. You can change the cache-dir value by editing the Poetry configuration. Additionally, you can use the `virtualenvs.in-project` configuration variable to create virtual environments within your project directory.
-- Setting Environment Variable:
+
+Setting Environment Variable:
 ```bash
+poetry config virtualenvs.in-project true
+
+# or adding the following to .bashrc
 export POETRY_VIRTUALENVS_IN_PROJECT=true
 ```
 
@@ -126,26 +130,28 @@ Poetry init
 
 ### Environment
 
-- Check all env created by Poetry in your system
+Check all env created by Poetry in your system
 ```bash
 poetry env list
 ```
 
-- You can find out where the current project’s virtual environment (if there is one) is stored with
+You can find out where the current project’s virtual environment (if there is one) is stored with
 ```bash
 poetry env info --path
 ```
 
-- Create a new env
+Create a new env
 ```bash
 poetry env use python3.11
 ```
 
-- With the install command, Poetry checks your pyproject.toml file for dependencies then resolves and installs them.
+With the install command, Poetry checks your pyproject.toml file for dependencies then resolves and installs them.
 ```bash
-poetry install
+poetry install --no-root [--only-root | --without dev docs] [--sync]
 ```
-**N.B: Besides pytest and its requirements, Poetry also installs the project itself (i.e. `pip install -e .`). This way, you can import your package into your tests right away:**
+- If you want to exclude one or more dependency groups for the installation, you can use the `--without` option.
+- If you want to synchronize your environment – and ensure it matches the lock file – use the `--sync` option.
+- **N.B: Besides pytest and its requirements, Poetry also installs the project itself (similar to `pip install -e .`). This way, you can import your package into your tests right away. To only install the project itself with no dependencies, use the `--only-root` flag. If you want to skip this installation, use the `--no-root` option.**
 
 - The easiest way to activate the virtual environment is to create a nested shell with `poetry shell`.
 - To deactivate the virtual environment and exit this new shell type `exit`. To deactivate the virtual environment without leaving the shell use `deactivate`.
