@@ -145,6 +145,8 @@ Poetry init
 
 ### Environment
 
+The `env` command regroups sub commands to interact with the virtualenvs associated with a specific project.
+
 You can list all the virtual environments associated with the current project with the `env list` command:
 ```bash
 poetry env list
@@ -155,19 +157,22 @@ You can find out where the current project’s virtual environment (if there is 
 poetry env info --path
 ```
 
-Create a new env
+To set a python interpreter for a project so you can create an env with:
 ```bash
 poetry env use python3.11
+# you should use poetry install after that to create the environment
 ```
 
 With the install command, Poetry checks your pyproject.toml file for dependencies then resolves and installs them.
 ```bash
-poetry install --no-root [--only-root | --without dev docs] [--sync]
+poetry install --no-root [--with dev | --only-root | --without dev docs] [--sync]
 ```
 - If you want to exclude one or more dependency groups for the installation, you can use the `--without` option.
 - If you want to synchronize your environment – and ensure it matches the lock file – use the `--sync` option.
 - **N.B: Besides pytest and its requirements, Poetry also installs the project itself (similar to `pip install -e .`). This way, you can import your package into your tests right away. To only install the project itself with no dependencies, use the `--only-root` flag. If you want to skip this installation, use the `--no-root` option.**
+- _Optional groups_ can be installed in addition to the default dependencies by using the `--with` option of the install command.
 
+#### Activate Virtual Environment
 - The easiest way to activate the virtual environment is to create a nested shell with `poetry shell`.
 - To deactivate the virtual environment and exit this new shell type `exit`. To deactivate the virtual environment without leaving the shell use `deactivate`.
 
