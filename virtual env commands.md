@@ -90,6 +90,21 @@ You should commit the poetry.lock file to your project repo so that all people w
 
 ### Preparing the system
 
+> <picture>
+>   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/info.svg">
+>   <img alt="Info" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/info.svg">
+> </picture><br>
+> 
+> If you use a tool like pyenv to manage different Python versions, you can set the experimental `virtualenvs.prefer-active-python` option to `true`. Poetry will then try to find the current python of your shell.
+You can also set environment Variable `export POETRY_VIRTUALENVS_PREFER_ACTIVE_PYTHON=true`:
+> >```bash
+> > poetry config virtualenvs.prefer-active-python true
+> > ....
+> > pyenv install 3.9.8
+> > pyenv local 3.9.8  # Activate Python 3.9 for the current project
+> > poetry install
+> > ```
+
 - Install Poetry, run
 ```bash
 curl -sSL https://install.python-poetry.org | sudo POETRY_HOME=/etc/poetry python3 -
@@ -130,7 +145,7 @@ Poetry init
 
 ### Environment
 
-Check all env created by Poetry in your system
+You can list all the virtual environments associated with the current project with the `env list` command:
 ```bash
 poetry env list
 ```
