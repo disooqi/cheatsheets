@@ -86,7 +86,7 @@ pyenv local 3.6.15
 - virtualenv
 
 ## Poetry
-You should commit the poetry.lock file to your project repo so that all people working on the project are locked to the same versions of dependencies (more below).
+You should commit the poetry.lock file to your project repo so that all people working on the project are locked to the same versions of dependencies.
 
 ### Preparing the system
 
@@ -176,7 +176,10 @@ poetry install --no-root [--with dev | --only-root | --without dev docs] [--sync
 - The easiest way to activate the virtual environment is to create a nested shell with `poetry shell`.
 - To deactivate the virtual environment and exit this new shell type `exit`. To deactivate the virtual environment without leaving the shell use `deactivate`.
 
-
+This command exports the lock file to other formats.
+```bash
+poetry export -f requirements.txt --output requirements.txt
+```
 
 ## Pipenv 
 
