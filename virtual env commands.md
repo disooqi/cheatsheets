@@ -163,14 +163,45 @@ poetry env use python3.11
 # you should use poetry install after that to create the environment
 ```
 
-With the install command, Poetry checks your pyproject.toml file for dependencies then resolves and installs them.
+With the install command, Poetry checks your `pyproject.toml` file for dependencies then resolves and installs them.
 ```bash
-poetry install --no-root [--with dev | --only-root | --without dev docs] [--sync]
+poetry install
 ```
-- If you want to exclude one or more dependency groups for the installation, you can use the `--without` option.
+- **N.B: Poetry also automatically installs the project itself (similar to `pip install -e .`). This way, you can import your package into your tests right away. To only install the project itself with no dependencies, use the `--only-root` flag. If you want to skip this installation, use the `--no-root` option.**
+```bash
+poetry install  [ --no-root | --only-root ]
+```
+
+If you have an optional dependency group, you can install it via `--with <dependency-group-name>`. The dependency group has to be marked with `optional = true` in the `pyproject.toml` file.
+```bash
+poetry install `--with dev --with test
+```
+
+If the dependency group is not marked as optional and you want to exclude one or more of them from the installation, you can use the `--without` option. 
+```bash
+poetry install `--without dev docs
+```
+
 - If you want to synchronize your environment – and ensure it matches the lock file – use the `--sync` option.
-- **N.B: Besides pytest and its requirements, Poetry also installs the project itself (similar to `pip install -e .`). This way, you can import your package into your tests right away. To only install the project itself with no dependencies, use the `--only-root` flag. If you want to skip this installation, use the `--no-root` option.**
-- _Optional groups_ can be installed in addition to the default dependencies by using the `--with` option of the install command.
+```bash
+poetry install --sync
+```
+
+In order to get the latest versions of the dependencies and to update the poetry.lock file, you should use the `update` command.
+```bash
+poetry update [--lock]
+```
+- Use `--lock` flag to not perform install (only update the lockfile).
+
+To install a package into the environment use `add` command, it will add it to `pyproject.toml` as well:
+```bash
+poetry add pydantic[dotenv,email]@^2.3
+```
+
+To install a package into specific dependency group:
+```bash
+poetry add pre-commit rich  --group dev
+```
 
 #### Activate Virtual Environment
 - The easiest way to activate the virtual environment is to create a nested shell with `poetry shell`.
@@ -179,6 +210,11 @@ poetry install --no-root [--with dev | --only-root | --without dev docs] [--sync
 This command exports the lock file to other formats.
 ```bash
 poetry export -f requirements.txt --output requirements.txt
+```
+
+#### To run a CLI command under poetry:
+```bash
+poetry run pytest
 ```
 
 ## Pipenv 
