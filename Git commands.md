@@ -283,6 +283,70 @@ git merge --no-ff my-slide
 git push origin main
 ```
 
+# Submodules
+
+Add submodule to you project
+```bash
+cd to/your/proj/dir
+git submodule add https://github.com/user/repo.git     [path/to/submodule]
+```
+
+Clone a project that has submodules
+```bash
+git clone --recurse-submodules [repository-name]
+```
+
+If you've already cloned the repository and forgot to use the `--recursive` flag, you can initialize and update submodules using the following commands:
+```bash
+git submodule update --init
+
+# If a project contains nested submodules, i.e., submodules within submodules, add the --recursive option to the previous command:
+git submodule update --init --recursive  
+```
+
+Pull the Latest Submodule with git update:
+```bash
+cd [submodule-directory]
+git fetch
+git merge origin/main
+
+# or
+git submodule update --recursive --remote
+
+# or 
+git pull --recurse-submodules
+```
+
+To Checkout the Specific Commit in the Submodule:
+```bash
+cd path/to/submodule
+git checkout <commit-hash>
+
+# Update the Parent Repository
+cd ..
+git add path/to/submodule
+git commit -m "Use specific build of submodule"
+git push
+```
+### Ignoring Changes in Submodules
+You can configure your main repository's `.gitignore` to ignore changes in the submodule. This can be helpful if you want to isolate the submodule changes from the main repository.
+
+### Removing a Submodule
+To remove a submodule from your repository, you need to follow these steps:
+
+a) Delete the submodule entry from the .gitmodules file.
+b) Delete the submodule's directory: rm -rf path/to/submodule
+c) Remove the submodule reference from the index: git rm --cached path/to/submodule
+d) Commit the changes.
+
+#### Fix the "Fatal: Needed a Single Revision" Error
+```
+vim .gitmodules
+branch = main  # branch = [branch-name]
+```
+
+
+
 
 ## Push Big Files  
 ```bash
