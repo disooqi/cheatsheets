@@ -1,3 +1,39 @@
+
+# First Time Ubuntu
+
+1. Install [pyenv](https://github.com/pyenv/pyenv)
+
+2. Install virtual invironment, one othe following
+   a) Poetry (Recommended)
+   b) Pipenv
+   c) Conda
+   d) Virtualenv (native)
+
+4. Install IDE, choose between:
+   a) PyCharm
+   b) VS Code
+   c) VIm
+   d) IDX
+
+## Creating Projects
+There are many ways to initiate your project. I am going to mension those only that I use:
+1. For generic Python projects, `poetry new` (for already existed projects `poetry init`)
+   You can always your IDE to automatically initiate both you project and your virtual environment.
+3. For Scrapy projects, `scrapy startproject project-name [.]`
+4. For Django projects, `django-admin startproject mysite`
+
+## Creating Virtual Environemnt
+I usually prefer to reside the project's virtual environment within the project directory. 
+As a good practice, the environment sub-directory should start with a `dot` to hide it and added
+it to the `.gitignore` file.
+
+In Poetry, either creating a new project or intializing and existing one, poetry will prompt you with the process of adding you dependency packages. If you choose to use this wizard to add the packages, then all you need is to run `poetry install` to create the environment. Poetry will automatically create  the environemnt if start adding packages to you project via `poetry add <package-name>` and create the
+`poetry.lock` file.
+
+### Creating an env fron already existed `pyproject.toml` file
+To create an environment usuing Poetry use `poetry install` command and if the 
+
+
 https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-ubuntu-20-04-focal-fossa
 
 ```bash
