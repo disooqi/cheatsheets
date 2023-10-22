@@ -1,6 +1,6 @@
 # CI/CD Preparations
 - Jenkin server
-- Cloud account
+- Cloud account (aws, digital ocean, azure, google)
 - 
 
 # Continuous Integration
@@ -9,7 +9,9 @@
 - linting
 - Security Venralability
 - Semantic Release
-
+- Vagrant
 
 
 # Continuous Deployment
+- Ansible
+- Terraform
