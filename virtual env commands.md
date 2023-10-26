@@ -209,7 +209,7 @@ poetry add pre-commit rich  --group dev
 
 This command exports the lock file to other formats.
 ```bash
-poetry export -f requirements.txt --output requirements.txt
+poetry export -f requirements.txt --output requirements.txt [--without-hashes]
 ```
 
 #### To run a CLI command under poetry:
