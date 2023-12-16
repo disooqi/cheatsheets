@@ -124,6 +124,13 @@ poetry config virtualenvs.in-project true
 # or adding the following to .bashrc
 export POETRY_VIRTUALENVS_IN_PROJECT=true
 ```
+Another option is add the following table to `pyproject.toml` file,
+```toml
+[virtualenvs]
+in-project = true
+path = ".venv"
+```
+
 
 - For autocompletion run the following:
 ```bash
