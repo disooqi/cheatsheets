@@ -1,4 +1,4 @@
-#!./venv python
+#!./.venv python
 # -*- coding: utf-8 -*-
 """
 WISE: Natural Language Platform to Query Knowledge bases
