@@ -20,9 +20,10 @@ logger = logging.getLogger(__name__)
 
 __all__ = ['Wise']
 
-def main():
-  pass
 
-if '__name__' == '__main__':
-  main()
-  
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()
