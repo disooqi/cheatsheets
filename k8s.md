@@ -31,18 +31,29 @@ kubectl get deployments
 kubectl get deployment
 ```
 
-3. View the Pod:
+3. View cluster events:
+```bash
+kubectl get events
+```
+
+4. View the Pod:
 ```bash
 kubectl get pods
 kubectl get pod
 ```
 
-4. View cluster events:
+5. View application logs for a container in a pod.
 ```bash
-kubectl get events
+kubectl logs <pod-name>
 ```
 
-5. 
+## Service
+By default, the Pod is only accessible by its internal IP address within the Kubernetes cluster. To make the Container accessible from outside the Kubernetes virtual network, you have to expose the Pod as a Kubernetes Service.
+```bash
+kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+```
+
+
 ```bash
 kubectl create secret docker-registry dockreg  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=dfddfs --docker-email=docker@eldesouki.com
 
@@ -57,7 +68,9 @@ kubectl delete -f mojrayat/alzwa-deployment.yaml
 kubectl get service
 kubectl describe service <service-name>
 
-kubectl logs <pod-name>
+
 kubectl describe pod <pod-name>
 kubectl exec -it <pod-name> -- bin/bash
 ```
+# Production
+A Kubernetes cluster that handles production traffic should have a minimum of three nodes because if one node goes down, both an __etcd__ member and a control plane instance are lost, and redundancy is compromised.
