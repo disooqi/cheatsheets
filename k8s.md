@@ -86,14 +86,10 @@ kubectl delete deployment <deploy-name>
 kubectl create secret docker-registry dockreg  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=dfddfs --docker-email=docker@eldesouki.com
 kubectl get nodes
 kubectl edit deployment <deploy-name>
-kubectl delete deployment <deploy-name>
 kubectl apply -f file.yaml
 kubectl delete -f mojrayat/alzwa-deployment.yaml
 
-kubectl get service
 kubectl describe service <service-name>
-
-
 kubectl describe pod <pod-name>
 kubectl exec -it <pod-name> -- bin/bash
 ```
