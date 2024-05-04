@@ -52,7 +52,7 @@ kubectl get events
 
 4. View the Pod:
 ```bash
-kubectl get pods
+kubectl get pods [-o wide]
 kubectl get pod
 ```
 
