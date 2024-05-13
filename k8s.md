@@ -138,6 +138,7 @@ spec:
       protocol: TCP
       port: 80
       targetPort: scrapyd-port
+      nodePort: 30100  # starts from 30000
 ```
 
 1. By default, the Pod is only accessible by its internal IP address within the Kubernetes cluster. To make the Container accessible from outside the Kubernetes virtual network, you have to expose the Pod as a Kubernetes Service. The `--type=LoadBalancer` flag indicates that you want to expose your Service outside of the cluster.
