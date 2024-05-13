@@ -155,6 +155,7 @@ kubectl get services
 ```
 
 ## Secrets
+Example yaml config file for a secret component:
 ```yaml
 apiVersion: v1
 kind: Secret
@@ -167,6 +168,10 @@ data:
   redis-url: dsfd
 
 # echo -n 'what-ever-data-you-want-to-encrypt' | base64
+```
+To generate a yaml file that holds Docker hub credentials:
+```bash
+kubectl create secret docker-registry dockreg  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=<docker-pat> --docker-email=docker@eldesouki.com -o yaml > docker-hub-secret.yaml
 ```
 
 ### Clean up
@@ -187,5 +192,9 @@ kubectl describe service <service-name>
 kubectl describe pod <pod-name>
 kubectl exec -it <pod-name> -- bin/bash
 ```
+
+## Digital Ocean
+
+
 # Production
 A Kubernetes cluster that handles production traffic should have a minimum of three nodes because if one node goes down, both an __etcd__ member and a control plane instance are lost, and redundancy is compromised.
