@@ -31,7 +31,51 @@ View the kubectl configuration:
 kubectl config view
 ```
 
+## Pods
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: whatever
+spec:
+  containers:
+    - name: whatever
+      image: disooqi/alzwa:latest
+      imagePullPolicy: Always
+      command: [ "echo", "SUCCESS" ]
+  imagePullSecrets:
+    - name: myregistrykey
+```
+
 ## Deployments
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alzwa-deployment
+  labels:
+    app: alzwa
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: alzwa
+  template:
+    metadata:
+      labels:
+        app: alzwa
+    spec:
+      containers:
+        - name: alzwa
+          image: disooqi/alzwa:latest
+          ports:
+            - containerPort: 6800
+      imagePullSecrets:
+        - name: dockreg
+  strategy:
+    type: RollingUpdate
+```
+
 1. Create Deployment:
 ```bash
 # kubectl create deployment <deploy-name>
@@ -62,6 +106,39 @@ kubectl logs <pod-name>
 ```
 
 ## Services
+Example servie config file:
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alzwa-pod
+  labels:
+    app.kubernetes.io/name: alzwa
+spec:
+  containers:
+    - name: alzwa
+      image: disooqi/alzwa:latest
+      ports:
+        - containerPort: 6800
+          name: scrapyd-port
+  imagePullSecrets:
+    - name: dockreg
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alzwa-service
+spec:
+  selector:
+    app.kubernetes.io/name: alzwa
+  ports:
+    - name: alzwa-service-port
+      protocol: TCP
+      port: 80
+      targetPort: scrapyd-port
+```
+
 1. By default, the Pod is only accessible by its internal IP address within the Kubernetes cluster. To make the Container accessible from outside the Kubernetes virtual network, you have to expose the Pod as a Kubernetes Service. The `--type=LoadBalancer` flag indicates that you want to expose your Service outside of the cluster.
 ```bash
 kubectl expose deployment alzwa-service --type=LoadBalancer --port=6800
@@ -73,6 +150,21 @@ minikube service alzwa-service  # This opens up a browser window that serves you
 2. View the Deployment:
 ```bash
 kubectl get services
+```
+
+## Secrets
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: alzwa-secret
+  type: Opaque
+data:
+  redis-username: ZGVmYXVsdA==
+  redis-password: SzFyNUZXQ3dJeldnRFpHbk1wcnBIdFF3UWQ1bzJ0RlE=
+  redis-url: dsfd
+
+# echo -n 'what-ever-data-you-want-to-encrypt' | base64
 ```
 
 ### Clean up
