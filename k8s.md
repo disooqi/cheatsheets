@@ -132,6 +132,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: alzwa
+  type: loadBalancer
   ports:
     - name: alzwa-service-port
       protocol: TCP
