@@ -171,7 +171,17 @@ data:
 ```
 To generate a yaml file that holds Docker hub credentials:
 ```bash
-kubectl create secret docker-registry dockreg  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=<docker-pat> --docker-email=docker@eldesouki.com -o yaml > docker-hub-secret.yaml
+kubectl create secret docker-registry dockreg  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=<dockerhub-pat> --docker-email=docker@eldesouki.com -o yaml > docker-hub-secret.yaml
+```
+
+## Configure a Pod to Use a ConfigMap
+Use the option `--from-env-file` to create a ConfigMap from an env-file, for example:
+```bash
+kubectl create configmap a2-config-env-file --from-env-file=.env.test
+```
+would produce a ConfigMap. View the ConfigMap:
+```bash
+kubectl get configmap a2-config-env-file -o yaml
 ```
 
 ### Clean up
@@ -182,7 +192,7 @@ kubectl delete deployment <deploy-name>
 ```
 
 ```bash
-kubectl create secret docker-registry dockreg  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=dfddfs --docker-email=docker@eldesouki.com
+kubectl create secret docker-registry dockhub-secret  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=dfddfs --docker-email=docker@eldesouki.com
 kubectl get nodes
 kubectl edit deployment <deploy-name>
 kubectl apply -f file.yaml
@@ -193,8 +203,21 @@ kubectl describe pod <pod-name>
 kubectl exec -it <pod-name> -- bin/bash
 ```
 
-## Digital Ocean
-
-
 # Production
 A Kubernetes cluster that handles production traffic should have a minimum of three nodes because if one node goes down, both an __etcd__ member and a control plane instance are lost, and redundancy is compromised.
+
+## Digital Ocean
+
+### Prerequisites
+* Install [doctl](https://docs.digitalocean.com/reference/doctl/how-to/install/), the DigitalOcean command-line tool.
+* Install kubectl, the Kubernetes command-line tool.
+
+### Connect to a DigitalOcean Kubernetes Cluster
+Go to digitalocean account home and select the cluster. Within the cluster page and in the overview tab, you will find the following command. This approach automatically renews your cluster’s certificate. Run the command below to authenticate:
+```bash
+doctl kubernetes cluster kubeconfig save c73ef98c-61eb-4a48-ae60-6bf4fdaaf831
+```
+Run the following to create a secret object for Docker Hub in the cluster after providing the dockerhub-tap.
+```bash
+kubectl create secret docker-registry dockhub-secret  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=<dockerhub-pat> --docker-email=docker@eldesouki.com
+```
