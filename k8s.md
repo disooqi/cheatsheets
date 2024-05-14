@@ -184,6 +184,13 @@ would produce a ConfigMap. View the ConfigMap:
 kubectl get configmap a2-config-env-file -o yaml
 ```
 
+## Dashboard
+```bash
+kubectl apply -f dashboard-adminuser.yaml
+kubectl -n kubernetes-dashboard create token admin-user
+kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
+```
+
 ### Clean up
 Now you can clean up the resources you created in your cluster:
 ```bash
