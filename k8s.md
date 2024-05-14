@@ -174,7 +174,7 @@ To generate a yaml file that holds Docker hub credentials:
 kubectl create secret docker-registry dockreg  --docker-server=https://index.docker.io/v1/ --docker-username=disooqi --docker-password=<dockerhub-pat> --docker-email=docker@eldesouki.com -o yaml > docker-hub-secret.yaml
 ```
 
-## Configure a Pod to Use a ConfigMap
+## [Configure a Pod to Use a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
 Use the option `--from-env-file` to create a ConfigMap from an env-file, for example:
 ```bash
 kubectl create configmap a2-config-env-file --from-env-file=.env.test
