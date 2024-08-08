@@ -102,7 +102,7 @@ kubectl get pods  [-n <namespace>] [-w] [-o [wide|yaml]]
 
 5. View application logs for a container in a pod.
 ```bash
-kubectl logs <pod-name>
+kubectl logs <pod-name> [-n <namespace>] [-c <sidecar-container-name>]
 ```
 
 ## Services
@@ -213,6 +213,12 @@ kubectl delete -f mojrayat/alzwa-deployment.yaml
 
 kubectl describe service <service-name>
 kubectl describe pod <pod-name>
+
+kubectl exec -it <pod-name> <container-name> <command>
+
+# for example
+kubectl exec -it <pod-name> <container-name> bin/bash
+# when omitting <container-name> use '--' to separate the command from the <podname>
 kubectl exec -it <pod-name> -- bin/bash
 ```
 
