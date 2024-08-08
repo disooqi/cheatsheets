@@ -96,8 +96,8 @@ kubectl get events
 
 4. View the Pod:
 ```bash
-kubectl get pods [-o wide]
-kubectl get pod
+
+kubectl get pods  [-n <namespace>] [-w] [-o [wide|yaml]]
 ```
 
 5. View application logs for a container in a pod.
@@ -194,10 +194,14 @@ kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy
 ```
 
 ### Clean up
-Now you can clean up the resources you created in your cluster:
+You can clean up the resources you created in your cluster:
 ```bash
 kubectl delete service <service-name>
 kubectl delete deployment <deploy-name>
+
+# OR delete both with one line
+kubectl delete svc,deploy -n a2 <service-name>
+kubectl delete configmap -n a2 mta3-config
 ```
 
 ```bash
