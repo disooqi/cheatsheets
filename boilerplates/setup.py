@@ -6,12 +6,12 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='A2-TLIQ',
-    version='0.0.1',
-    description='Arabic Language Processing of ArabAgent',
+    name='Labeeb',
+    version='0.2.18',
+    description='Best Deep Learning Module out there',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://mohamed.eldesouki.com/pypi/a2-tliq',
+    url='https://mohamed.eldesouki.com/pypi/Labeeb',
     author='Mohamed Eldesouki',
     author_email='mohamed@eldesouki.com',
     extras_require=dict(tests=['pytest']),
