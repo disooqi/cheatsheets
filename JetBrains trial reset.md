@@ -35,3 +35,6 @@ If not works on Mac OS, then run the following code:
 ```sh
 rm -rf ~/Library/Preferences/com.apple.java.util.prefs.plist
 ```
+
+## Source:
+- https://gist.github.com/h3ssan/9510fbb2291d41b090cf52adb2edd1c4
