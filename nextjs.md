@@ -1,3 +1,47 @@
+## Fetch Data
+
+```js
+'use client'
+
+// import { type Metadata } from 'next';
+import { useState, useEffect } from 'react';
+import {getStory} from "@/app/lib/data";
+import StoryCard from "@/app/ui/story-card";
+import {Story} from "@/app/lib/definitions";
+
+const HEADERS: any = {
+    'Authorization': 'Bearer '
+}
+
+export default function StoryPage({ params }: { params: { pk: string } }) {
+    const [story, setStory] = useState<any>(null);
+    useEffect(() => {
+        const fetchStory = async () => {
+            const res = await fetch(`https://mojrayat.com/mta3/api/v1/stories/${params.pk}`, {
+                // cache: 'force-cache',
+                // cache: 'no-store',
+                headers: HEADERS
+            });
+            const data = await res.json();
+            setStory(data);
+        };
+        fetchStory();
+    }, [params.pk]);
+
+    return (
+        <div>
+            {story ? (
+                // <p>{story.title}</p>
+                <StoryCard story={story}/>
+            ) : (
+                <p>Loading...</p>
+            )}
+        </div>
+    );
+}
+```
+
+
 # How to Serve an Next JS website using GitHub Actions
 
 After developing your website, do the following:
