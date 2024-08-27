@@ -217,9 +217,9 @@ kubectl describe pod <pod-name>
 kubectl exec -it <pod-name> <container-name> <command>
 
 # for example
-kubectl exec -it <pod-name> <container-name> bin/bash
+kubectl exec -n a2 -it trteeb-service-84855995d6-bv7tx -- /bin/bash
 # when omitting <container-name> use '--' to separate the command from the <podname>
-kubectl exec -it <pod-name> -- bin/bash
+kubectl exec -it <pod-name> -- /bin/bash
 ```
 
 # Production
