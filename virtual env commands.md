@@ -147,7 +147,7 @@ The `--src` flag put the created package under directory `src/`
 
 - Poetrising an Existing Project
 ```bash
-Poetry init
+poetry init
 ```
 
 ### Environment
