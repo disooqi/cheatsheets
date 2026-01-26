@@ -46,6 +46,8 @@ sudo apt-get update; sudo apt-get install --no-install-recommends make build-ess
 
 # If you wanted to see all the available CPython 3.6 through 3.8, you can do this:
 pyenv install --list | grep " 3\.[678]"
+# If you wanted to see all the available CPython 3.13 through 3.14, you can do this:
+pyenv install --list | grep " 3\.1[34]"
 
 pyenv install 3.7.6
 ```
