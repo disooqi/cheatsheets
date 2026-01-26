@@ -152,7 +152,7 @@ poetry completions bash >> ~/.bash_completion
 
 - create a new project,
 ```bash
-poetry new [--src] try-poetry [--name my_package]
+poetry new [--src] <project-name> [--name my_package]
 ```
 The `--src` flag put the created package under directory `src/`
 
