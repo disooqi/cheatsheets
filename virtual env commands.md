@@ -50,6 +50,9 @@ pyenv install --list | grep " 3\.[678]"
 pyenv install --list | grep " 3\.1[34]"
 
 pyenv install 3.7.6
+
+# At some point, you may find that you don’t need a given Python installation anymore. In that case, you can uninstall it with the following command syntax:
+pyenv uninstall 3.9.16
 ```
 
 > NOTE: You can activate multiple versions at the same time, including multiple versions of Python2 or Python3 simultaneously. 
