@@ -91,6 +91,12 @@ pyenv local 3.6.15
 - virtualenv
 
 ## Poetry
+
+### Updating the Poetry Tool Itself
+```bash
+poetry self update
+```
+
 You should commit the poetry.lock file to your project repo so that all people working on the project are locked to the same versions of dependencies.
 
 ### Preparing the system
