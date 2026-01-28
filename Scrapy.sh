@@ -7,6 +7,11 @@ pip install scrapy==2.10.1
 # If project_dir wasn’t specified, project_dir will be the same as myproject.
 scrapy startproject myproject [project_dir]
 
+# Create a spider
+# e.g. scrapy genspider example example.com
+poetry run scrapy genspider <spider-name> <URL>
+
+
 # Run the spider defined in the given file
 # for option u can use "-o" direct output to json or plain file
 scrapy runspider [options] <spider_file>
