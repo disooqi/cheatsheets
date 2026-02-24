@@ -10,4 +10,9 @@ nvm list-remote
 nvm install v<00000000>
 nvm list
 
+# Install latest LTS
+nvm install --reinstall-packages-from=current 'lts/*'
+nvm alias default v24.13.1
+
+nvm uninstall v16.20.2
 ```
