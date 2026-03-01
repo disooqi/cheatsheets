@@ -55,6 +55,19 @@ poetry add transformers datasets sentence-transformers
 # Install the Arabic-specific heavy hitter
 poetry add camel-tools
 ```
+* Update `pyproject.toml` with the following:
+```toml
+python = ">=3.12,<3.13"
+# Force Transformers to stay within CAMeL's allowed range
+transformers = ">=4.40.0,<4.44.0"
+# Ensure CAMeL Tools is locked to the current stable version
+camel-tools = "^1.5.7"
+```
+Then
+```bash
+poetry lock --no-update
+poetry install
+```
 
 
 ## How to Use My Ghraphics Card vRAM
