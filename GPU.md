@@ -22,7 +22,20 @@ nvidia-smi
 ```
 * If you see a table showing NVIDIA-SMI 550.x and your GTX 1650, the "mismatch" is gone!
 
-### Initialize Your Project with Poetry
+#### If black Screen
+```shell
+sudo prime-select nvidia
+
+# REBOOT (Crucial)
+sudo reboot
+
+sudo vim /etc/gdm3/custom.conf  # Find the line #WaylandEnable=false and uncomment it
+sudo systemctl restart gdm3  # Restart your display manager
+
+
+```
+
+#### Initialize Your Project with Poetry
 
 * Make sure you are using older version of Python (eg. 3.12)
 ```bash
