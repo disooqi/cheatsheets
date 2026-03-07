@@ -54,6 +54,7 @@ poetry add transformers datasets sentence-transformers
 
 # Install the Arabic-specific heavy hitter
 poetry add camel-tools
+poetry run camel_data -i ner-all  # All available named-entity-recognition models
 ```
 * Update `pyproject.toml` with the following:
 ```toml
