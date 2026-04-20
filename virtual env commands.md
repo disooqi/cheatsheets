@@ -132,6 +132,28 @@ When the environment is synced, uv will install the project (and other workspace
 
 To opt-out of this behavior, use the `--no-editable` option.
 
+### Workspaces
+
+Workspaces are not suited for cases in which members have conflicting requirements, or desire a separate virtual environment for each member. In this case, `path dependencies` are often preferable. 
+For example, rather than grouping `albatross` and its members in a workspace, you can always define each package as its own independent project, with inter-package dependencies defined as 
+path dependencies in tool.uv.sources:
+```toml
+[project]
+name = "albatross"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["bird-feeder", "tqdm>=4,<5"]
+
+[tool.uv.sources]
+bird-feeder = { path = "packages/bird-feeder" }
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12"]
+build-backend = "uv_build"
+```
+
+
+
 
 
 ## Poetry
