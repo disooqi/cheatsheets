@@ -84,11 +84,55 @@ pyenv local 3.6.15
 ```
 
 # Virtual Enivronment for Python
-
+- uv
 - Poetry
 - Pipenv
 - Anaconda
 - virtualenv
+
+## uv
+The `--package` flag can be used to create a packaged application:
+```bash
+uv init --package example-pkg
+```
+
+A library provides functions and objects for other projects to consume. Libraries are intended to be built and distributed, e.g., by uploading them to PyPI.
+Libraries can be created by using the --lib flag:
+```bash
+uv init --lib example-lib
+```
+
+```bash
+uv init example-bare --bare --description "Hello world" --author-from git --vcs git --python-pin
+```
+
+You can select a different build backend template by using `--build-backend` with `hatchling`, `uv_build`, `flit-core`, `pdm-backend`, `setuptools`, `maturin`, 
+or `scikit-build-core`. An alternative backend is required if you want to create a library with extension modules.
+
+```bash
+uv add httpx
+uv add -r requirements.txt
+
+uv remove httpx
+```
+
+```bash
+# No locking but it through error if not up-to-date
+uv run --locked
+
+# No locking and it will not through error if is not up-to-date
+uv run --frozen
+
+# Run a command without checking if the environment is up-to-date
+uv run --no-sync 
+```
+
+### Editable installation
+When the environment is synced, uv will install the project (and other workspace members) as editable packages, such that re-syncing is not necessary for changes to be reflected in the environment.
+
+To opt-out of this behavior, use the `--no-editable` option.
+
+
 
 ## Poetry
 
